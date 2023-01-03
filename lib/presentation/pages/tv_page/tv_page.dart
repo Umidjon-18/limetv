@@ -15,6 +15,9 @@ class TVPage extends StatefulWidget {
 }
 
 class _TVPageState extends State<TVPage> {
+  var sized = SizedBox(
+    width: 20.w,
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,14 +73,20 @@ class _TVPageState extends State<TVPage> {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 72.w),
-              child: ChannelGridView(text: 'Узбекские телеканалы', channelTextList: Assets.channelList.uzbekChannels),
+              child: ChannelGridView(
+                text: 'Узбекские телеканалы',
+                channelTextList: Assets.channelList.uzbekChannels,
+              ),
             ),
             SizedBox(
               height: 69.h,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 72.w),
-              child: ChannelGridView(text: 'Русские телеканалы', channelTextList: Assets.channelList.russianChannels),
+              child: ChannelGridView(
+                text: 'Русские телеканалы',
+                channelTextList: Assets.channelList.russianChannels,
+              ),
             ),
             SizedBox(
               height: 69.h,
@@ -95,8 +104,65 @@ class _TVPageState extends State<TVPage> {
                 ),
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  
+                  SizedBox(
+                    height: 53.h,
+                  ),
+                  Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(Assets.images.youTube),
+                        sized,
+                        SvgPicture.asset(Assets.images.instagram),
+                        sized,
+                        SvgPicture.asset(Assets.images.telegram),
+                        sized,
+                        SvgPicture.asset(Assets.images.appStore),
+                        sized,
+                        SvgPicture.asset(Assets.images.playMarket),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 146.h, left: 72.w),
+                    child: Text(
+                      '''© 2023 LimeTV.  18+
+Федеральные каналы доступны для бесплатного просмотра круглосуточно
+HBO ® and related service marks are the property of Home Box Office, Inc
+ООО «LIMETVUZ», адрес местонахождения: 115035, Узбекистан, г. Ташкент, ул. Садовническая, д. 82, стр. 2, пом. 9А01
+Адрес для обращений пользователей: info@limetv.uz
+''',
+                      style: AppTextStyles.body16w4,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 72.w, top: 0),
+                    child: Row(
+                      children: [
+                        Text(
+                          'Cоглашение',
+                          style: AppTextStyles.body16w4.copyWith(
+                            color: const Color(0xff2F80ED),
+                            decoration: TextDecoration.underline,
+                            decorationColor: const Color(0xff2F80ED),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10.w,
+                        ),
+                        Text(
+                          'Справка',
+                          style: AppTextStyles.body16w4.copyWith(
+                            color: const Color(0xff2F80ED),
+                            decoration: TextDecoration.underline,
+                            decorationColor: const Color(0xff2F80ED),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),

@@ -46,7 +46,7 @@ class _Images extends _AssetsHolder {
   String get onePlusOne => "$basePath/1plus1.png";
 
   String get appStore => "$basePath/app_store.svg";
-  String get googlePlay => "$basePath/google_play.svg";
+  String get playMarket => "$basePath/google_play.svg";
   String get telegram => "$basePath/telegram.svg";
   String get youTube => "$basePath/you_tube.svg";
   String get instagram => "$basePath/instagram.svg";
