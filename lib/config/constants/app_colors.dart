@@ -5,6 +5,7 @@ abstract class AppColors {
 
   static const Color accentColor = Colors.white;
   static const Color borderColor = Colors.white38;
+  static const Color backgroundColor = Color(0xff03060B);
 
   static List<Color> cartGrColors = [
     const Color(0xff383E4F),
