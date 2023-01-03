@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -5,6 +6,7 @@ import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
 
 import '../../../config/constants/local_data.dart';
+import '../../components/category_grid.dart';
 import '../../components/genre_label.dart';
 import '../../components/movie_carousel.dart';
 import '../../components/subscription_banner.dart';
@@ -84,27 +86,36 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
             SliverToBoxAdapter(
-              child: SizedBox(
-                height: 482.h,
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: skoroVKino.length,
+              child: CarouselSlider(
+                options: CarouselOptions(
+                  height: 485.h,
+                  initialPage: 0,
+                  reverse: false,
+                  autoPlay: true,
+                  enlargeFactor: 0.15,
+                  aspectRatio: 2 / 3,
+                  disableCenter: true,
+                  viewportFraction: 0.23,
+                  enlargeCenterPage: true,
+                  enableInfiniteScroll: true,
                   scrollDirection: Axis.horizontal,
-                  padding: EdgeInsets.only(left: 72.w),
-                  itemBuilder: (context, index) {
-                    return Container(
-                      width: 320.w,
-                      height: 482.h,
-                      margin: EdgeInsets.only(right: 27.w, bottom: 22.h),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15.r),
-                        image: DecorationImage(
-                          image: AssetImage(skoroVKino[index].bgImage),
-                          fit: BoxFit.cover,
-                        ),
+                  onPageChanged: (index, reason) {},
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  autoPlayInterval: const Duration(seconds: 3),
+                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                ),
+                items: List.generate(
+                  skoroVKino.length,
+                  (index) => Container(
+                    margin: EdgeInsets.symmetric(horizontal: 20.w),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.r),
+                      image: DecorationImage(
+                        image: AssetImage(skoroVKino[index].bgImage),
+                        fit: BoxFit.cover,
                       ),
-                    );
-                  },
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -116,6 +127,40 @@ class _MainPageState extends State<MainPage> {
                 onTap: () {},
                 margin: EdgeInsets.only(left: 72.w, bottom: 43.h),
                 title: "Фильмы",
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: CarouselSlider(
+                options: CarouselOptions(
+                  height: 280.h,
+                  initialPage: 0,
+                  reverse: false,
+                  autoPlay: true,
+                  enlargeFactor: 0.15,
+                  aspectRatio: 463 / 277,
+                  disableCenter: true,
+                  viewportFraction: 0.23,
+                  enlargeCenterPage: true,
+                  enableInfiniteScroll: true,
+                  scrollDirection: Axis.horizontal,
+                  onPageChanged: (index, reason) {},
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  autoPlayInterval: const Duration(seconds: 3),
+                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                ),
+                items: List.generate(
+                  filmy.length,
+                  (index) => Container(
+                    margin: EdgeInsets.only(right: 27.w),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.r),
+                      image: DecorationImage(
+                        image: AssetImage(filmy[index].bgImage),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
             SliverToBoxAdapter(
@@ -182,52 +227,49 @@ class _MainPageState extends State<MainPage> {
                 title: "Категории",
               ),
             ),
+            const SliverToBoxAdapter(
+              child: CategoryGrid(),
+            ),
             SliverToBoxAdapter(
-              child: Container(
-                width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 72.w),
-                child: GridView.builder(
-                  itemCount: 12,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
-                    mainAxisSpacing: 28,
-                    crossAxisSpacing: 28,
-                    childAspectRatio: 375 / 195,
+              child: GenreLabel(
+                onTap: () {},
+                margin: EdgeInsets.only(left: 72.w, bottom: 43.h, top: 69.h),
+                title: "Рекомендо",
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: CarouselSlider(
+                options: CarouselOptions(
+                  height: 350.h,
+                  initialPage: 0,
+                  reverse: false,
+                  autoPlay: true,
+                  enlargeFactor: 0.15,
+                  aspectRatio: 16 / 9,
+                  disableCenter: true,
+                  viewportFraction: 0.3,
+                  enlargeCenterPage: true,
+                  enableInfiniteScroll: true,
+                  scrollDirection: Axis.horizontal,
+                  onPageChanged: (index, reason) {},
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  autoPlayInterval: const Duration(seconds: 3),
+                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                ),
+                items: List.generate(
+                  filmy.length,
+                  (index) => Container(
+                    width: 463.w,
+                    height: 277.h,
+                    margin: EdgeInsets.only(right: 27.w, bottom: 22.h),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.r),
+                      image: DecorationImage(
+                        image: AssetImage(filmy[index].bgImage),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
-                  itemBuilder: (context, index) {
-                    return Container(
-                      height: 195.h,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15.r),
-                        color: AppColors.categoryBgColor.withOpacity(.5),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SvgPicture.asset(
-                            categories[index].categoryIcon,
-                            width: 82.h,
-                            height: 82.h,
-                          ),
-                          SizedBox(width: 48.w),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text(categories[index].categoryName, style: AppTextStyles.body20w5),
-                              SizedBox(height: 2.h),
-                              Text(
-                                "(${categories[index].categoryMovieCount})",
-                                style: AppTextStyles.body16w4.copyWith(color: AppColors.categoryCountColor),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    );
-                  },
                 ),
               ),
             ),
