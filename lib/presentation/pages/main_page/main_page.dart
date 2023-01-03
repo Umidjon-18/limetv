@@ -1,13 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
 
 import '../../../config/constants/local_data.dart';
 import '../../components/category_grid.dart';
 import '../../components/genre_label.dart';
+import '../../components/movie_banner.dart';
 import '../../components/movie_carousel.dart';
 import '../../components/subscription_banner.dart';
 import '../../components/web_appbar.dart';
@@ -20,6 +20,8 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  ValueNotifier<int> currentIndex = ValueNotifier<int>(0);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,10 +36,60 @@ class _MainPageState extends State<MainPage> {
               flexibleSpace: const WebAppBar(),
             ),
             SliverToBoxAdapter(
-              child: SizedBox(
-                width: 1117.w,
-                height: 888.h,
-                child: const MovieCarousel(),
+              child: Stack(
+                children: [
+                  CarouselSlider(
+                    options: CarouselOptions(
+                      height: 840.h,
+                      autoPlay: true,
+                      enlargeFactor: 0,
+                      aspectRatio: 1728 / 840,
+                      disableCenter: true,
+                      viewportFraction: 1,
+                      enableInfiniteScroll: true,
+                      scrollDirection: Axis.horizontal,
+                      onPageChanged: (index, reason) {
+                        currentIndex.value = index;
+                      },
+                      autoPlayCurve: Curves.fastOutSlowIn,
+                      autoPlayInterval: const Duration(seconds: 3),
+                      autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                    ),
+                    items: List.generate(
+                      bannerMovies.length,
+                      (index) => MovieBanner(model: bannerMovies[index]),
+                    ),
+                  ),
+                  Positioned(
+                    left: 0,
+                    right: 0,
+                    bottom: 40.h,
+                    child: ValueListenableBuilder(
+                      builder: (context, value, child) {
+                        return Wrap(
+                          alignment: WrapAlignment.center,
+                          runSpacing: 10,
+                          spacing: 10,
+                          children: List.generate(
+                            4,
+                            (index) => Container(
+                              width: 12.h,
+                              height: 12.h,
+                              margin: EdgeInsets.only(bottom: 40.h),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: currentIndex.value == index
+                                    ? AppColors.selectedColor
+                                    : AppColors.selectedColor.withOpacity(.3),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                      valueListenable: currentIndex,
+                    ),
+                  )
+                ],
               ),
             ),
             SliverToBoxAdapter(
@@ -133,14 +185,11 @@ class _MainPageState extends State<MainPage> {
               child: CarouselSlider(
                 options: CarouselOptions(
                   height: 280.h,
-                  initialPage: 0,
-                  reverse: false,
                   autoPlay: true,
-                  enlargeFactor: 0.15,
+                  enlargeFactor: 0,
                   aspectRatio: 463 / 277,
                   disableCenter: true,
-                  viewportFraction: 0.23,
-                  enlargeCenterPage: true,
+                  viewportFraction: 0.28,
                   enableInfiniteScroll: true,
                   scrollDirection: Axis.horizontal,
                   onPageChanged: (index, reason) {},
@@ -160,31 +209,6 @@ class _MainPageState extends State<MainPage> {
                       ),
                     ),
                   ),
-                ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: SizedBox(
-                height: 280.h,
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: filmy.length,
-                  scrollDirection: Axis.horizontal,
-                  padding: EdgeInsets.only(left: 72.w),
-                  itemBuilder: (context, index) {
-                    return Container(
-                      width: 463.w,
-                      height: 277.h,
-                      margin: EdgeInsets.only(right: 27.w, bottom: 22.h),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15.r),
-                        image: DecorationImage(
-                          image: AssetImage(filmy[index].bgImage),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    );
-                  },
                 ),
               ),
             ),
