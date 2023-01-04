@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:limetv/presentation/pages/tv_page/tv_page.dart';
 
-import '../pages/main_page/landing_page.dart';
+import '../pages/landing_page/landing_page.dart';
+import '../pages/settings_page/settings_page.dart';
 
 class Routes {
-  static const landingPage = '/';
+  static const landingPage = '/landingPage';
   static const tvPage = '/tvPage';
+  static const settingsPage = '/';
 
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     try {
@@ -22,6 +24,12 @@ class Routes {
           return MaterialPageRoute(
             builder: (context) {
               return const TVPage();
+            },
+          );
+        case settingsPage:
+          return MaterialPageRoute(
+            builder: (context) {
+              return const SettingsPage();
             },
           );
 
