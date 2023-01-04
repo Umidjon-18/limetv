@@ -8,6 +8,9 @@ abstract class Assets {
   static _Images get images => const _Images();
 
   // ignore: library_private_types_in_public_api
+  static _ChannelsList get channelList => _ChannelsList();
+
+  // ignore: library_private_types_in_public_api
   static _Videos get videos => const _Videos();
 }
 
