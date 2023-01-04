@@ -9,6 +9,10 @@ abstract class AppColors {
   static const Color accentColor = Colors.white;
   static const Color borderColor = Colors.white38;
   static const Color selectedColor = Color(0xFF2F80ED);
+  static const Color cartBgColor = Color(0xFF080E19);
+  static const Color textFieldBgColor = Color(0xFF0F192C);
+  static const Color redText = Color(0xFFEB5757);
+  static  Color shadowColor = const Color(0xFF122345).withOpacity(.39);
   static Color appBarBgColor = const Color(0xFF060A12).withOpacity(.85);
 
   static List<Color> cartGrColors = [

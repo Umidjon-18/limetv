@@ -132,6 +132,8 @@ class _Images extends _AssetsHolder {
 
   String get xmen => "$basePath/xmen.png";
 
+  String get signBg => "$basePath/sign_bg.png";
+
 
 }
 
