@@ -26,6 +26,7 @@ class _Icons extends _AssetsHolder {
   String get trash => "$basePath/ic_trash.svg";
   String get search => "$basePath/search_1.png";
   String get play => "$basePath/play.svg";
+  String get clock => "$basePath/clock.svg";
 }
 
 class _Images extends _AssetsHolder {
@@ -37,6 +38,9 @@ class _Images extends _AssetsHolder {
   String get my5 => "$basePath/my5.png";
   String get navo => "$basePath/navo.png";
   String get sevimli => "$basePath/sevimli.png";
+
+  String get yoshlarTvPlayer => "$basePath/yoshlar_tv.png";
+  String get channelPlay => "$basePath/channel_play.png";
 
   String get euroPlus => "$basePath/euro_plus.png";
   String get kinopremyera => "$basePath/kinopremyera.png";

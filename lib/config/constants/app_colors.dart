@@ -5,7 +5,8 @@ abstract class AppColors {
 
   static const Color accentColor = Colors.white;
   static const Color borderColor = Colors.white38;
-  static const Color backgroundColor = Color(0xff03060B);
+  static const Color backgroundColorTv = Color(0xff03060B);
+  static const Color backgroundColorTvPlayer = Color(0xff1E1E1E);
 
   static List<Color> cartGrColors = [
     const Color(0xff383E4F),
@@ -13,6 +14,8 @@ abstract class AppColors {
     const Color(0xff5A6278),
     const Color(0xff1A1E2A),
   ];
+
+  static const containerColor = Color(0xff0A101C);
 
   static Gradients gradients = const Gradients();
 

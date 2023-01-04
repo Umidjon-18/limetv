@@ -21,7 +21,7 @@ class _TVPageState extends State<TVPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.backgroundColorTv,
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(
@@ -126,43 +126,61 @@ class _TVPageState extends State<TVPage> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 146.h, left: 72.w),
-                    child: Text(
-                      '''© 2023 LimeTV.  18+
+                    padding: EdgeInsets.only(
+                      left: 72.w,
+                      right: 72.w,
+                      top: 146.h,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '''© 2023 LimeTV.  18+
 Федеральные каналы доступны для бесплатного просмотра круглосуточно
 HBO ® and related service marks are the property of Home Box Office, Inc
 ООО «LIMETVUZ», адрес местонахождения: 115035, Узбекистан, г. Ташкент, ул. Садовническая, д. 82, стр. 2, пом. 9А01
 Адрес для обращений пользователей: info@limetv.uz
 ''',
-                      style: AppTextStyles.body16w4,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 72.w, top: 0),
-                    child: Row(
-                      children: [
+                              style: AppTextStyles.body16w4,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  'Cоглашение',
+                                  style: AppTextStyles.body16w4.copyWith(
+                                    color: const Color(0xff2F80ED),
+                                    decoration: TextDecoration.underline,
+                                    decorationColor: const Color(0xff2F80ED),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 10.w,
+                                ),
+                                Text(
+                                  'Справка',
+                                  style: AppTextStyles.body16w4.copyWith(
+                                    color: const Color(0xff2F80ED),
+                                    decoration: TextDecoration.underline,
+                                    decorationColor: const Color(0xff2F80ED),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                         Text(
-                          'Cоглашение',
+                          '© 2023 LimeTV',
                           style: AppTextStyles.body16w4.copyWith(
-                            color: const Color(0xff2F80ED),
-                            decoration: TextDecoration.underline,
-                            decorationColor: const Color(0xff2F80ED),
+                            color: Colors.white,
                           ),
-                        ),
-                        SizedBox(
-                          width: 10.w,
-                        ),
-                        Text(
-                          'Справка',
-                          style: AppTextStyles.body16w4.copyWith(
-                            color: const Color(0xff2F80ED),
-                            decoration: TextDecoration.underline,
-                            decorationColor: const Color(0xff2F80ED),
-                          ),
-                        ),
+                        )
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
