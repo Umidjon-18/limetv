@@ -5,10 +5,10 @@ import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
 
 import '../../../config/constants/local_data.dart';
+import '../../components/carousel_with_bottom_banner.dart';
 import '../../components/category_grid.dart';
 import '../../components/genre_label.dart';
 import '../../components/movie_banner.dart';
-import '../../components/movie_carousel.dart';
 import '../../components/subscription_banner.dart';
 import '../../components/web_appbar.dart';
 
@@ -21,6 +21,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   ValueNotifier<int> currentIndex = ValueNotifier<int>(0);
+  ValueNotifier<int> currentRecommendIndex = ValueNotifier<int>(0);
 
   @override
   Widget build(BuildContext context) {
@@ -40,10 +41,10 @@ class _MainPageState extends State<MainPage> {
                 children: [
                   CarouselSlider(
                     options: CarouselOptions(
-                      height: 840.h,
+                      height: 940.h,
                       autoPlay: true,
                       enlargeFactor: 0,
-                      aspectRatio: 1728 / 840,
+                      aspectRatio: 1728 / 1000,
                       disableCenter: true,
                       viewportFraction: 1,
                       enableInfiniteScroll: true,
@@ -139,22 +140,11 @@ class _MainPageState extends State<MainPage> {
             ),
             SliverToBoxAdapter(
               child: CarouselSlider(
-                options: CarouselOptions(
+                options: MyCarouselOptions(
                   height: 485.h,
-                  initialPage: 0,
-                  reverse: false,
-                  autoPlay: true,
                   enlargeFactor: 0.15,
                   aspectRatio: 2 / 3,
-                  disableCenter: true,
                   viewportFraction: 0.23,
-                  enlargeCenterPage: true,
-                  enableInfiniteScroll: true,
-                  scrollDirection: Axis.horizontal,
-                  onPageChanged: (index, reason) {},
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                  autoPlayInterval: const Duration(seconds: 3),
-                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
                 ),
                 items: List.generate(
                   skoroVKino.length,
@@ -183,20 +173,7 @@ class _MainPageState extends State<MainPage> {
             ),
             SliverToBoxAdapter(
               child: CarouselSlider(
-                options: CarouselOptions(
-                  height: 280.h,
-                  autoPlay: true,
-                  enlargeFactor: 0,
-                  aspectRatio: 463 / 277,
-                  disableCenter: true,
-                  viewportFraction: 0.28,
-                  enableInfiniteScroll: true,
-                  scrollDirection: Axis.horizontal,
-                  onPageChanged: (index, reason) {},
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                  autoPlayInterval: const Duration(seconds: 3),
-                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
-                ),
+                options: MyCarouselOptions(),
                 items: List.generate(
                   filmy.length,
                   (index) => Container(
@@ -220,30 +197,48 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
             SliverToBoxAdapter(
-              child: SizedBox(
-                height: 280.h,
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: serialy.length,
-                  scrollDirection: Axis.horizontal,
-                  padding: EdgeInsets.only(left: 72.w),
-                  itemBuilder: (context, index) {
-                    return Container(
-                      width: 463.w,
-                      height: 277.h,
-                      margin: EdgeInsets.only(right: 27.w, bottom: 22.h),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15.r),
-                        image: DecorationImage(
-                          image: AssetImage(serialy[index].bgImage),
-                          fit: BoxFit.cover,
-                        ),
+              child: CarouselSlider(
+                options: MyCarouselOptions(),
+                items: List.generate(
+                  serialy.length,
+                  (index) => Container(
+                    margin: EdgeInsets.only(right: 27.w),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.r),
+                      image: DecorationImage(
+                        image: AssetImage(serialy[index].bgImage),
+                        fit: BoxFit.cover,
                       ),
-                    );
-                  },
+                    ),
+                  ),
                 ),
               ),
             ),
+            // SliverToBoxAdapter(
+            //   child: SizedBox(
+            //     height: 280.h,
+            //     child: ListView.builder(
+            //       shrinkWrap: true,
+            //       itemCount: serialy.length,
+            //       scrollDirection: Axis.horizontal,
+            //       padding: EdgeInsets.only(left: 72.w),
+            //       itemBuilder: (context, index) {
+            //         return Container(
+            //           width: 463.w,
+            //           height: 277.h,
+            //           margin: EdgeInsets.only(right: 27.w, bottom: 22.h),
+            //           decoration: BoxDecoration(
+            //             borderRadius: BorderRadius.circular(15.r),
+            //             image: DecorationImage(
+            //               image: AssetImage(serialy[index].bgImage),
+            //               fit: BoxFit.cover,
+            //             ),
+            //           ),
+            //         );
+            //       },
+            //     ),
+            //   ),
+            // ),
             SliverToBoxAdapter(
               child: GenreLabel(
                 onTap: () {},
@@ -262,42 +257,32 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
             SliverToBoxAdapter(
-              child: CarouselSlider(
-                options: CarouselOptions(
-                  height: 350.h,
-                  initialPage: 0,
-                  reverse: false,
-                  autoPlay: true,
-                  enlargeFactor: 0.15,
-                  aspectRatio: 16 / 9,
-                  disableCenter: true,
-                  viewportFraction: 0.3,
-                  enlargeCenterPage: true,
-                  enableInfiniteScroll: true,
-                  scrollDirection: Axis.horizontal,
-                  onPageChanged: (index, reason) {},
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                  autoPlayInterval: const Duration(seconds: 3),
-                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
-                ),
-                items: List.generate(
-                  filmy.length,
-                  (index) => Container(
-                    width: 463.w,
-                    height: 277.h,
-                    margin: EdgeInsets.only(right: 27.w, bottom: 22.h),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.r),
-                      image: DecorationImage(
-                        image: AssetImage(filmy[index].bgImage),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              child: CarouselWithBottomBanner(currentRecommendIndex: currentRecommendIndex),
             ),
           ],
         ));
   }
+}
+
+class MyCarouselOptions extends CarouselOptions {
+  MyCarouselOptions({
+    double height = 280,
+    double enlargeFactor = 0,
+    double aspectRatio = 463 / 277,
+    double viewportFraction = 0.28,
+    dynamic Function(int, CarouselPageChangedReason)? onPageChanged,
+  }) : super(
+          height: height.h,
+          autoPlay: true,
+          enlargeFactor: enlargeFactor,
+          aspectRatio: aspectRatio,
+          disableCenter: true,
+          viewportFraction: viewportFraction,
+          enableInfiniteScroll: true,
+          scrollDirection: Axis.horizontal,
+          onPageChanged: onPageChanged,
+          autoPlayCurve: Curves.fastOutSlowIn,
+          autoPlayInterval: const Duration(seconds: 3),
+          autoPlayAnimationDuration: const Duration(milliseconds: 800),
+        );
 }

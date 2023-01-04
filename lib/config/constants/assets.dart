@@ -22,6 +22,8 @@ class _Icons extends _AssetsHolder {
 
   String get favorite => "$basePath/ic_favorite.svg";
 
+  String get favoriteColored => "$basePath/favorite_colored.svg";
+
   String get filter => "$basePath/ic_filter.svg";
 
   String get home => "$basePath/ic_home.svg";
@@ -57,6 +59,8 @@ class _Icons extends _AssetsHolder {
   String get horror => "$basePath/horror.svg";
 
   String get thriller => "$basePath/thriller.svg";
+
+  String get arrowDown => "$basePath/arrow_down.svg";
 
 
 }
