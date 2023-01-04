@@ -53,7 +53,7 @@ class _TvVideoPlayerPageState extends State<TvVideoPlayerPage> {
                       child: Row(
                         children: [
                           Image.asset(
-                            Assets.images.yoshlarTvPlayer,
+                            Assets.images.yoshlarTv,
                             width: 100.w,
                             height: 43.h,
                           ),

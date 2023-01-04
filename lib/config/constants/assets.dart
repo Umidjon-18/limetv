@@ -32,14 +32,13 @@ class _Icons extends _AssetsHolder {
 class _Images extends _AssetsHolder {
   const _Images() : super('assets/images');
 
-  String get yoshlarTv => "$basePath/yoshlar_channel.png";
+  String get yoshlarTv => "$basePath/yoshlar_tv.png";
   String get dunyoBoylab => "$basePath/dunyo_boylab.png";
-  String get mahalla => "$basePath/mahalla.png";
+  String get mahalla => "$basePath/mahalla_channel.png";
   String get my5 => "$basePath/my5.png";
   String get navo => "$basePath/navo.png";
-  String get sevimli => "$basePath/sevimli.png";
-
-  String get yoshlarTvPlayer => "$basePath/yoshlar_tv.png";
+  String get sevimli => "$basePath/sevimli_channel.png";
+  
   String get channelPlay => "$basePath/channel_play.png";
 
   String get euroPlus => "$basePath/euro_plus.png";
