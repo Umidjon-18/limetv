@@ -3,23 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
+import 'package:limetv/config/constants/assets.dart';
 
 import '../../../config/constants/local_data.dart';
 import '../../components/carousel_with_bottom_banner.dart';
 import '../../components/category_grid.dart';
+import '../../components/footer_component.dart';
 import '../../components/genre_label.dart';
 import '../../components/movie_banner.dart';
 import '../../components/subscription_banner.dart';
 import '../../components/web_appbar.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+class LandingPage extends StatefulWidget {
+  const LandingPage({super.key});
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<LandingPage> createState() => _LandingPageState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _LandingPageState extends State<LandingPage> {
   ValueNotifier<int> currentIndex = ValueNotifier<int>(0);
   ValueNotifier<int> currentRecommendIndex = ValueNotifier<int>(0);
 
@@ -214,31 +216,6 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
             ),
-            // SliverToBoxAdapter(
-            //   child: SizedBox(
-            //     height: 280.h,
-            //     child: ListView.builder(
-            //       shrinkWrap: true,
-            //       itemCount: serialy.length,
-            //       scrollDirection: Axis.horizontal,
-            //       padding: EdgeInsets.only(left: 72.w),
-            //       itemBuilder: (context, index) {
-            //         return Container(
-            //           width: 463.w,
-            //           height: 277.h,
-            //           margin: EdgeInsets.only(right: 27.w, bottom: 22.h),
-            //           decoration: BoxDecoration(
-            //             borderRadius: BorderRadius.circular(15.r),
-            //             image: DecorationImage(
-            //               image: AssetImage(serialy[index].bgImage),
-            //               fit: BoxFit.cover,
-            //             ),
-            //           ),
-            //         );
-            //       },
-            //     ),
-            //   ),
-            // ),
             SliverToBoxAdapter(
               child: GenreLabel(
                 onTap: () {},
@@ -258,6 +235,104 @@ class _MainPageState extends State<MainPage> {
             ),
             SliverToBoxAdapter(
               child: CarouselWithBottomBanner(currentRecommendIndex: currentRecommendIndex),
+            ),
+            SliverToBoxAdapter(
+              child: GenreLabel(
+                onTap: () {},
+                margin: EdgeInsets.only(left: 72.w, bottom: 43.h, top: 69.h),
+                title: "Телеканалы",
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 295.h,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: Assets.channelList.russianChannels.length,
+                  scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.only(left: 72.w, bottom: 69.h),
+                  itemBuilder: (context, index) {
+                    return Container(
+                      width: 224.h,
+                      height: 224.h,
+                      margin: EdgeInsets.only(right: 27.w),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.r),
+                        color: AppColors.cardBgColor,
+                      ),
+                      child: Center(
+                        child: Image.asset(Assets.channelList.russianChannels[index]),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: GenreLabel(
+                onTap: () {},
+                margin: EdgeInsets.only(left: 72.w, bottom: 43.h, top: 69.h),
+                title: "Фильмы на Английском",
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 490.h,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: englishMovies.length,
+                  scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.only(left: 72.w),
+                  itemBuilder: (context, index) {
+                    return Container(
+                      width: 320.h,
+                      height: 482.h,
+                      margin: EdgeInsets.only(right: 27.w),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.r),
+                        color: AppColors.cardBgColor,
+                      ),
+                      child: Center(
+                        child: Image.asset(englishMovies[index].mainImage),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: GenreLabel(
+                onTap: () {},
+                margin: EdgeInsets.only(left: 72.w, bottom: 43.h, top: 69.h),
+                title: "Детям",
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 490.h,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: childrenCartoons.length,
+                  scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.only(left: 72.w, bottom: 185.h),
+                  itemBuilder: (context, index) {
+                    return Container(
+                      width: 300.h,
+                      height: 300.h,
+                      margin: EdgeInsets.only(right: 27.w),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.r),
+                      ),
+                      child: Center(
+                        child: Image.asset(childrenCartoons[index].mainImage),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            const SliverToBoxAdapter(
+              child: FooterComponent(),
             ),
           ],
         ));

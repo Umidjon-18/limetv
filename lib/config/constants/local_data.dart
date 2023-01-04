@@ -3,6 +3,9 @@ import 'package:limetv/data/models/movie_model.dart';
 
 import 'assets.dart';
 
+String bottomAboutText =
+    "Федеральные каналы доступны для бесплатного просмотра круглосуточно\nHBO ® and related service marks are the property of Home Box Office, Inc\nООО «LIMETVUZ», адрес местонахождения: 115035, Узбекистан, г. Ташкент, ул. Садовническая, д. 82, стр. 2, пом. 9А01\nАдрес для обращений пользователей: info@limetv.uz";
+
 List<MovieModel> bannerMovies = [
   MovieModel(
     bgImage: Assets.images.banner1,
@@ -307,4 +310,169 @@ List<CategoryModel> categories = [
   CategoryModel(categoryIcon: Assets.icons.fantasy, categoryName: "Фантастики", categoryMovieCount: 1334),
   CategoryModel(categoryIcon: Assets.icons.horror, categoryName: "Триллеры", categoryMovieCount: 44534),
   CategoryModel(categoryIcon: Assets.icons.thriller, categoryName: "Ужасы", categoryMovieCount: 44534),
+];
+
+List<MovieModel> englishMovies = [
+  MovieModel(
+    bgImage: Assets.images.titanic,
+    mainImage: Assets.images.titanic,
+    name: "Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.inception,
+    mainImage: Assets.images.inception,
+    name: "Last Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.london,
+    mainImage: Assets.images.london,
+    name: "Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.frontCover,
+    mainImage: Assets.images.frontCover,
+    name: "Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.titanic,
+    mainImage: Assets.images.titanic,
+    name: "Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.inception,
+    mainImage: Assets.images.inception,
+    name: "Last Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.london,
+    mainImage: Assets.images.london,
+    name: "Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.frontCover,
+    mainImage: Assets.images.frontCover,
+    name: "Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+];
+List<MovieModel> childrenCartoons = [
+  MovieModel(
+    bgImage: Assets.images.titanic,
+    mainImage: Assets.images.titanic,
+    name: "Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.sing,
+    mainImage: Assets.images.sing,
+    name: "Last Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.mermaidCartoon,
+    mainImage: Assets.images.mermaidCartoon,
+    name: "Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.frozen,
+    mainImage: Assets.images.frozen,
+    name: "Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.bigAndSmall,
+    mainImage: Assets.images.bigAndSmall,
+    name: "Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.moana,
+    mainImage: Assets.images.moana,
+    name: "Last Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.titanic,
+    mainImage: Assets.images.titanic,
+    name: "Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.sing,
+    mainImage: Assets.images.sing,
+    name: "Last Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.mermaidCartoon,
+    mainImage: Assets.images.mermaidCartoon,
+    name: "Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.frozen,
+    mainImage: Assets.images.frozen,
+    name: "Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.bigAndSmall,
+    mainImage: Assets.images.bigAndSmall,
+    name: "Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
+  MovieModel(
+    bgImage: Assets.images.moana,
+    mainImage: Assets.images.moana,
+    name: "Last Christmas",
+    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    about: "",
+    rating: "IMDB 8.6",
+  ),
 ];

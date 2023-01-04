@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 abstract class AppColors {
   const AppColors._();
 
+  static const Color cardBgColor = Color(0xFF0A101C);
   static const Color categoryCountColor = Color(0xFF345290);
   static const Color backgroundColor = Color(0xFF03060B);
   static const Color categoryBgColor = Color(0xFF0D1526);
