@@ -3,9 +3,10 @@ import 'package:limetv/presentation/pages/sign/sign_code.dart';
 import 'package:limetv/presentation/pages/sign/sign_page.dart';
 
 import '../pages/main_page/landing_page.dart';
+import '../pages/tv_page/tv_page.dart';
 
 class Routes {
-  static const signPage = '/';
+  static const signPage = '/signPage';
   static const signCodePage = '/signCodePage';
   static const landingPage = '/';
   static const tvPage = '/tvPage';
