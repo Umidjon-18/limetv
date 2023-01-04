@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:limetv/presentation/pages/sign/sign_code.dart';
 import 'package:limetv/presentation/pages/sign/sign_page.dart';
 
-import '../pages/main_page/main_page.dart';
+import '../pages/main_page/landing_page.dart';
 
 class Routes {
   static const signPage = '/';
   static const signCodePage = '/signCodePage';
+  static const landingPage = '/';
+  static const tvPage = '/tvPage';
 
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     try {
@@ -14,6 +16,19 @@ class Routes {
           routeSettings.arguments as Map<String, dynamic>?;
       args ?? <String, dynamic>{};
       switch (routeSettings.name) {
+        case landingPage:
+          return MaterialPageRoute(
+            builder: (context) {
+              return const LandingPage();
+            },
+          );
+        case tvPage:
+          return MaterialPageRoute(
+            builder: (context) {
+              return const TVPage();
+            },
+          );
+
         case signPage:
           return MaterialPageRoute(
             settings: routeSettings,
@@ -27,13 +42,13 @@ class Routes {
         default:
           return MaterialPageRoute(
             settings: routeSettings,
-            builder: (_) => const MainPage(),
+            builder: (_) => const LandingPage(),
           );
       }
     } catch (e) {
       return MaterialPageRoute(
         settings: routeSettings,
-        builder: (_) => const MainPage(),
+        builder: (_) => const LandingPage(),
       );
     }
   }
