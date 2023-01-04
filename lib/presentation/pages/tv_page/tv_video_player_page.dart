@@ -31,7 +31,7 @@ class _TvVideoPlayerPageState extends State<TvVideoPlayerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColorTvPlayer,
+      backgroundColor: AppColors.backgroundColorTv,
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
