@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -58,7 +56,7 @@ class _TVPageState extends State<TVPage> {
                     suffixIcon: Padding(
                       padding: EdgeInsets.only(right: 30.w),
                       child: Image.asset(
-                        Assets.icons.search,
+                        Assets.icons.search1,
                         color: Colors.white,
                         width: 20,
                         height: 20,

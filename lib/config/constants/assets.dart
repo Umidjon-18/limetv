@@ -23,6 +23,11 @@ abstract class _AssetsHolder {
 class _Icons extends _AssetsHolder {
   const _Icons() : super('assets/icons');
 
+
+  String get trash => "$basePath/ic_trash.svg";
+  String get search1 => "$basePath/search_1.png";
+  String get play => "$basePath/play.svg";
+
   String get favorite => "$basePath/ic_favorite.svg";
 
   String get favoriteColored => "$basePath/favorite_colored.svg";
@@ -70,6 +75,27 @@ class _Icons extends _AssetsHolder {
 
 class _Images extends _AssetsHolder {
   const _Images() : super('assets/images');
+
+
+  String get yoshlarTv => "$basePath/yoshlar_channel.png";
+  String get dunyoBoylab => "$basePath/dunyo_boylab.png";
+  String get mahalla => "$basePath/mahalla.png";
+  String get my5 => "$basePath/my5.png";
+  String get navo => "$basePath/navo.png";
+  String get sevimli => "$basePath/sevimli.png";
+
+  String get euroPlus => "$basePath/euro_plus.png";
+  String get kinopremyera => "$basePath/kinopremyera.png";
+  String get match => "$basePath/match.png";
+  String get rossiya1 => "$basePath/rossiya_1.png";
+  String get tht => "$basePath/tht.png";
+  String get onePlusOne => "$basePath/1plus1.png";
+
+  String get appStore => "$basePath/app_store.svg";
+  String get playMarket => "$basePath/google_play.svg";
+  String get telegram => "$basePath/telegram.svg";
+  String get youTube => "$basePath/you_tube.svg";
+  String get instagram => "$basePath/instagram.svg";
 
   String get logo => "$basePath/logo.svg";
 
@@ -140,6 +166,38 @@ class _Images extends _AssetsHolder {
   String get xmen => "$basePath/xmen.png";
 
 
+}
+
+class _ChannelsList {
+  List<String> russianChannels = [
+    const _Images().tht,
+    const _Images().rossiya1,
+    const _Images().match,
+    const _Images().onePlusOne,
+    const _Images().kinopremyera,
+    const _Images().euroPlus,
+    const _Images().onePlusOne,
+    const _Images().euroPlus,
+    const _Images().kinopremyera,
+    const _Images().rossiya1,
+    const _Images().tht,
+    const _Images().match,
+  ];
+
+  List<String> uzbekChannels = [
+    const _Images().yoshlarTv,
+    const _Images().sevimli,
+    const _Images().navo,
+    const _Images().dunyoBoylab,
+    const _Images().mahalla,
+    const _Images().my5,
+    const _Images().mahalla,
+    const _Images().dunyoBoylab,
+    const _Images().my5,
+    const _Images().yoshlarTv,
+    const _Images().sevimli,
+    const _Images().navo,
+  ];
 }
 
 class _Videos extends _AssetsHolder {
