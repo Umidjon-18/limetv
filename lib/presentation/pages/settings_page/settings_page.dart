@@ -5,6 +5,7 @@ import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/constants.dart';
 import 'package:limetv/presentation/components/genre_label.dart';
 import 'package:limetv/presentation/components/web_appbar.dart';
+import 'package:limetv/presentation/pages/settings_page/widget/settings_main.dart';
 import 'package:limetv/presentation/pages/settings_page/widget/settings_menu_item.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -66,12 +67,13 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
           Container(
             margin: EdgeInsets.only(top: 162.h, left: 72.w),
-            child: Text(
-              settingsMenuName[onTap],
-              style: AppTextStyles.body37w5.copyWith(
-                color: Colors.white,
-              ),
-            ),
+            child: const SettingsMainWidget(),
+            // Text(
+            //   settingsMenuName[onTap],
+            //   style: AppTextStyles.body37w5.copyWith(
+            //     color: Colors.white,
+            //   ),
+            // ),
           )
         ],
       ),

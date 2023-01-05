@@ -84,6 +84,8 @@ class _Icons extends _AssetsHolder {
   String get securityChilds => "$basePath/security_childs.svg";
 
   String get settingsMain => "$basePath/settings_main.svg";
+
+  String get person => "$basePath/person.svg";
 }
 
 class _Images extends _AssetsHolder {
