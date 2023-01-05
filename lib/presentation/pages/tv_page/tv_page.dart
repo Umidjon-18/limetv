@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/assets.dart';
+import 'package:limetv/presentation/pages/tv_page/tv_video_player_page.dart';
 
 class TVPage extends StatefulWidget {
   const TVPage({super.key});
@@ -234,6 +235,7 @@ class ChannelGridView extends StatelessWidget {
           itemBuilder: (context, index) {
             return ChannelName(
               text: channelTextList[index],
+              index: index,
             );
           },
         ),
@@ -243,23 +245,44 @@ class ChannelGridView extends StatelessWidget {
 }
 
 class ChannelName extends StatelessWidget {
-  ChannelName({Key? key, required this.text}) : super(key: key);
+  ChannelName({
+    Key? key,
+    required this.text,
+    required this.index,
+  }) : super(key: key);
   String text;
+  int index;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 240.h,
-      height: 239.h,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: const Color(0xff0A101C),
-        borderRadius: BorderRadius.circular(15.r),
-      ),
-      child: Image.asset(
-        text,
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return TvVideoPlayerPage(
+                channelName: text,
+                index: index,
+              );
+            },
+          ),
+        );
+      },
+      borderRadius: BorderRadius.circular(15.r),
+      child: Container(
+        width: 240.h,
+        height: 239.h,
         alignment: Alignment.center,
-        width: 200.h,
-        height: 200.h,
+        decoration: BoxDecoration(
+          color: const Color(0xff0A101C),
+          borderRadius: BorderRadius.circular(15.r),
+        ),
+        child: Image.asset(
+          text,
+          alignment: Alignment.center,
+          width: 200.h,
+          height: 200.h,
+        ),
       ),
     );
   }

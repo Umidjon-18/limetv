@@ -6,7 +6,14 @@ import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/assets.dart';
 
 class TvVideoPlayerPage extends StatefulWidget {
-  const TvVideoPlayerPage({super.key});
+  TvVideoPlayerPage({
+    super.key,
+    required this.channelName,
+    required this.index,
+  });
+
+  String channelName;
+  int index;
 
   @override
   State<TvVideoPlayerPage> createState() => _TvVideoPlayerPageState();
@@ -53,7 +60,7 @@ class _TvVideoPlayerPageState extends State<TvVideoPlayerPage> {
                       child: Row(
                         children: [
                           Image.asset(
-                            Assets.images.yoshlarTv,
+                            widget.channelName,
                             width: 100.w,
                             height: 43.h,
                           ),
@@ -61,7 +68,7 @@ class _TvVideoPlayerPageState extends State<TvVideoPlayerPage> {
                             width: 15.w,
                           ),
                           Text(
-                            'Телеканал “Yoshlar”',
+                            'Телеканал “${channelNameList[widget.index]}”',
                             style: AppTextStyles.body20w5.copyWith(
                               color: Colors.white,
                             ),
