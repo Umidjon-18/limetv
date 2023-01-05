@@ -4,16 +4,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/assets.dart';
+import 'package:limetv/presentation/components/web_appbar.dart';
 
 class TvVideoPlayerPage extends StatefulWidget {
   TvVideoPlayerPage({
     super.key,
     required this.channelName,
-    required this.index,
+    this.index,
   });
 
-  String channelName;
-  int index;
+  String? channelName;
+  int? index;
 
   @override
   State<TvVideoPlayerPage> createState() => _TvVideoPlayerPageState();
@@ -39,18 +40,21 @@ class _TvVideoPlayerPageState extends State<TvVideoPlayerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backgroundColorTv,
-      body: SingleChildScrollView(
+      body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
-        child: Padding(
-          padding: EdgeInsets.only(
-            left: 72.w,
-            right: 76.w,
-            top: 75.h,
+        slivers: [
+          SliverAppBar(
+            pinned: false,
+            snap: false,
+            floating: true,
+            expandedHeight: 129.h,
+            flexibleSpace: const WebAppBar(),
+            automaticallyImplyLeading: false,
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.only(left: 72.w, right: 476.w, top: 69.h),
+              child: SizedBox(
                 width: 1180.w,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -60,7 +64,7 @@ class _TvVideoPlayerPageState extends State<TvVideoPlayerPage> {
                       child: Row(
                         children: [
                           Image.asset(
-                            widget.channelName,
+                            widget.channelName == null ? Assets.images.yoshlarTv : widget.channelName!,
                             width: 100.w,
                             height: 43.h,
                           ),
@@ -68,7 +72,7 @@ class _TvVideoPlayerPageState extends State<TvVideoPlayerPage> {
                             width: 15.w,
                           ),
                           Text(
-                            'Телеканал “${channelNameList[widget.index]}”',
+                            'Телеканал “${channelNameList[widget.index ?? 0]}”',
                             style: AppTextStyles.body20w5.copyWith(
                               color: Colors.white,
                             ),
@@ -113,10 +117,20 @@ class _TvVideoPlayerPageState extends State<TvVideoPlayerPage> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 30.h,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 30.h,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: 72.w,
+                right: 76.w,
               ),
-              Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -141,6 +155,8 @@ class _TvVideoPlayerPageState extends State<TvVideoPlayerPage> {
                       alignment: Alignment.bottomCenter,
                       children: [
                         ListView.separated(
+                          physics: const BouncingScrollPhysics(),
+                          shrinkWrap: true,
                           separatorBuilder: (context, index) {
                             return SizedBox(
                               height: 16.h,
@@ -175,9 +191,9 @@ class _TvVideoPlayerPageState extends State<TvVideoPlayerPage> {
                   ),
                 ],
               ),
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

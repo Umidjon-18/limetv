@@ -4,7 +4,7 @@ import 'package:limetv/data/models/movie_model.dart';
 import 'assets.dart';
 
 String bottomAboutText =
-    "Федеральные каналы доступны для бесплатного просмотра круглосуточно\nHBO ® and related service marks are the property of Home Box Office, Inc\nООО «LIMETVUZ», адрес местонахождения: 115035, Узбекистан, г. Ташкент, ул. Садовническая, д. 82, стр. 2, пом. 9А01\nАдрес для обращений пользователей: info@limetv.uz";
+    "© 2023 LimeTV. 18+\nФедеральные каналы доступны для бесплатного просмотра круглосуточно\nHBO ® and related service marks are the property of Home Box Office, Inc\nООО «LIMETVUZ», адрес местонахождения: 115035, Узбекистан, г. Ташкент, ул. Садовническая, д. 82, стр. 2, пом. 9А01\nАдрес для обращений пользователей: info@limetv.uz";
 
 List<MovieModel> bannerMovies = [
   MovieModel(
