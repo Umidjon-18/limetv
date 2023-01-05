@@ -13,7 +13,9 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   flutter_screenutil: ^5.5.4
-  flutter_svg: ^1.1.6
+  carousel_slider: ^4.2.1
+  flutter_svg: ^1.1.5
+  mask_text_input_formatter: ^2.4.0
 
 dev_dependencies:
   flutter_test:
@@ -31,35 +33,24 @@ flutter:
     - assets/images/
     - assets/icons/
 
-  # fonts:
-    # - family: PlusJakartaSans
-    #   fonts:
-    #     - asset: fonts/plus_jakarta_display/PlusJakartaSans-ExtraBold.ttf
-    #       weight: 800
-    #     - asset: fonts/plus_jakarta_display/PlusJakartaSans-Bold.ttf
-    #       weight: 700
-    #     - asset: fonts/plus_jakarta_display/PlusJakartaSans-SemiBold.ttf
-    #       weight: 600
-    #     - asset: fonts/plus_jakarta_display/PlusJakartaSans-Medium.ttf
-    #       weight: 500
-    #     - asset: fonts/plus_jakarta_display/PlusJakartaSans-Regular.ttf
-    #       weight: 400
-    #     - asset: fonts/plus_jakarta_display/PlusJakartaSans-Light.ttf
-    #       weight: 300
-    #     - asset: fonts/plus_jakarta_display/PlusJakartaSans-ExtraLight.ttf
-    #       weight: 200
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: fonts/montserrat/Montserrat-ExtraBold.ttf
+          weight: 800
+        - asset: fonts/montserrat/Montserrat-Bold.ttf
+          weight: 700
+        - asset: fonts/montserrat/Montserrat-SemiBold.ttf
+          weight: 600
+        - asset: fonts/montserrat/Montserrat-Medium.ttf
+          weight: 500
+        - asset: fonts/montserrat/Montserrat-Regular.ttf
+          weight: 400
+        - asset: fonts/montserrat/Montserrat-Light.ttf
+          weight: 300
+        - asset: fonts/montserrat/Montserrat-ExtraLight.ttf
+          weight: 200
         
-    # - family: ClashDisplay
-    #   fonts:
-    #     - asset: fonts/clash/ClashDisplay-Medium.otf
-    #       weight: 500
-    #     - asset: fonts/clash/ClashDisplay-Regular.otf
-    #       weight: 400
-          
-    # - family: HeliosExtC
-    #   fonts:
-    #     - asset: fonts/HeliosExtC-Regular.otf
-    #       weight: 400
 
 # flutter_native_splash:
 #   color: "#ffffff"

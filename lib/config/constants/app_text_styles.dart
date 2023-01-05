@@ -6,9 +6,7 @@ import 'app_colors.dart';
 abstract class AppTextStyles {
   const AppTextStyles._();
 
-  static const String fontFamily = 'PlusJakartaSans';
-  static const String fontFamilyClash = 'ClashDisplay';
-  static const String fontFamilyHeliosExtC = 'HeliosExtC';
+  static const String fontFamily = 'Montserrat';
 
   static TextStyle head29w7 = TextStyle(
       fontFamily: fontFamily,
@@ -17,11 +15,25 @@ abstract class AppTextStyles {
       fontSize: 29.sp,
       color: AppColors.textColor.shade1);
 
+  static TextStyle head84w7 = TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w700,
+      fontStyle: FontStyle.normal,
+      fontSize: 84.sp,
+      color: AppColors.textColor.shade1);
+
   static TextStyle head40w5 = TextStyle(
       fontFamily: fontFamily,
       fontWeight: FontWeight.w500,
       fontStyle: FontStyle.normal,
       fontSize: 40.sp,
+      color: AppColors.textColor.shade1);
+
+  static TextStyle head36w5 = TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w500,
+      fontStyle: FontStyle.normal,
+      fontSize: 36.sp,
       color: AppColors.textColor.shade1);
 
   static TextStyle head25w5 = TextStyle(
@@ -323,6 +335,13 @@ abstract class AppTextStyles {
       fontSize: 20.sp,
       color: AppColors.textColor.shade1);
 
+  static TextStyle body20w5 = TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w500,
+      fontStyle: FontStyle.normal,
+      fontSize: 20.sp,
+      color: AppColors.textColor.shade1);
+
   static TextStyle body20w4 = TextStyle(
       fontFamily: fontFamily,
       fontWeight: FontWeight.w400,
@@ -416,6 +435,13 @@ abstract class AppTextStyles {
   static TextStyle body32w5 = TextStyle(
       fontFamily: fontFamily,
       fontWeight: FontWeight.w400,
+      fontStyle: FontStyle.normal,
+      fontSize: 22.sp,
+      color: AppColors.textColor.shade1);
+
+  static TextStyle body22w5 = TextStyle(
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w500,
       fontStyle: FontStyle.normal,
       fontSize: 22.sp,
       color: AppColors.textColor.shade1);
