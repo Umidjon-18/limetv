@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:limetv/presentation/pages/tv_page/tv_page.dart';
+import 'package:limetv/presentation/pages/tv_page/tv_video_player_page.dart';
 
 import 'presentation/routes/routes.dart';
 
@@ -17,9 +19,10 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         minTextAdapt: true,
         builder: (context, child) {
-          return MaterialApp(
+          return const MaterialApp(
             debugShowCheckedModeBanner: false,
-            onGenerateRoute: (settings) => Routes.generateRoute(settings),
+            // onGenerateRoute: (settings) => Routes.generateRoute(settings),
+            home: TVPage(),
           );
         });
   }

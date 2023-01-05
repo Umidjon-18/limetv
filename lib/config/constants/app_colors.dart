@@ -9,6 +9,9 @@ abstract class AppColors {
   static const Color categoryBgColor = Color(0xFF0D1526);
   static const Color accentColor = Colors.white;
   static const Color borderColor = Colors.white38;
+
+  static const Color backgroundColorTv = Color(0xff03060B);  
+
   static const Color selectedColor = Color(0xFF2F80ED);
   static const Color cartBgColor = Color(0xFF080E19);
   static const Color textFieldBgColor = Color(0xFF0F192C);
@@ -16,12 +19,15 @@ abstract class AppColors {
   static  Color shadowColor = const Color(0xFF122345).withOpacity(.39);
   static Color appBarBgColor = const Color(0xFF060A12).withOpacity(.85);
 
+
   static List<Color> cartGrColors = [
     const Color(0xff383E4F),
     const Color(0xff383D4D),
     const Color(0xff5A6278),
     const Color(0xff1A1E2A),
   ];
+
+  static const containerColor = Color(0xff0A101C);
 
   static Gradients gradients = const Gradients();
 

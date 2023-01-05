@@ -6,9 +6,15 @@ import '../pages/main_page/landing_page.dart';
 import '../pages/tv_page/tv_page.dart';
 
 class Routes {
+
+  static const welcomePage = '/';
+
+  static const mainPage = '/mainPage';
+
   static const signPage = '/signPage';
   static const signCodePage = '/signCodePage';
   static const landingPage = '/';
+
   static const tvPage = '/tvPage';
 
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
@@ -17,12 +23,14 @@ class Routes {
           routeSettings.arguments as Map<String, dynamic>?;
       args ?? <String, dynamic>{};
       switch (routeSettings.name) {
+
         case landingPage:
           return MaterialPageRoute(
             builder: (context) {
               return const LandingPage();
             },
-          );
+         );
+
         case tvPage:
           return MaterialPageRoute(
             builder: (context) {
