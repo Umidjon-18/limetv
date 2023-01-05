@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
+import 'package:limetv/config/constants/assets.dart';
 import 'package:limetv/presentation/components/web_appbar.dart';
 import 'package:limetv/presentation/pages/filter_page/widgets/custom_dropdown_button.dart';
 import 'package:limetv/presentation/pages/filter_page/widgets/filter_button.dart';
+import 'package:limetv/presentation/pages/filter_page/widgets/filter_result_text.dart';
+import 'package:limetv/presentation/pages/filter_page/widgets/filter_result_videos.dart';
 import 'package:limetv/presentation/pages/filter_page/widgets/rubrics_button.dart';
 
 import '../../../config/constants/constants.dart';
@@ -41,8 +44,13 @@ class _FilterPageState extends State<FilterPage> {
             flexibleSpace: const WebAppBar(),
           ),
           SliverToBoxAdapter(
-            child: SizedBox(
-              width: 1117.w,
+            child: Container(
+              padding: EdgeInsets.all(79.r),
+              decoration: BoxDecoration(
+                  color: AppColors.appBarBgColor,
+                  border: Border(
+                      bottom: BorderSide(
+                          color: AppColors.selectedColor.withOpacity(.2)))),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -175,6 +183,15 @@ class _FilterPageState extends State<FilterPage> {
               ),
             ),
           ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.all(79.r),
+              child: Column(children: const [
+                FilterResultTextWidget(),
+                FilterResultVideosWidget()
+              ]),
+            ),
+          )
         ],
       ),
     );

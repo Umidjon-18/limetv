@@ -131,6 +131,8 @@ class _Images extends _AssetsHolder {
   String get titanic2 => "$basePath/titanic2.png";
 
   String get xmen => "$basePath/xmen.png";
+
+  String get prince => "$basePath/prince.png";
 }
 
 class _Videos extends _AssetsHolder {
