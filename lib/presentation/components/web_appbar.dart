@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/assets.dart';
+import 'package:limetv/presentation/routes/routes.dart';
 
 class WebAppBar extends StatefulWidget with PreferredSizeWidget {
   const WebAppBar({super.key});
@@ -67,6 +68,7 @@ class _WebAppBarState extends State<WebAppBar> {
                 MenuTextButton(
                     onPressed: () {
                       select(3);
+                      Navigator.pushNamed(context, Routes.filterPage);
                     },
                     icon: Assets.icons.filter,
                     isSelected: indexes[3],
@@ -74,7 +76,8 @@ class _WebAppBarState extends State<WebAppBar> {
                 SizedBox(width: 40.w),
                 IconButton(
                   onPressed: () {},
-                  icon: SvgPicture.asset(Assets.icons.search, width: 20.h, height: 20.h),
+                  icon: SvgPicture.asset(Assets.icons.search,
+                      width: 20.h, height: 20.h),
                 ),
               ],
             ),
@@ -125,12 +128,15 @@ class MenuTextButton extends StatelessWidget {
       icon: SvgPicture.asset(
         icon,
         width: 20.h,
-        color: isSelected ? AppColors.selectedColor : AppColors.baseLight.shade100,
+        color:
+            isSelected ? AppColors.selectedColor : AppColors.baseLight.shade100,
       ),
       label: Text(
         title,
-        style:
-            AppTextStyles.body16w5.copyWith(color: isSelected ? AppColors.selectedColor : AppColors.baseLight.shade100),
+        style: AppTextStyles.body16w5.copyWith(
+            color: isSelected
+                ? AppColors.selectedColor
+                : AppColors.baseLight.shade100),
       ),
     );
   }

@@ -308,3 +308,23 @@ List<CategoryModel> categories = [
   CategoryModel(categoryIcon: Assets.icons.horror, categoryName: "Триллеры", categoryMovieCount: 44534),
   CategoryModel(categoryIcon: Assets.icons.thriller, categoryName: "Ужасы", categoryMovieCount: 44534),
 ];
+List<String> janrs = [
+  'Комедия',
+  'Драма',
+  'Мелодрама',
+  'Ужас',
+  'Триллер',
+  'Криминал',
+  'Фантастика',
+  'Боевик',
+  'Детектив',
+  'Аниме',
+  'Мултьфильм',
+  'Приключения',
+  'Фентези',
+  'Исторический',
+  'Семейный',
+  'Биография',
+  'Мистика'
+];
+

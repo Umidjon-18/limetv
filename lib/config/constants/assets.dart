@@ -58,7 +58,7 @@ class _Icons extends _AssetsHolder {
 
   String get thriller => "$basePath/thriller.svg";
 
-
+  String get down => "$basePath/down.svg";
 }
 
 class _Images extends _AssetsHolder {
@@ -71,9 +71,9 @@ class _Images extends _AssetsHolder {
   String get kingman => "$basePath/kingman.png";
 
   String get assasin => "$basePath/assasin.png";
-  
+
   String get love => "$basePath/love.png";
-  
+
   String get ripd => "$basePath/ripd.png";
 
   String get after => "$basePath/after.png";
@@ -81,7 +81,7 @@ class _Images extends _AssetsHolder {
   String get aladdin => "$basePath/aladdin.png";
 
   String get avatar => "$basePath/avatar.png";
-  
+
   String get bigAndSmall => "$basePath/big_and_small.png";
 
   String get blade => "$basePath/blade.png";
@@ -131,8 +131,6 @@ class _Images extends _AssetsHolder {
   String get titanic2 => "$basePath/titanic2.png";
 
   String get xmen => "$basePath/xmen.png";
-
-
 }
 
 class _Videos extends _AssetsHolder {
