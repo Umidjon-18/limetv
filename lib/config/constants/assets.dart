@@ -84,6 +84,10 @@ class _Icons extends _AssetsHolder {
   String get securityChilds => "$basePath/security_childs.svg";
 
   String get settingsMain => "$basePath/settings_main.svg";
+
+  String get ios => "$basePath/ios.svg";
+
+  String get android => "$basePath/android.svg";
 }
 
 class _Images extends _AssetsHolder {
@@ -176,6 +180,8 @@ class _Images extends _AssetsHolder {
   String get titanic2 => "$basePath/titanic2.png";
 
   String get xmen => "$basePath/xmen.png";
+
+  String get crcode => "$basePath/crcode.png";
 }
 
 class _ChannelsList {

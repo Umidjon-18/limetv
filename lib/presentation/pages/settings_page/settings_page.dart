@@ -5,6 +5,10 @@ import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/constants.dart';
 import 'package:limetv/presentation/components/genre_label.dart';
 import 'package:limetv/presentation/components/web_appbar.dart';
+import 'package:limetv/presentation/pages/settings_page/child_protection_page.dart';
+import 'package:limetv/presentation/pages/settings_page/compl_and%20_sugg_page.dart';
+import 'package:limetv/presentation/pages/settings_page/my_devices_page.dart';
+import 'package:limetv/presentation/pages/settings_page/notification_page.dart';
 import 'package:limetv/presentation/pages/settings_page/widget/settings_menu_item.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -66,18 +70,38 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
           Container(
             margin: EdgeInsets.only(top: 162.h, left: 72.w),
-            child: Text(
-              settingsMenuName[onTap],
-              style: AppTextStyles.body37w5.copyWith(
-                color: Colors.white,
-              ),
-            ),
+            child: menus[onTap],
           )
         ],
       ),
     );
   }
 }
+
+List menus = [
+  Text(
+    'Основные',
+    style: AppTextStyles.body37w5.copyWith(
+      color: Colors.white,
+    ),
+  ),
+  Text(
+    'Оплата услуг',
+    style: AppTextStyles.body37w5.copyWith(
+      color: Colors.white,
+    ),
+  ),
+  const MyDevicesPage(),
+  const ChildProtectionPage(),
+  const ComplaintsAndSuggestionPage(),
+  const NotificationPage(),
+  Text(
+    'Выход',
+    style: AppTextStyles.body37w5.copyWith(
+      color: Colors.white,
+    ),
+  ),
+];
 
 Color colorFunc(int index, int onTap) {
   if (onTap == index) {
