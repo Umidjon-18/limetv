@@ -168,6 +168,7 @@ class _SettingsMainWidgetState extends State<SettingsMainWidget> {
   }
 }
 
+// ignore: must_be_immutable
 class SettingsTextField extends StatelessWidget {
   SettingsTextField({
     required this.hintText,
