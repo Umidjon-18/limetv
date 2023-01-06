@@ -67,26 +67,25 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
           Container(
             margin: EdgeInsets.only(top: 162.h, left: 72.w),
-            child: const SettingsMainWidget(),
-            // Text(
-            //   settingsMenuName[onTap],
-            //   style: AppTextStyles.body37w5.copyWith(
-            //     color: Colors.white,
-            //   ),
-            // ),
+            child: Text(
+              settingsMenuName[onTap],
+              style: AppTextStyles.body37w5.copyWith(
+                color: Colors.white,
+              ),
+            ),
           )
         ],
       ),
     );
   }
-}
 
-Color colorFunc(int index, int onTap) {
-  if (onTap == index) {
-    return const Color(0xff2F80ED);
+  Color colorFunc(int index, int onTap) {
+    if (onTap == index) {
+      return const Color(0xff2F80ED);
+    }
+    if (index == 1) {
+      return const Color(0xffF2994A);
+    }
+    return AppColors.settingsTextFieldAndTextColor;
   }
-  if (index == 1) {
-    return const Color(0xffF2994A);
-  }
-  return const Color(0xff828282);
 }
