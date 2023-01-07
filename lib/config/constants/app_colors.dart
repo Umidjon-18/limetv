@@ -15,13 +15,22 @@ abstract class AppColors {
 
   static const Color borderColor = Colors.white38;
 
-  static const Color selectedColor = Color(0xFF2F80ED);
 
   static const Color personContainerColor = Color(0xFF1C5EB8);
 
   static const Color settingsTextFieldAndTextColor = Color(0xff828282);
 
+
+  static const Color backgroundColorTv = Color(0xff03060B);  
+
+  static const Color selectedColor = Color(0xFF2F80ED);
+  static const Color cartBgColor = Color(0xFF080E19);
+  static const Color textFieldBgColor = Color(0xFF0F192C);
+  static const Color redText = Color(0xFFEB5757);
+  static  Color shadowColor = const Color(0xFF122345).withOpacity(.39);
+  
   static Color appBarBgColor = const Color(0xFF060A12).withOpacity(.85);
+
 
   static List<Color> cartGrColors = [
     const Color(0xff383E4F),
@@ -29,6 +38,8 @@ abstract class AppColors {
     const Color(0xff5A6278),
     const Color(0xff1A1E2A),
   ];
+
+  static const containerColor = Color(0xff0A101C);
 
   static Gradients gradients = const Gradients();
 

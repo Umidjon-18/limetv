@@ -4,6 +4,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/assets.dart';
+import 'package:limetv/presentation/components/footer_component.dart';
+import 'package:limetv/presentation/components/genre_label.dart';
+import 'package:limetv/presentation/components/web_appbar.dart';
+import 'package:limetv/presentation/routes/routes.dart';
 
 class TVPage extends StatefulWidget {
   const TVPage({super.key});
@@ -19,16 +23,24 @@ class _TVPageState extends State<TVPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
-      body: SingleChildScrollView(
+      backgroundColor: AppColors.backgroundColorTv,
+      body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
+        slivers: [
+          SliverAppBar(
+            pinned: false,
+            snap: false,
+            floating: true,
+            expandedHeight: 129.h,
+            flexibleSpace: const WebAppBar(),            
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
               height: 69.h,
             ),
-            Center(
+          ),
+          SliverToBoxAdapter(
+            child: Center(
               child: SizedBox(
                 width: 569.w,
                 height: 64.h,
@@ -58,114 +70,53 @@ class _TVPageState extends State<TVPage> {
                       child: Image.asset(
                         Assets.icons.search1,
                         color: Colors.white,
-                        width: 20,
-                        height: 20,
+                        width: 20.h,
+                        height: 20.h,
                       ),
                     ),
                   ),
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(top: 69.h),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 72.w),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.only(
+                top: 69.h,
+                left: 72.w,
+                right: 72.w,
+              ),
               child: ChannelGridView(
                 text: 'Узбекские телеканалы',
                 channelTextList: Assets.channelList.uzbekChannels,
               ),
             ),
-            SizedBox(
-              height: 69.h,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 72.w),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: 72.w,
+                right: 72.w,
+                top: 69.h,
+              ),
               child: ChannelGridView(
                 text: 'Русские телеканалы',
                 channelTextList: Assets.channelList.russianChannels,
               ),
             ),
-            SizedBox(
-              height: 69.h,
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.only(top: 69.h),
+              child: const FooterComponent(),
             ),
-            Container(
-              width: double.infinity,
-              height: 406.h,
-              decoration: const BoxDecoration(
-                color: Color(0xff060911),
-                border: Border(
-                  top: BorderSide(
-                    width: 1,
-                    color: Color(0xff0C1E38),
-                  ),
-                ),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    height: 53.h,
-                  ),
-                  Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SvgPicture.asset(Assets.images.youTube),
-                        sized,
-                        SvgPicture.asset(Assets.images.instagram),
-                        sized,
-                        SvgPicture.asset(Assets.images.telegram),
-                        sized,
-                        SvgPicture.asset(Assets.images.appStore),
-                        sized,
-                        SvgPicture.asset(Assets.images.playMarket),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 146.h, left: 72.w),
-                    child: Text(
-                      '''© 2023 LimeTV.  18+
-Федеральные каналы доступны для бесплатного просмотра круглосуточно
-HBO ® and related service marks are the property of Home Box Office, Inc
-ООО «LIMETVUZ», адрес местонахождения: 115035, Узбекистан, г. Ташкент, ул. Садовническая, д. 82, стр. 2, пом. 9А01
-Адрес для обращений пользователей: info@limetv.uz
-''',
-                      style: AppTextStyles.body16w4,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 72.w, top: 0),
-                    child: Row(
-                      children: [
-                        Text(
-                          'Cоглашение',
-                          style: AppTextStyles.body16w4.copyWith(
-                            color: const Color(0xff2F80ED),
-                            decoration: TextDecoration.underline,
-                            decorationColor: const Color(0xff2F80ED),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 10.w,
-                        ),
-                        Text(
-                          'Справка',
-                          style: AppTextStyles.body16w4.copyWith(
-                            color: const Color(0xff2F80ED),
-                            decoration: TextDecoration.underline,
-                            decorationColor: const Color(0xff2F80ED),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
+
           ],
         ),
+
+          ),
+        ],
+
       ),
     );
   }
@@ -180,25 +131,15 @@ class ChannelGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
-                text,
-                style: AppTextStyles.body22w7.copyWith(
-                  color: Colors.white,
-                ),
-              ),
-              SizedBox(
-                width: 18.w,
-              ),
-              SvgPicture.asset(
-                Assets.icons.play,
-                color: Colors.white,
-              ),
-            ],
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            GenreLabel(
+              onTap: () {},
+              margin: EdgeInsets.zero,
+              title: text,
+            ),
+          ],
         ),
         SizedBox(
           height: 32.h,
@@ -214,6 +155,7 @@ class ChannelGridView extends StatelessWidget {
           itemBuilder: (context, index) {
             return ChannelName(
               text: channelTextList[index],
+              index: index,
             );
           },
         ),
@@ -223,23 +165,41 @@ class ChannelGridView extends StatelessWidget {
 }
 
 class ChannelName extends StatelessWidget {
-  ChannelName({Key? key, required this.text}) : super(key: key);
+  ChannelName({
+    Key? key,
+    required this.text,
+    required this.index,
+  }) : super(key: key);
   String text;
+  int index;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 240.h,
-      height: 239.h,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: const Color(0xff0A101C),
-        borderRadius: BorderRadius.circular(15.r),
-      ),
-      child: Image.asset(
-        text,
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          Routes.tvVideoPlayerPage,
+          arguments: {
+            'channelName': text,
+            'index': index,
+          },
+        );
+      },
+      borderRadius: BorderRadius.circular(15.r),
+      child: Container(
+        width: 240.h,
+        height: 239.h,
         alignment: Alignment.center,
-        width: 200.h,
-        height: 200.h,
+        decoration: BoxDecoration(
+          color: const Color(0xff0A101C),
+          borderRadius: BorderRadius.circular(15.r),
+        ),
+        child: Image.asset(
+          text,
+          alignment: Alignment.center,
+          width: 200.h,
+          height: 200.h,
+        ),
       ),
     );
   }
