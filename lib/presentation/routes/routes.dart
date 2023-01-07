@@ -1,10 +1,11 @@
+
+
+import '../pages/landing_page/landing_page.dart';
+import '../pages/settings_page/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:limetv/presentation/pages/sign/sign_code.dart';
 import 'package:limetv/presentation/pages/sign/sign_page.dart';
 import 'package:limetv/presentation/pages/tv_page/tv_video_player_page.dart';
-
-import '../pages/main_page/landing_page.dart';
-import '../pages/tv_page/tv_page.dart';
 
 class Routes {
   static const mainPage = '/mainPage';
@@ -12,8 +13,12 @@ class Routes {
   static const signPage = '/signPage';
   static const signCodePage = '/signCodePage';
   static const landingPage = '/landingPage';
+    //static const landingPage = '/landingPage';
+  static const tvPage = '/tvPage';
+  static const settingsPage = '/';
 
-  static const tvPage = '/';
+
+//  static const tvPage = '/';
   static const tvVideoPlayerPage = '/tvVideoPlayerPage';
 
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
@@ -34,6 +39,14 @@ class Routes {
               return const TVPage();
             },
           );
+
+        case settingsPage:
+          return MaterialPageRoute(
+            builder: (context) {
+              return const SettingsPage();
+            },
+          );
+
         case tvVideoPlayerPage:
           return MaterialPageRoute(
             builder: (context) {

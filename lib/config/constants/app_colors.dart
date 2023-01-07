@@ -4,11 +4,22 @@ abstract class AppColors {
   const AppColors._();
 
   static const Color cardBgColor = Color(0xFF0A101C);
+
   static const Color categoryCountColor = Color(0xFF345290);
+
   static const Color backgroundColor = Color(0xFF03060B);
+
   static const Color categoryBgColor = Color(0xFF0D1526);
+
   static const Color accentColor = Colors.white;
+
   static const Color borderColor = Colors.white38;
+
+
+  static const Color personContainerColor = Color(0xFF1C5EB8);
+
+  static const Color settingsTextFieldAndTextColor = Color(0xff828282);
+
 
   static const Color backgroundColorTv = Color(0xff03060B);  
 
@@ -17,6 +28,7 @@ abstract class AppColors {
   static const Color textFieldBgColor = Color(0xFF0F192C);
   static const Color redText = Color(0xFFEB5757);
   static  Color shadowColor = const Color(0xFF122345).withOpacity(.39);
+  
   static Color appBarBgColor = const Color(0xFF060A12).withOpacity(.85);
 
 

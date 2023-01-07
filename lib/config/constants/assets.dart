@@ -23,7 +23,6 @@ abstract class _AssetsHolder {
 class _Icons extends _AssetsHolder {
   const _Icons() : super('assets/icons');
 
-
   String get trash => "$basePath/ic_trash.svg";
   String get search1 => "$basePath/search_1.png";
   String get play => "$basePath/play.svg";
@@ -72,10 +71,37 @@ class _Icons extends _AssetsHolder {
   String get thriller => "$basePath/thriller.svg";
 
   String get arrowDown => "$basePath/arrow_down.svg";
+
+  String get complaintsSuggestions => "$basePath/complaints_suggestions.svg";
+
+  String get exit => "$basePath/exit.svg";
+
+  String get myDevices => "$basePath/my_devices.svg";
+
+  String get notifications => "$basePath/notifications.svg";
+
+  String get paymentServices => "$basePath/payment_services.svg";
+
+  String get point => "$basePath/point.svg";
+
+  String get securityChilds => "$basePath/security_childs.svg";
+
+  String get settingsMain => "$basePath/settings_main.svg";
+
+
+  String get ios => "$basePath/ios.svg";
+
+  String get android => "$basePath/android.svg";
+
+  String get person => "$basePath/person.svg";
+
 }
 
 class _Images extends _AssetsHolder {
   const _Images() : super('assets/images');
+
+
+  //String get yoshlarTv => "$basePath/yoshlar_channel.png";
 
 
   String get yoshlarTv => "$basePath/yoshlar_tv.png";
@@ -111,9 +137,9 @@ class _Images extends _AssetsHolder {
   String get kingman => "$basePath/kingman.png";
 
   String get assasin => "$basePath/assasin.png";
-  
+
   String get love => "$basePath/love.png";
-  
+
   String get ripd => "$basePath/ripd.png";
 
   String get after => "$basePath/after.png";
@@ -121,7 +147,7 @@ class _Images extends _AssetsHolder {
   String get aladdin => "$basePath/aladdin.png";
 
   String get avatar => "$basePath/avatar.png";
-  
+
   String get bigAndSmall => "$basePath/big_and_small.png";
 
   String get blade => "$basePath/blade.png";
@@ -172,7 +198,11 @@ class _Images extends _AssetsHolder {
 
   String get xmen => "$basePath/xmen.png";
 
+
+  String get crcode => "$basePath/crcode.png";
+
   String get signBg => "$basePath/sign_bg.png";
+
 
 
 }

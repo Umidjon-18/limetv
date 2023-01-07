@@ -10,12 +10,12 @@ class GenreLabel extends StatelessWidget {
   const GenreLabel({
     Key? key,
     required this.onTap,
-    required this.margin,
+    this.margin,
     required this.title,
   }) : super(key: key);
 
   final Function() onTap;
-  final EdgeInsets margin;
+  final EdgeInsets? margin;
   final String title;
 
   @override

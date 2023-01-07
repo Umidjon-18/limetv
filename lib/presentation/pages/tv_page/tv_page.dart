@@ -110,8 +110,13 @@ class _TVPageState extends State<TVPage> {
               padding: EdgeInsets.only(top: 69.h),
               child: const FooterComponent(),
             ),
+
+          ],
+        ),
+
           ),
         ],
+
       ),
     );
   }
