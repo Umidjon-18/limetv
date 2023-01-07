@@ -26,13 +26,13 @@ class _TVPageState extends State<TVPage> {
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
-          SliverAppBar(
-            pinned: false,
-            snap: false,
-            floating: true,
-            expandedHeight: 129.h,
-            flexibleSpace: const WebAppBar(),
-          ),
+          // SliverAppBar(
+          //   pinned: false,
+          //   snap: false,
+          //   floating: true,
+          //   expandedHeight: 129.h,
+          //   flexibleSpace: const WebAppBar(),
+          // ),
           SliverToBoxAdapter(
             child: SizedBox(
               height: 69.h,

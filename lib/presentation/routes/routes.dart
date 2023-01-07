@@ -1,3 +1,5 @@
+import 'package:limetv/presentation/pages/main_page/main_page.dart';
+import 'package:limetv/presentation/pages/my_page/my_page.dart';
 import 'package:limetv/presentation/pages/tv_page/tv_page.dart';
 
 import '../pages/landing_page/landing_page.dart';
@@ -7,9 +9,7 @@ import 'package:limetv/presentation/pages/sign/sign_code.dart';
 import 'package:limetv/presentation/pages/sign/sign_page.dart';
 import 'package:limetv/presentation/pages/tv_page/tv_video_player_page.dart';
 
-import 'package:flutter/material.dart';
 import 'package:limetv/presentation/pages/filter_page/filter_page.dart';
-
 
 class Routes {
   static const mainPage = '/mainPage';
@@ -22,6 +22,7 @@ class Routes {
   static const tvPage = '/tvPage';
   static const settingsPage = '/settingsPage';
   static const tvVideoPlayerPage = '/tvVideoPlayerPage';
+  static const myPage = '/myPage';
 
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     try {
@@ -29,7 +30,6 @@ class Routes {
           routeSettings.arguments as Map<String, dynamic>?;
       args ?? <String, dynamic>{};
       switch (routeSettings.name) {
-
         case filterPage:
           return MaterialPageRoute(
             settings: routeSettings,
@@ -40,6 +40,18 @@ class Routes {
           return MaterialPageRoute(
             builder: (context) {
               return const LandingPage();
+            },
+          );
+        case mainPage:
+          return MaterialPageRoute(
+            builder: (context) {
+              return const MainPage();
+            },
+          );
+        case myPage:
+          return MaterialPageRoute(
+            builder: (context) {
+              return const MyPage();
             },
           );
 

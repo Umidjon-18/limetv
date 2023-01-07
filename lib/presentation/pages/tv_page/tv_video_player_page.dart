@@ -43,14 +43,14 @@ class _TvVideoPlayerPageState extends State<TvVideoPlayerPage> {
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
-          SliverAppBar(
-            pinned: false,
-            snap: false,
-            floating: true,
-            expandedHeight: 129.h,
-            flexibleSpace: const WebAppBar(),
-            automaticallyImplyLeading: false,
-          ),
+          // SliverAppBar(
+          //   pinned: false,
+          //   snap: false,
+          //   floating: true,
+          //   expandedHeight: 129.h,
+          //   flexibleSpace: const WebAppBar(),
+          //   automaticallyImplyLeading: false,
+          // ),
           SliverToBoxAdapter(
             child: Padding(
               padding: EdgeInsets.only(left: 72.w, right: 476.w, top: 69.h),

@@ -8,7 +8,7 @@ import '../../config/constants/assets.dart';
 import '../../config/constants/local_data.dart';
 
 class FooterComponent extends StatelessWidget {
-  const FooterComponent({
+  const  FooterComponent({
     Key? key,
   }) : super(key: key);
 
