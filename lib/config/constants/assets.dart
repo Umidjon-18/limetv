@@ -70,6 +70,9 @@ class _Icons extends _AssetsHolder {
 
   String get thriller => "$basePath/thriller.svg";
 
+
+  String get down => "$basePath/down.svg";
+
   String get arrowDown => "$basePath/arrow_down.svg";
 
   String get complaintsSuggestions => "$basePath/complaints_suggestions.svg";
@@ -94,7 +97,6 @@ class _Icons extends _AssetsHolder {
   String get android => "$basePath/android.svg";
 
   String get person => "$basePath/person.svg";
-
 }
 
 class _Images extends _AssetsHolder {
@@ -197,6 +199,8 @@ class _Images extends _AssetsHolder {
   String get titanic2 => "$basePath/titanic2.png";
 
   String get xmen => "$basePath/xmen.png";
+
+  String get prince => "$basePath/prince.png";
 
 
   String get crcode => "$basePath/crcode.png";
