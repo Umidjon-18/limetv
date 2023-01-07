@@ -1,6 +1,6 @@
 import 'package:limetv/config/constants/assets.dart';
 
-List<String> settingsMenuName = [
+const List<String> settingsMenuName = [
   'Основные',
   'Оплата услуг',
   'Мои утсройства',
@@ -19,3 +19,5 @@ List<String> settingIconText = [
   Assets.icons.notifications,
   Assets.icons.exit,
 ];
+
+const List<String> settingsTextFieldTexts = ['Эл. адрес', 'Имя аккаунта', 'Телефон номер'];
