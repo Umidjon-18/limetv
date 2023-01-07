@@ -5,10 +5,10 @@ import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/constants.dart';
 import 'package:limetv/presentation/components/genre_label.dart';
 import 'package:limetv/presentation/components/web_appbar.dart';
-import 'package:limetv/presentation/pages/settings_page/child_protection_page.dart';
-import 'package:limetv/presentation/pages/settings_page/compl_and%20_sugg_page.dart';
-import 'package:limetv/presentation/pages/settings_page/my_devices_page.dart';
-import 'package:limetv/presentation/pages/settings_page/notification_page.dart';
+import 'package:limetv/presentation/pages/settings_page/widget/child_protection_page.dart';
+import 'package:limetv/presentation/pages/settings_page/widget/compl_and%20_sugg_page.dart';
+import 'package:limetv/presentation/pages/settings_page/widget/my_devices_page.dart';
+import 'package:limetv/presentation/pages/settings_page/widget/notification_page.dart';
 import 'package:limetv/presentation/pages/settings_page/widget/settings_main.dart';
 import 'package:limetv/presentation/pages/settings_page/widget/settings_menu_item.dart';
 import 'package:limetv/presentation/pages/settings_page/widget/settings_payment_services.dart';
@@ -33,102 +33,83 @@ class _SettingsPageState extends State<SettingsPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 450.w,
-            padding: EdgeInsets.only(top: 69.h, left: 72.w),
+            // width: 450.w,
+            height: MediaQuery.of(context).size.height,
+            padding: EdgeInsets.only(top: 69.h, left: 72.w, right: 76.w),
             decoration: BoxDecoration(
               color: AppColors.appBarBgColor,
             ),
-            child: Column(
-              children: [
-                GenreLabel(
-                  onTap: () {},
-                  title: "Настройка",
-                ),
-                SizedBox(
-                  height: 69.h,
-                ),
-                Column(
-                  children: List.generate(
-                    settingsMenuName.length,
-                    (index) {
-                      return InkWell(
-                        onTap: () {
-                          setState(() {
-                            onTap = index;
-                          });
-                        },
-                        child: SettingsMenuItem(
-                          text: settingsMenuName[index],
-                          color: colorFunc(index, onTap),
-                          assetsIconText: settingIconText[index],
-                          onClick: index == onTap,
-                        ),
-                      );
-                    },
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  GenreLabel(
+                    onTap: () {},
+                    title: "Настройка",
                   ),
-                ),
-              ],
+                  SizedBox(
+                    height: 69.h,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: List.generate(
+                      settingsMenuName.length,
+                      (index) {
+                        return InkWell(
+                          onTap: () {
+                            setState(() {
+                              onTap = index;
+                            });
+                          },
+                          child: SettingsMenuItem(
+                            text: settingsMenuName[index],
+                            color: colorFunc(index, onTap),
+                            assetsIconText: settingIconText[index],
+                            onClick: index == onTap,
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(top: 162.h, left: 72.w),
-
-            child: menus[onTap],
-
-            //child: const SettingsPaymentServices(),
-            // Text(
-            //   settingsMenuName[onTap],
-            //   style: AppTextStyles.body37w5.copyWith(
-            //     color: Colors.white,
-            //   ),
-            // ),
-
+          SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Container(
+              margin: EdgeInsets.only(top: 162.h, left: 72.w),
+              child: menus[onTap],
+            ),
           )
         ],
       ),
     );
   }
 
+  List menus = [
+    const SettingsMainWidget(),
+    const SettingsPaymentServices(),
+    const MyDevicesPage(),
+    const ChildProtectionPage(),
+    const ComplaintsAndSuggestionPage(),
+    const NotificationPage(),
+    Text(
+      'Выход',
+      style: AppTextStyles.body37w5.copyWith(
+        color: Colors.white,
+      ),
+    ),
+  ];
 
-List menus = [
-  Text(
-    'Основные',
-    style: AppTextStyles.body37w5.copyWith(
-      color: Colors.white,
-    ),
-  ),
-  Text(
-    'Оплата услуг',
-    style: AppTextStyles.body37w5.copyWith(
-      color: Colors.white,
-    ),
-  ),
-  const MyDevicesPage(),
-  const ChildProtectionPage(),
-  const ComplaintsAndSuggestionPage(),
-  const NotificationPage(),
-  Text(
-    'Выход',
-    style: AppTextStyles.body37w5.copyWith(
-      color: Colors.white,
-    ),
-  ),
-];
-
-Color colorFunc(int index, int onTap) {
-  if (onTap == index) {
-    return const Color(0xff2F80ED);
+  Color colorFunc(int index, int onTap) {
+    if (onTap == index) {
+      return const Color(0xff2F80ED);
+    }
+    if (index == 1) {
+      return const Color(0xffF2994A);
+    }
+    return AppColors.settingsTextFieldAndTextColor;
   }
-  if (index == 1) {
-    return const Color(0xffF2994A);
-
-  //Color colorFunc(int index, int onTap) {
-   // if (onTap == index) {
-    //  return const Color(0xff2F80ED);
-   // }
-   // if (index == 1) {
-    //  return const Color(0xffF2994A);
-   // }
-   // return AppColors.settingsTextFieldAndTextColor;
- // }
 }

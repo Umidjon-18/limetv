@@ -6,6 +6,7 @@ import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/assets.dart';
 import 'package:limetv/config/constants/constants.dart';
 import 'package:limetv/config/constants/local_data.dart';
+import 'package:limetv/presentation/pages/settings_page/widget/custom_button.dart';
 
 class SettingsMainWidget extends StatefulWidget {
   const SettingsMainWidget({super.key});
@@ -107,38 +108,15 @@ class _SettingsMainWidgetState extends State<SettingsMainWidget> {
                     ),
                     Row(
                       children: [
-                        Container(
-                          height: 64.h,
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.symmetric(horizontal: 23.w),
-                          decoration: BoxDecoration(
-                            color: AppColors.selectedColor,
-                            borderRadius: BorderRadius.circular(32.r),
-                          ),
-                          child: Text(
-                            'Сохранить',
-                            style: AppTextStyles.body18w4,
-                          ),
+                        const CustomButton(
+                          text: 'Сохранить',
+                          buttonColor: AppColors.selectedColor,
                         ),
-                        const SizedBox(
-                          width: 28,
+                        SizedBox(
+                          width: 28.w,
                         ),
-                        Container(
-                          height: 64.h,
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.symmetric(horizontal: 23.w),
-                          decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            border: Border.all(
-                              width: 1.h,
-                              color: AppColors.selectedColor,
-                            ),
-                            borderRadius: BorderRadius.circular(32.r),
-                          ),
-                          child: Text(
-                            'Добавить аккаунт',
-                            style: AppTextStyles.body18w4,
-                          ),
+                        const CustomButton(
+                          text: 'Добавить аккаунт',
                         ),
                       ],
                     )

@@ -4,7 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/assets.dart';
-import 'package:limetv/presentation/pages/settings_page/child_protection_page.dart';
+import 'package:limetv/presentation/pages/settings_page/widget/child_protection_page.dart';
+import 'package:limetv/presentation/pages/settings_page/widget/custom_button.dart';
 
 class MyDevicesPage extends StatelessWidget {
   const MyDevicesPage({super.key});
