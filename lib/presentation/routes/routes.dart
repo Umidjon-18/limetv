@@ -1,4 +1,4 @@
-
+import 'package:limetv/presentation/pages/tv_page/tv_page.dart';
 
 import '../pages/landing_page/landing_page.dart';
 import '../pages/settings_page/settings_page.dart';
@@ -9,16 +9,11 @@ import 'package:limetv/presentation/pages/tv_page/tv_video_player_page.dart';
 
 class Routes {
   static const mainPage = '/mainPage';
-
   static const signPage = '/signPage';
   static const signCodePage = '/signCodePage';
   static const landingPage = '/landingPage';
-    //static const landingPage = '/landingPage';
   static const tvPage = '/tvPage';
   static const settingsPage = '/';
-
-
-//  static const tvPage = '/';
   static const tvVideoPlayerPage = '/tvVideoPlayerPage';
 
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
