@@ -6,6 +6,7 @@ import '../../config/constants/app_decorations.dart';
 import '../../config/constants/app_text_styles.dart';
 import '../../data/models/movie_model.dart';
 
+// ignore: must_be_immutable
 class MovieBanner extends StatelessWidget {
   MovieBanner({
     Key? key,
@@ -16,8 +17,6 @@ class MovieBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 1117.w,
-      height: 888.h,
       padding: EdgeInsets.only(top: 63.h, right: 72.w),
       decoration: BoxDecoration(
         image: DecorationImage(image: AssetImage(model.bgImage), fit: BoxFit.cover),
