@@ -1,4 +1,4 @@
-
+import 'package:limetv/config/constants/assets.dart';
  bool comedy = false;
   bool drama = false;
   bool melodrama = false;
@@ -41,8 +41,8 @@
   bool english = false;
   List languagesList = ['Русский', 'Английский'];
    List languageBools = [russian, english];
-=======
-import 'package:limetv/config/constants/assets.dart';
+
+
 
 const List<String> settingsMenuName = [
   'Основные',

@@ -16,11 +16,11 @@ class Routes {
 
   static const filterPage = '/filterPage';
 
-  static const signPage = '/signPage';
+  static const signPage = '/';
   static const signCodePage = '/signCodePage';
   static const landingPage = '/landingPage';
   static const tvPage = '/tvPage';
-  static const settingsPage = '/';
+  static const settingsPage = '/settingsPage';
   static const tvVideoPlayerPage = '/tvVideoPlayerPage';
 
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {

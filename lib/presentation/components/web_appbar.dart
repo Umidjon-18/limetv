@@ -44,6 +44,7 @@ class _WebAppBarState extends State<WebAppBar> {
                 MenuTextButton(
                     onPressed: () {
                       select(0);
+                      Navigator.pushNamed(context, Routes.landingPage);
                     },
                     icon: Assets.icons.home,
                     isSelected: indexes[0],
@@ -52,6 +53,7 @@ class _WebAppBarState extends State<WebAppBar> {
                 MenuTextButton(
                     onPressed: () {
                       select(1);
+                      // Navigator.pushNamed(context, Routes.tvPage);
                     },
                     icon: Assets.icons.favorite,
                     isSelected: indexes[1],
@@ -60,6 +62,7 @@ class _WebAppBarState extends State<WebAppBar> {
                 MenuTextButton(
                     onPressed: () {
                       select(2);
+                      Navigator.pushNamed(context, Routes.tvPage);
                     },
                     icon: Assets.icons.tv,
                     isSelected: indexes[2],
@@ -76,8 +79,7 @@ class _WebAppBarState extends State<WebAppBar> {
                 SizedBox(width: 40.w),
                 IconButton(
                   onPressed: () {},
-                  icon: SvgPicture.asset(Assets.icons.search,
-                      width: 20.h, height: 20.h),
+                  icon: SvgPicture.asset(Assets.icons.search, width: 20.h, height: 20.h),
                 ),
               ],
             ),
@@ -94,11 +96,12 @@ class _WebAppBarState extends State<WebAppBar> {
             child: Container(
               width: 62.h,
               height: 62.h,
+              alignment: Alignment.bottomCenter,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: AppColors.selectedColor,
               ),
-              child: const Icon(Icons.person),
+              child: SvgPicture.asset(Assets.icons.person),
             ),
           ),
         ],
@@ -128,15 +131,12 @@ class MenuTextButton extends StatelessWidget {
       icon: SvgPicture.asset(
         icon,
         width: 20.h,
-        color:
-            isSelected ? AppColors.selectedColor : AppColors.baseLight.shade100,
+        color: isSelected ? AppColors.selectedColor : AppColors.baseLight.shade100,
       ),
       label: Text(
         title,
-        style: AppTextStyles.body16w5.copyWith(
-            color: isSelected
-                ? AppColors.selectedColor
-                : AppColors.baseLight.shade100),
+        style:
+            AppTextStyles.body16w5.copyWith(color: isSelected ? AppColors.selectedColor : AppColors.baseLight.shade100),
       ),
     );
   }

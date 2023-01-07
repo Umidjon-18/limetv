@@ -4,6 +4,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:limetv/presentation/routes/routes.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 import '../../../config/constants/app_colors.dart';
@@ -27,8 +28,7 @@ class _SignCodePageState extends State<SignCodePage> {
         padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 73.w),
         decoration: BoxDecoration(
           color: AppColors.cartBgColor,
-          image: DecorationImage(
-              image: AssetImage(Assets.images.signBg), fit: BoxFit.cover),
+          image: DecorationImage(image: AssetImage(Assets.images.signBg), fit: BoxFit.cover),
         ),
         child: Stack(
           children: [
@@ -42,9 +42,7 @@ class _SignCodePageState extends State<SignCodePage> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                   ),
-                  boxShadow: [
-                    BoxShadow(blurRadius: 250, color: AppColors.shadowColor)
-                  ],
+                  boxShadow: [BoxShadow(blurRadius: 250, color: AppColors.shadowColor)],
                   borderRadius: BorderRadius.circular(33.r),
                 ),
                 child: Container(
@@ -81,8 +79,7 @@ class _SignCodePageState extends State<SignCodePage> {
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: '_  _  _   _  _  _',
-                            hintStyle: AppTextStyles.body24w4
-                                .copyWith(color: AppColors.selectedColor),
+                            hintStyle: AppTextStyles.body24w4.copyWith(color: AppColors.selectedColor),
                           ),
                           inputFormatters: [
                             MaskTextInputFormatter(
@@ -94,7 +91,9 @@ class _SignCodePageState extends State<SignCodePage> {
                       ),
                       const Spacer(),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, Routes.landingPage);
+                        },
                         style: AppDecorations.buttonStyle(
                           bgColor: AppColors.selectedColor,
                           borderRadius: 38.5.r,
