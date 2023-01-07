@@ -7,6 +7,7 @@ import 'package:limetv/presentation/components/genre_label.dart';
 import 'package:limetv/presentation/components/web_appbar.dart';
 import 'package:limetv/presentation/pages/settings_page/widget/settings_main.dart';
 import 'package:limetv/presentation/pages/settings_page/widget/settings_menu_item.dart';
+import 'package:limetv/presentation/pages/settings_page/widget/settings_payment_services.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -67,7 +68,7 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
           Container(
             margin: EdgeInsets.only(top: 162.h, left: 72.w),
-            child: const SettingsMainWidget(),
+            child: const SettingsPaymentServices(),
             // Text(
             //   settingsMenuName[onTap],
             //   style: AppTextStyles.body37w5.copyWith(
@@ -79,14 +80,14 @@ class _SettingsPageState extends State<SettingsPage> {
       ),
     );
   }
-}
 
-Color colorFunc(int index, int onTap) {
-  if (onTap == index) {
-    return const Color(0xff2F80ED);
+  Color colorFunc(int index, int onTap) {
+    if (onTap == index) {
+      return const Color(0xff2F80ED);
+    }
+    if (index == 1) {
+      return const Color(0xffF2994A);
+    }
+    return AppColors.settingsTextFieldAndTextColor;
   }
-  if (index == 1) {
-    return const Color(0xffF2994A);
-  }
-  return const Color(0xff828282);
 }

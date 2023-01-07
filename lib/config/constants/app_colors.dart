@@ -4,15 +4,24 @@ abstract class AppColors {
   const AppColors._();
 
   static const Color cardBgColor = Color(0xFF0A101C);
-  static const Color categoryCountColor = Color(0xFF345290);
-  static const Color backgroundColor = Color(0xFF03060B);
-  static const Color categoryBgColor = Color(0xFF0D1526);
-  static const Color accentColor = Colors.white;
-  static const Color borderColor = Colors.white38;
-  static const Color selectedColor = Color(0xFF2F80ED);
-  static const Color personContainerColor = Color(0xFF1C5EB8);
-  static Color appBarBgColor = const Color(0xFF060A12).withOpacity(.85);
 
+  static const Color categoryCountColor = Color(0xFF345290);
+
+  static const Color backgroundColor = Color(0xFF03060B);
+
+  static const Color categoryBgColor = Color(0xFF0D1526);
+
+  static const Color accentColor = Colors.white;
+
+  static const Color borderColor = Colors.white38;
+
+  static const Color selectedColor = Color(0xFF2F80ED);
+
+  static const Color personContainerColor = Color(0xFF1C5EB8);
+
+  static const Color settingsTextFieldAndTextColor = Color(0xff828282);
+
+  static Color appBarBgColor = const Color(0xFF060A12).withOpacity(.85);
 
   static List<Color> cartGrColors = [
     const Color(0xff383E4F),
