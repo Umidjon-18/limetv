@@ -207,6 +207,13 @@ class _Images extends _AssetsHolder {
 
   String get signBg => "$basePath/sign_bg.png";
 
+  String get harryPotter => "$basePath/harry_potter.png";
+
+  String get postuchisMoyuDver => "$basePath/postuchis_moyu_dver.png";
+
+  String get serdseParme => "$basePath/serdse_parme.png";
+
+
 
 
 }

@@ -145,7 +145,7 @@ class ChannelGridView extends StatelessWidget {
             crossAxisSpacing: 28.h,
             mainAxisSpacing: 28.h,
           ),
-          itemCount: 12,
+          itemCount: channelTextList.length,
           itemBuilder: (context, index) {
             return ChannelName(
               text: channelTextList[index],
