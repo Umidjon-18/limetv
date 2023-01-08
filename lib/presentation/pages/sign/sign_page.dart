@@ -75,7 +75,7 @@ class _SignPageState extends State<SignPage> {
                           style: AppTextStyles.body22w4,
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: '+998 ( -- )  --- -- --',
+                            hintText: '+998 (--)  --- -- --',
                             hintStyle: AppTextStyles.body22w4,
                           ),
                           inputFormatters: [
@@ -89,11 +89,13 @@ class _SignPageState extends State<SignPage> {
                       const Spacer(),
                       TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(
+                          if(controller.text.length == 19) {
+                            Navigator.pushNamed(
                             context,
                             Routes.signCodePage,
                             arguments: {"number": controller.text},
                           );
+                          }
                         },
                         style: AppDecorations.buttonStyle(
                           bgColor: AppColors.selectedColor,
