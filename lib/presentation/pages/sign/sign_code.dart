@@ -28,7 +28,8 @@ class _SignCodePageState extends State<SignCodePage> {
         padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 73.w),
         decoration: BoxDecoration(
           color: AppColors.cartBgColor,
-          image: DecorationImage(image: AssetImage(Assets.images.signBg), fit: BoxFit.cover),
+          image: DecorationImage(
+              image: AssetImage(Assets.images.signBg), fit: BoxFit.cover),
         ),
         child: Stack(
           children: [
@@ -42,7 +43,9 @@ class _SignCodePageState extends State<SignCodePage> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                   ),
-                  boxShadow: [BoxShadow(blurRadius: 250, color: AppColors.shadowColor)],
+                  boxShadow: [
+                    BoxShadow(blurRadius: 250, color: AppColors.shadowColor)
+                  ],
                   borderRadius: BorderRadius.circular(33.r),
                 ),
                 child: Container(
@@ -79,7 +82,8 @@ class _SignCodePageState extends State<SignCodePage> {
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: '_  _  _   _  _  _',
-                            hintStyle: AppTextStyles.body24w4.copyWith(color: AppColors.selectedColor),
+                            hintStyle: AppTextStyles.body24w4
+                                .copyWith(color: AppColors.selectedColor),
                           ),
                           inputFormatters: [
                             MaskTextInputFormatter(
@@ -92,7 +96,7 @@ class _SignCodePageState extends State<SignCodePage> {
                       const Spacer(),
                       TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, Routes.landingPage);
+                          Navigator.pushNamed(context, Routes.mainPage);
                         },
                         style: AppDecorations.buttonStyle(
                           bgColor: AppColors.selectedColor,
@@ -116,7 +120,7 @@ class _SignCodePageState extends State<SignCodePage> {
                           borderRadius: 38.5.r,
                           size: Size(408.w, 70.h),
                         ),
-                        child: TimeText(),
+                        child: const TimeText(),
                       )
                     ],
                   ),

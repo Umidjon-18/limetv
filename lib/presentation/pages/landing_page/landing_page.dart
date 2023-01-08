@@ -12,7 +12,6 @@ import '../../components/footer_component.dart';
 import '../../components/genre_label.dart';
 import '../../components/movie_banner.dart';
 import '../../components/subscription_banner.dart';
-import '../../components/web_appbar.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -31,13 +30,13 @@ class _LandingPageState extends State<LandingPage> {
         backgroundColor: AppColors.backgroundColor,
         body: CustomScrollView(
           slivers: <Widget>[
-            SliverAppBar(
-              pinned: false,
-              snap: false,
-              floating: true,
-              expandedHeight: 129.h,
-              flexibleSpace: const WebAppBar(),
-            ),
+            // SliverAppBar(
+            //   pinned: false,
+            //   snap: false,
+            //   floating: true,
+            //   expandedHeight: 129.h,
+            //   flexibleSpace: const WebAppBar(),
+            // ),
             SliverToBoxAdapter(
               child: Stack(
                 children: [
@@ -56,7 +55,8 @@ class _LandingPageState extends State<LandingPage> {
                       },
                       autoPlayCurve: Curves.fastOutSlowIn,
                       autoPlayInterval: const Duration(seconds: 3),
-                      autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                      autoPlayAnimationDuration:
+                          const Duration(milliseconds: 800),
                     ),
                     items: List.generate(
                       bannerMovies.length,
@@ -121,12 +121,14 @@ class _LandingPageState extends State<LandingPage> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15.r),
                             image: DecorationImage(
-                              image: AssetImage(continueWatchingMovies[index].bgImage),
+                              image: AssetImage(
+                                  continueWatchingMovies[index].bgImage),
                               fit: BoxFit.cover,
                             ),
                           ),
                         ),
-                        Text(continueWatchingMovies[index].name, style: AppTextStyles.body20w6),
+                        Text(continueWatchingMovies[index].name,
+                            style: AppTextStyles.body20w6),
                       ],
                     );
                   },
@@ -234,7 +236,8 @@ class _LandingPageState extends State<LandingPage> {
               ),
             ),
             SliverToBoxAdapter(
-              child: CarouselWithBottomBanner(currentRecommendIndex: currentRecommendIndex),
+              child: CarouselWithBottomBanner(
+                  currentRecommendIndex: currentRecommendIndex),
             ),
             SliverToBoxAdapter(
               child: GenreLabel(
@@ -261,7 +264,8 @@ class _LandingPageState extends State<LandingPage> {
                         color: AppColors.cardBgColor,
                       ),
                       child: Center(
-                        child: Image.asset(Assets.channelList.russianChannels[index]),
+                        child: Image.asset(
+                            Assets.channelList.russianChannels[index]),
                       ),
                     );
                   },

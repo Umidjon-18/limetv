@@ -4,7 +4,7 @@ import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/constants.dart';
 import 'package:limetv/presentation/components/genre_label.dart';
-import 'package:limetv/presentation/components/web_appbar.dart';
+
 import 'package:limetv/presentation/pages/settings_page/widget/child_protection_page.dart';
 import 'package:limetv/presentation/pages/settings_page/widget/compl_and%20_sugg_page.dart';
 import 'package:limetv/presentation/pages/settings_page/widget/my_devices_page.dart';
@@ -27,13 +27,12 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
-      appBar: const WebAppBar(),
       body: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            // width: 450.w,
+           
             height: MediaQuery.of(context).size.height,
             padding: EdgeInsets.only(top: 69.h, left: 72.w, right: 76.w),
             decoration: BoxDecoration(

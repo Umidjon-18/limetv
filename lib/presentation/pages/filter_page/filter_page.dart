@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
-import 'package:limetv/config/constants/assets.dart';
-import 'package:limetv/presentation/components/web_appbar.dart';
+import 'package:limetv/presentation/components/footer_component.dart';
 import 'package:limetv/presentation/pages/filter_page/widgets/custom_dropdown_button.dart';
 import 'package:limetv/presentation/pages/filter_page/widgets/filter_button.dart';
 import 'package:limetv/presentation/pages/filter_page/widgets/filter_result_text.dart';
@@ -36,13 +35,6 @@ class _FilterPageState extends State<FilterPage> {
       backgroundColor: AppColors.backgroundColor,
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(
-            pinned: false,
-            snap: false,
-            floating: true,
-            expandedHeight: 129.h,
-            flexibleSpace: const WebAppBar(),
-          ),
           SliverToBoxAdapter(
             child: Container(
               padding: EdgeInsets.all(79.r),
@@ -191,7 +183,13 @@ class _FilterPageState extends State<FilterPage> {
                 FilterResultVideosWidget()
               ]),
             ),
-          )
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.only(top: 69.h),
+              child: const FooterComponent(),
+            ),
+          ),
         ],
       ),
     );
