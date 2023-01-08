@@ -101,7 +101,7 @@ class _MainPageState extends State<MainPage> {
                       IconButton(
                         onPressed: () {},
                         icon: SvgPicture.asset(Assets.icons.search,
-                            width: 20.h, height: 20.h),
+                            width: 24.w, height: 24.h),
                       ),
                     ],
                   ),

@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/assets.dart';
+import 'package:limetv/presentation/pages/landing_page/widgets/coming_to_cinema_widget.dart';
+import 'package:limetv/presentation/pages/landing_page/widgets/films_chapter.dart';
 
 import '../../../config/constants/local_data.dart';
 import '../../components/carousel_with_bottom_banner.dart';
@@ -12,6 +14,7 @@ import '../../components/footer_component.dart';
 import '../../components/genre_label.dart';
 import '../../components/movie_banner.dart';
 import '../../components/subscription_banner.dart';
+import 'widgets/serials_item_widget.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -22,7 +25,12 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   ValueNotifier<int> currentIndex = ValueNotifier<int>(0);
+  ValueNotifier<int> comingSoonToCinemaIndex = ValueNotifier<int>(0);
+  ValueNotifier<int> serialIndex = ValueNotifier<int>(0);
   ValueNotifier<int> currentRecommendIndex = ValueNotifier<int>(0);
+  CarouselController comingSoonToCinemaController = CarouselController();
+  CarouselController serialController = CarouselController();
+  CarouselController filmController = CarouselController();
 
   @override
   Widget build(BuildContext context) {
@@ -127,8 +135,12 @@ class _LandingPageState extends State<LandingPage> {
                             ),
                           ),
                         ),
-                        Text(continueWatchingMovies[index].name,
-                            style: AppTextStyles.body20w6),
+                        SizedBox(
+                          width: 463.w,
+                          child: Text(continueWatchingMovies[index].name,
+                              style: AppTextStyles.body20w6,
+                              overflow: TextOverflow.ellipsis),
+                        ),
                       ],
                     );
                   },
@@ -143,26 +155,9 @@ class _LandingPageState extends State<LandingPage> {
               ),
             ),
             SliverToBoxAdapter(
-              child: CarouselSlider(
-                options: MyCarouselOptions(
-                  height: 485.h,
-                  enlargeFactor: 0.15,
-                  aspectRatio: 2 / 3,
-                  viewportFraction: 0.23,
-                ),
-                items: List.generate(
-                  skoroVKino.length,
-                  (index) => Container(
-                    margin: EdgeInsets.symmetric(horizontal: 20.w),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.r),
-                      image: DecorationImage(
-                        image: AssetImage(skoroVKino[index].bgImage),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
+              child: ComingToCinemaChapter(
+                comingSoonToCinemaController: comingSoonToCinemaController,
+                comingSoonToCinemaIndex: comingSoonToCinemaIndex,
               ),
             ),
             SliverToBoxAdapter(
@@ -176,22 +171,7 @@ class _LandingPageState extends State<LandingPage> {
               ),
             ),
             SliverToBoxAdapter(
-              child: CarouselSlider(
-                options: MyCarouselOptions(),
-                items: List.generate(
-                  filmy.length,
-                  (index) => Container(
-                    margin: EdgeInsets.only(right: 27.w),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.r),
-                      image: DecorationImage(
-                        image: AssetImage(filmy[index].bgImage),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              child: FilmsChapter(filmController: filmController),
             ),
             SliverToBoxAdapter(
               child: GenreLabel(
@@ -201,22 +181,8 @@ class _LandingPageState extends State<LandingPage> {
               ),
             ),
             SliverToBoxAdapter(
-              child: CarouselSlider(
-                options: MyCarouselOptions(),
-                items: List.generate(
-                  serialy.length,
-                  (index) => Container(
-                    margin: EdgeInsets.only(right: 27.w),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.r),
-                      image: DecorationImage(
-                        image: AssetImage(serialy[index].bgImage),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              child: SerialsChapter(
+                  serialController: serialController, serialIndex: serialIndex),
             ),
             SliverToBoxAdapter(
               child: GenreLabel(
@@ -258,6 +224,7 @@ class _LandingPageState extends State<LandingPage> {
                     return Container(
                       width: 224.h,
                       height: 224.h,
+                      padding: EdgeInsets.symmetric(horizontal: 26.w),
                       margin: EdgeInsets.only(right: 27.w),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15.r),
@@ -327,8 +294,10 @@ class _LandingPageState extends State<LandingPage> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15.r),
                       ),
-                      child: Center(
-                        child: Image.asset(childrenCartoons[index].mainImage),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(15.r),
+                        child: Image.asset(childrenCartoons[index].mainImage,
+                            fit: BoxFit.cover),
                       ),
                     );
                   },
@@ -341,27 +310,4 @@ class _LandingPageState extends State<LandingPage> {
           ],
         ));
   }
-}
-
-class MyCarouselOptions extends CarouselOptions {
-  MyCarouselOptions({
-    double height = 280,
-    double enlargeFactor = 0,
-    double aspectRatio = 463 / 277,
-    double viewportFraction = 0.28,
-    dynamic Function(int, CarouselPageChangedReason)? onPageChanged,
-  }) : super(
-          height: height.h,
-          autoPlay: true,
-          enlargeFactor: enlargeFactor,
-          aspectRatio: aspectRatio,
-          disableCenter: true,
-          viewportFraction: viewportFraction,
-          enableInfiniteScroll: true,
-          scrollDirection: Axis.horizontal,
-          onPageChanged: onPageChanged,
-          autoPlayCurve: Curves.fastOutSlowIn,
-          autoPlayInterval: const Duration(seconds: 3),
-          autoPlayAnimationDuration: const Duration(milliseconds: 800),
-        );
 }

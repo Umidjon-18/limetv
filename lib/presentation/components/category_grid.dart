@@ -39,8 +39,8 @@ class CategoryGrid extends StatelessWidget {
               children: [
                 SvgPicture.asset(
                   categories[index].categoryIcon,
-                  width: 82.h,
-                  height: 82.h,
+                  width: 84.h,
+                  height: 84.h,
                 ),
                 SizedBox(width: 48.w),
                 Column(

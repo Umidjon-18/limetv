@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:limetv/presentation/pages/main_page/main_page.dart';
 import 'package:limetv/presentation/pages/search_page/search_page.dart';
 import 'package:limetv/presentation/pages/settings_page/widget/settings_main.dart';
 
@@ -19,10 +20,10 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         minTextAdapt: true,
         builder: (context, child) {
-          return const MaterialApp(
+          return MaterialApp(
             debugShowCheckedModeBanner: false,
-            // onGenerateRoute: (settings) => Routes.generateRoute(settings),
-            home: SearchPage(),
+            onGenerateRoute: (settings) => Routes.generateRoute(settings),
+            // home: MainPage(),
           );
         });
   }

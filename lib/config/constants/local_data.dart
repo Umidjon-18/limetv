@@ -104,7 +104,7 @@ List<MovieModel> skoroVKino = [
     bgImage: Assets.images.avatar,
     mainImage: Assets.images.avatar,
     name: "Смертоносные машины",
-    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    genre: "фантастика, фэнтези, боевик, приключения",
     about: "",
     rating: "IMDB 8.6",
   ),
@@ -112,7 +112,7 @@ List<MovieModel> skoroVKino = [
     bgImage: Assets.images.blade,
     mainImage: Assets.images.blade,
     name: "Титаник",
-    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    genre: "фантастика, фэнтези, боевик, приключения",
     about: "",
     rating: "IMDB 8.6",
   ),
@@ -120,7 +120,7 @@ List<MovieModel> skoroVKino = [
     bgImage: Assets.images.fantasticFour,
     mainImage: Assets.images.fantasticFour,
     name: "Indiana Jones",
-    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    genre: "фантастика, фэнтези, боевик, приключения",
     about: "",
     rating: "IMDB 8.6",
   ),
@@ -128,7 +128,7 @@ List<MovieModel> skoroVKino = [
     bgImage: Assets.images.mermaid,
     mainImage: Assets.images.mermaid,
     name: "Смертоносные машины",
-    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    genre: "фантастика, фэнтези, боевик, приключения",
     about: "",
     rating: "IMDB 8.6",
   ),
@@ -136,7 +136,7 @@ List<MovieModel> skoroVKino = [
     bgImage: Assets.images.avatar,
     mainImage: Assets.images.avatar,
     name: "Смертоносные машины",
-    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    genre: "фантастика, фэнтези, боевик, приключения",
     about: "",
     rating: "IMDB 8.6",
   ),
@@ -144,7 +144,7 @@ List<MovieModel> skoroVKino = [
     bgImage: Assets.images.blade,
     mainImage: Assets.images.blade,
     name: "Титаник",
-    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    genre: "фантастика, фэнтези, боевик, приключения",
     about: "",
     rating: "IMDB 8.6",
   ),
@@ -152,7 +152,7 @@ List<MovieModel> skoroVKino = [
     bgImage: Assets.images.fantasticFour,
     mainImage: Assets.images.fantasticFour,
     name: "Indiana Jones",
-    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    genre: "фантастика, фэнтези, боевик, приключения",
     about: "",
     rating: "IMDB 8.6",
   ),
@@ -160,7 +160,7 @@ List<MovieModel> skoroVKino = [
     bgImage: Assets.images.mermaid,
     mainImage: Assets.images.mermaid,
     name: "Смертоносные машины",
-    genre: "2022 фантастика, фэнтези, боевик, приключения",
+    genre: "фантастика, фэнтези, боевик, приключения",
     about: "",
     rating: "IMDB 8.6",
   ),
@@ -301,18 +301,54 @@ List<MovieModel> serialy = [
 ];
 
 List<CategoryModel> categories = [
-  CategoryModel(categoryIcon: Assets.icons.documentary, categoryName: "Биографии", categoryMovieCount: 1334),
-  CategoryModel(categoryIcon: Assets.icons.action, categoryName: "Боевики", categoryMovieCount: 44534),
-  CategoryModel(categoryIcon: Assets.icons.filmNoir, categoryName: "Детективы", categoryMovieCount: 44534),
-  CategoryModel(categoryIcon: Assets.icons.drama, categoryName: "Драмы", categoryMovieCount: 44534),
-  CategoryModel(categoryIcon: Assets.icons.comedy, categoryName: "Комедии", categoryMovieCount: 1334),
-  CategoryModel(categoryIcon: Assets.icons.crime, categoryName: "Криминалы", categoryMovieCount: 44534),
-  CategoryModel(categoryIcon: Assets.icons.romantic, categoryName: "Мелодрамы", categoryMovieCount: 44534),
-  CategoryModel(categoryIcon: Assets.icons.musical, categoryName: "Мюзиклы", categoryMovieCount: 44534),
-  CategoryModel(categoryIcon: Assets.icons.sport, categoryName: "Спорт", categoryMovieCount: 500),
-  CategoryModel(categoryIcon: Assets.icons.fantasy, categoryName: "Фантастики", categoryMovieCount: 1334),
-  CategoryModel(categoryIcon: Assets.icons.horror, categoryName: "Триллеры", categoryMovieCount: 44534),
-  CategoryModel(categoryIcon: Assets.icons.thriller, categoryName: "Ужасы", categoryMovieCount: 44534),
+  CategoryModel(
+      categoryIcon: Assets.icons.documentary,
+      categoryName: "Биографии",
+      categoryMovieCount: 1334),
+  CategoryModel(
+      categoryIcon: Assets.icons.action,
+      categoryName: "Боевики",
+      categoryMovieCount: 44534),
+  CategoryModel(
+      categoryIcon: Assets.icons.filmNoir,
+      categoryName: "Детективы",
+      categoryMovieCount: 44534),
+  CategoryModel(
+      categoryIcon: Assets.icons.drama,
+      categoryName: "Драмы",
+      categoryMovieCount: 44534),
+  CategoryModel(
+      categoryIcon: Assets.icons.comedy,
+      categoryName: "Комедии",
+      categoryMovieCount: 1334),
+  CategoryModel(
+      categoryIcon: Assets.icons.crime,
+      categoryName: "Криминалы",
+      categoryMovieCount: 44534),
+  CategoryModel(
+      categoryIcon: Assets.icons.romantic,
+      categoryName: "Мелодрамы",
+      categoryMovieCount: 44534),
+  CategoryModel(
+      categoryIcon: Assets.icons.musical,
+      categoryName: "Мюзиклы",
+      categoryMovieCount: 44534),
+  CategoryModel(
+      categoryIcon: Assets.icons.sport,
+      categoryName: "Спорт",
+      categoryMovieCount: 500),
+  CategoryModel(
+      categoryIcon: Assets.icons.fantasy,
+      categoryName: "Фантастики",
+      categoryMovieCount: 1334),
+  CategoryModel(
+      categoryIcon: Assets.icons.horror,
+      categoryName: "Триллеры",
+      categoryMovieCount: 44534),
+  CategoryModel(
+      categoryIcon: Assets.icons.thriller,
+      categoryName: "Ужасы",
+      categoryMovieCount: 44534),
 ];
 
 List<String> janrs = [
@@ -334,8 +370,6 @@ List<String> janrs = [
   'Биография',
   'Мистика'
 ];
-
-
 
 List<MovieModel> englishMovies = [
   MovieModel(

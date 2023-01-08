@@ -30,7 +30,7 @@ class MenuTextButton extends StatelessWidget {
       ),
       label: Text(
         title,
-        style: AppTextStyles.body16w5.copyWith(
+        style: AppTextStyles.body20w5 .copyWith(
             color: isSelected
                 ? AppColors.selectedColor
                 : AppColors.baseLight.shade100),

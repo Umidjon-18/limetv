@@ -14,6 +14,7 @@ import '../../../config/constants/assets.dart';
 
 class SignCodePage extends StatefulWidget {
   const SignCodePage({super.key, this.number});
+
   final String? number;
 
   @override
