@@ -1,8 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
+import 'package:limetv/config/constants/assets.dart';
 import 'package:limetv/config/constants/local_data.dart';
 import 'package:limetv/presentation/components/footer_component.dart';
 
@@ -18,6 +20,8 @@ class MyPage extends StatefulWidget {
 class _MyPageState extends State<MyPage> {
   ValueNotifier<int> currentIndex = ValueNotifier<int>(0);
   ValueNotifier<int> currentRecommendIndex = ValueNotifier<int>(0);
+  ScrollController controller = ScrollController();
+  ScrollController resumeVideoController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +29,6 @@ class _MyPageState extends State<MyPage> {
         backgroundColor: AppColors.backgroundColor,
         body: CustomScrollView(
           slivers: <Widget>[
-            // SliverAppBar(
-            //   pinned: false,
-            //   snap: false,
-            //   floating: true,
-            //   expandedHeight: 129.h,
-            //   flexibleSpace: const WebAppBar(),
-            // ),
             SliverToBoxAdapter(
               child: GenreLabel(
                 onTap: () {},
@@ -46,35 +43,29 @@ class _MyPageState extends State<MyPage> {
                   children: [
                     ListView.builder(
                       shrinkWrap: true,
+                      controller: controller,
                       itemCount: continueWatchingMovies.length,
                       scrollDirection: Axis.horizontal,
                       padding: EdgeInsets.only(left: 72.w),
                       itemBuilder: (context, index) {
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              width: 463.w,
-                              height: 277.h,
-                              margin:
-                                  EdgeInsets.only(right: 27.w, bottom: 22.h),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15.r),
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                      continueWatchingMovies[index].bgImage),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
+                        return Container(
+                          width: 463.w,
+                          height: 277.h,
+                          margin: EdgeInsets.only(right: 27.w, bottom: 22.h),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15.r),
+                            image: DecorationImage(
+                              image: AssetImage(
+                                  continueWatchingMovies[index].bgImage),
+                              fit: BoxFit.cover,
                             ),
-                          ],
+                          ),
                         );
                       },
                     ),
-                    const Align(
-                      alignment: Alignment.topRight,
-                      child: ScrollVideosButton(),
-                    )
+                    Positioned(
+                        right: 0,
+                        child: ScrollVideosButton(controller: controller)),
                   ],
                 ),
               ),
@@ -93,6 +84,7 @@ class _MyPageState extends State<MyPage> {
                   children: [
                     ListView.builder(
                       shrinkWrap: true,
+                      controller: resumeVideoController,
                       itemCount: continueWatchingMovies.length,
                       scrollDirection: Axis.horizontal,
                       padding: EdgeInsets.only(left: 72.w),
@@ -120,15 +112,16 @@ class _MyPageState extends State<MyPage> {
                         );
                       },
                     ),
-                    const Align(
-                      alignment: Alignment.topRight,
-                      child: ScrollVideosButton(),
+                    Positioned(
+                      right: 0,
+                      child: ScrollVideosButton(
+                        controller: resumeVideoController,
+                      ),
                     )
                   ],
                 ),
               ),
             ),
-
             SliverToBoxAdapter(
               child: Padding(
                 padding: EdgeInsets.only(top: 69.h),
@@ -141,26 +134,42 @@ class _MyPageState extends State<MyPage> {
 }
 
 class ScrollVideosButton extends StatelessWidget {
-  const ScrollVideosButton({
-    Key? key,
-  }) : super(key: key);
+  const ScrollVideosButton({Key? key, required this.controller})
+      : super(key: key);
+  final ScrollController controller;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(right: 93.w),
-      alignment: Alignment.centerRight,
+      padding: EdgeInsets.only(right: 72.w,top: 145.h,bottom: 145.h),
       height: 331.h,
       width: 414.w,
+      alignment: Alignment.centerRight,
       decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [
-        const Color(0xff060A12).withOpacity(0.345),
-        const Color.fromARGB(0, 6, 10, 18).withOpacity(0.9665)
-      ])),
-      child: const Icon(
-        Icons.arrow_right_sharp,
-        color: AppColors.selectedColor,
-        size: 50,
+        gradient: LinearGradient(
+          colors: [
+            const Color(0xff060A12).withOpacity(0),
+            const Color(0xff060A12),
+          ],
+        ),
+      ),
+      child: Positioned(
+        // right: 52.w,
+        // top: 106.5.h,
+        // bottom: 106.5.h,
+        child: GestureDetector(
+          onTap: () {
+            controller.animateTo(controller.position.pixels + 500.w,
+                duration: const Duration(seconds: 1),
+                curve: Curves.fastOutSlowIn);
+          },
+          child: SvgPicture.asset(
+            Assets.icons.play,
+            color: AppColors.selectedColor.withOpacity(0.6),
+            height: 64.h,
+            width: 64.w,
+          ),
+        ),
       ),
     );
   }

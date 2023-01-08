@@ -6,7 +6,7 @@ import 'package:limetv/config/constants/assets.dart';
 import 'package:limetv/presentation/pages/filter_page/filter_page.dart';
 import 'package:limetv/presentation/pages/landing_page/landing_page.dart';
 import 'package:limetv/presentation/pages/main_page/widgets/menu_button.dart';
-import 'package:limetv/presentation/pages/my_page/my_page.dart';
+import 'package:limetv/presentation/pages/my_page/favorite_page.dart';
 import 'package:limetv/presentation/pages/search_page.dart';
 import 'package:limetv/presentation/pages/settings_page/settings_page.dart';
 import 'package:limetv/presentation/pages/tv_page/tv_page.dart';
