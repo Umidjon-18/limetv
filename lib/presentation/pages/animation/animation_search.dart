@@ -18,7 +18,7 @@ class AnimationSearch extends StatefulWidget {
 
 class _AnimationSearchState extends State<AnimationSearch> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  int toggle = 0;  
+  int toggle = 0;
 
   @override
   void initState() {
@@ -53,7 +53,7 @@ class _AnimationSearchState extends State<AnimationSearch> with SingleTickerProv
                 curve: Curves.easeInOut,
                 alignment: Alignment.centerLeft,
                 decoration: BoxDecoration(
-                  color: Colors.transparent,
+                  // color: Colors.blue,
                   borderRadius: BorderRadius.circular(32.r),
                   border: toggle == 1
                       ? Border.all(
@@ -66,6 +66,7 @@ class _AnimationSearchState extends State<AnimationSearch> with SingleTickerProv
                   children: [
                     toggle == 1
                         ? AnimatedPositioned(
+                            right: 80.h,
                             left: 25.h,
                             curve: Curves.easeInOut,
                             duration: const Duration(
@@ -102,11 +103,12 @@ class _AnimationSearchState extends State<AnimationSearch> with SingleTickerProv
                           )
                         : const SizedBox.shrink(),
                     Align(
-                      alignment: toggle == 1 ? Alignment.centerRight : Alignment.center,
+                      alignment: Alignment.centerRight,
                       child: Padding(
-                        padding: toggle == 0 ? EdgeInsets.zero : EdgeInsets.only(right: 30.h),
+                        padding: EdgeInsets.only(right: 30.h),
                         child: InkWell(
                           borderRadius: BorderRadius.circular(32.r),
+                          overlayColor: MaterialStateProperty.all(Colors.transparent),
                           onTap: () {
                             setState(() {
                               if (toggle == 0) {
