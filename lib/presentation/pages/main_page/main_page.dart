@@ -7,7 +7,7 @@ import 'package:limetv/presentation/pages/filter_page/filter_page.dart';
 import 'package:limetv/presentation/pages/landing_page/landing_page.dart';
 import 'package:limetv/presentation/pages/main_page/widgets/menu_button.dart';
 import 'package:limetv/presentation/pages/my_page/my_page.dart';
-import 'package:limetv/presentation/pages/search_page.dart';
+import 'package:limetv/presentation/pages/search_page/search_page.dart';
 import 'package:limetv/presentation/pages/settings_page/settings_page.dart';
 import 'package:limetv/presentation/pages/tv_page/tv_page.dart';
 
@@ -100,8 +100,7 @@ class _MainPageState extends State<MainPage> {
                       SizedBox(width: 40.w),
                       IconButton(
                         onPressed: () {},
-                        icon: SvgPicture.asset(Assets.icons.search,
-                            width: 20.h, height: 20.h),
+                        icon: SvgPicture.asset(Assets.icons.search, width: 20.h, height: 20.h),
                       ),
                     ],
                   ),
@@ -118,8 +117,7 @@ class _MainPageState extends State<MainPage> {
                     padding: EdgeInsets.all(2.r),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(
-                          width: 2.h, color: AppColors.selectedColor),
+                      border: Border.all(width: 2.h, color: AppColors.selectedColor),
                     ),
                     child: Container(
                       width: 60.w,
