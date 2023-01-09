@@ -30,10 +30,7 @@ class SettingsMenuItem extends StatelessWidget {
           onClick ? SvgPicture.asset(
             Assets.icons.point,
             color: color,
-          ) : SvgPicture.asset(
-            Assets.icons.point,
-            color: Colors.transparent,
-          ) ,
+          ) : SizedBox(width: 6.w),
           Row(
             children: [
               SizedBox(

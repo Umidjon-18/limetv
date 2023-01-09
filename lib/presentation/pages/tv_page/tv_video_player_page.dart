@@ -4,17 +4,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/assets.dart';
-import 'package:limetv/presentation/components/web_appbar.dart';
 
 class TvVideoPlayerPage extends StatefulWidget {
-  TvVideoPlayerPage({
+  const TvVideoPlayerPage({
     super.key,
     required this.channelName,
     this.index,
   });
 
-  String? channelName;
-  int? index;
+ final  String? channelName;
+ final int? index;
 
   @override
   State<TvVideoPlayerPage> createState() => _TvVideoPlayerPageState();
@@ -223,6 +222,8 @@ class _ChannelNameListView extends StatelessWidget {
               channelList,
               width: 91.w,
               height: 43.h,
+              alignment: Alignment.centerLeft,
+              fit: BoxFit.contain,
             ),
             SizedBox(
               width: 30.w,
