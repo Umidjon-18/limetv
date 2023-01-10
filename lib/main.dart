@@ -13,15 +13,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(1728, 1117),
-        splitScreenMode: true,
-        minTextAdapt: true,
-        builder: (context, child) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            // onGenerateRoute: (settings) => Routes.generateRoute(settings),
-            home: AnimationSearch(),
-          );
-        });
+      designSize: const Size(1728, 1117),
+      splitScreenMode: true,
+      minTextAdapt: true,
+      builder: (context, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          // onGenerateRoute: (settings) => Routes.generateRoute(settings),
+          home: AnimationSearch(),
+        );
+      },
+    );
   }
 }

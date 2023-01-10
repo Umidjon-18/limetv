@@ -23,7 +23,7 @@ List<Widget> _pages = [
   const MyPage(),
   const TVPage(),
   const FilterPage(),
-  const SearchPage(),
+  SearchPage(),
   const SettingsPage()
 ];
 

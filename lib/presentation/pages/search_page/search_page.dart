@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:limetv/config/constants/app_colors.dart';
@@ -8,7 +6,10 @@ import 'package:limetv/config/constants/assets.dart';
 import 'package:limetv/presentation/components/genre_label.dart';
 
 class SearchPage extends StatefulWidget {
-  const SearchPage({super.key});
+  SearchPage({super.key, this.toggle, this.animation});
+
+  int? toggle;
+  AnimationController? animation;
 
   @override
   State<SearchPage> createState() => _SearchPageState();
@@ -29,84 +30,79 @@ class _SearchPageState extends State<SearchPage> {
     'Постучись в мою дверь': Assets.images.postuchisMoyuDver,
     'Сердце Пармы': Assets.images.serdseParme,
   };
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                Assets.images.signBg,
-              ),
-              fit: BoxFit.cover,
+    return Expanded(
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              Assets.images.signBg,
             ),
+            fit: BoxFit.cover,
           ),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(
-              sigmaX: 30.0,
-              sigmaY: 30.0,
-            ),
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.only(left: 72.w, right: 73.w, bottom: 69.h, top: 72.h),
-              decoration: const BoxDecoration(),
-              child: Column(
-                children: [
-                  GenreLabel(
-                    onTap: () {},
-                    title: 'Часто ищут',
-                  ),
-                  const SizedBox(
-                    height: 32,
-                  ),
-                  GridView.builder(
-                    shrinkWrap: true,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 28,
-                      crossAxisSpacing: 51.w,
-                      childAspectRatio: 493.4.w / 160.h,
-                    ),
-                    itemCount: movieAndMovieText.length,
-                    itemBuilder: (context, index) {
-                      return SearchWidget(
-                        movieNameText: movieAndMovieText.keys.elementAt(index),
-                        assetsText: movieAndMovieText.values.elementAt(index),
-                      );
-                    },
-                  ),                  
-                  SizedBox(
-                    height: 69.h,
-                  ),
-                  GenreLabel(
-                    onTap: () {},
-                    title: 'Актеры и Режиссёры',
-                  ),
-                  SizedBox(
-                    height: 28.h,
-                  ),
-                  GridView.builder(
-                    shrinkWrap: true,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      mainAxisSpacing: 28,
-                      crossAxisSpacing: 55.w,
-                      childAspectRatio: 10,
-                    ),
-                    itemCount: actorsNameAndDirector.length,
-                    itemBuilder: (context, index) {
-                      return SearchActorAndDirector(
-                        actorName: actorsNameAndDirector.keys.elementAt(index),
-                        actorOrDiretorText: actorsNameAndDirector.values.elementAt(index),
-                      );
-                    },
-                  ),
-                ],
+        ),
+        child: Container(
+          width: double.infinity,
+          padding: EdgeInsets.only(
+            left: 72.w,
+            right: 73.w,
+            bottom: 69.h,
+          ),
+          decoration: const BoxDecoration(),
+          child: Column(
+            children: [
+              GenreLabel(
+                onTap: () {},
+                title: 'Часто ищут',
               ),
-            ),
+              SizedBox(
+                height: 32.h,
+              ),
+              GridView.builder(
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  mainAxisSpacing: 28,
+                  crossAxisSpacing: 51.w,
+                  childAspectRatio: 493.4.w / 160.h,
+                ),
+                itemCount: movieAndMovieText.length,
+                itemBuilder: (context, index) {
+                  return SearchWidget(
+                    movieNameText: movieAndMovieText.keys.elementAt(index),
+                    assetsText: movieAndMovieText.values.elementAt(index),
+                  );
+                },
+              ),
+              SizedBox(
+                height: 69.h,
+              ),
+              GenreLabel(
+                onTap: () {},
+                title: 'Актеры и Режиссёры',
+              ),
+              SizedBox(
+                height: 28.h,
+              ),
+              GridView.builder(
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  mainAxisSpacing: 28,
+                  crossAxisSpacing: 55.w,
+                  childAspectRatio: 10,
+                ),
+                itemCount: actorsNameAndDirector.length,
+                itemBuilder: (context, index) {
+                  return SearchActorAndDirector(
+                    actorName: actorsNameAndDirector.keys.elementAt(index),
+                    actorOrDiretorText: actorsNameAndDirector.values.elementAt(index),
+                  );
+                },
+              ),
+            ],
           ),
         ),
       ),
