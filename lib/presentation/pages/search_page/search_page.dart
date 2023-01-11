@@ -35,75 +35,64 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(
-            Assets.images.signBg,
-          ),
-          fit: BoxFit.cover,
-        ),
+      padding: EdgeInsets.only(
+        left: 72.w,
+        right: 73.w,
+        bottom: 69.h,
       ),
-      child: Container(
-        width: double.infinity,
-        padding: EdgeInsets.only(
-          left: 72.w,
-          right: 73.w,
-          bottom: 69.h,
-        ),
-        decoration: const BoxDecoration(),
-        child: Column(
-          children: [
-            GenreLabel(
-              onTap: () {},
-              title: 'Часто ищут',
+      decoration: const BoxDecoration(),
+      child: Column(
+        children: [
+          GenreLabel(
+            onTap: () {},
+            title: 'Часто ищут',
+          ),
+          SizedBox(
+            height: 32.h,
+          ),
+          GridView.builder(
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              mainAxisSpacing: 28,
+              crossAxisSpacing: 51.w,
+              childAspectRatio: 493.4.w / 160.h,
             ),
-            SizedBox(
-              height: 32.h,
+            itemCount: movieAndMovieText.length,
+            itemBuilder: (context, index) {
+              return SearchWidget(
+                movieNameText: movieAndMovieText.keys.elementAt(index),
+                assetsText: movieAndMovieText.values.elementAt(index),
+              );
+            },
+          ),
+          SizedBox(
+            height: 69.h,
+          ),
+          GenreLabel(
+            onTap: () {},
+            title: 'Актеры и Режиссёры',
+          ),
+          SizedBox(
+            height: 28.h,
+          ),
+          GridView.builder(
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              mainAxisSpacing: 28,
+              crossAxisSpacing: 55.w,
+              childAspectRatio: 10,
             ),
-            GridView.builder(
-              shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                mainAxisSpacing: 28,
-                crossAxisSpacing: 51.w,
-                childAspectRatio: 493.4.w / 160.h,
-              ),
-              itemCount: movieAndMovieText.length,
-              itemBuilder: (context, index) {
-                return SearchWidget(
-                  movieNameText: movieAndMovieText.keys.elementAt(index),
-                  assetsText: movieAndMovieText.values.elementAt(index),
-                );
-              },
-            ),
-            SizedBox(
-              height: 69.h,
-            ),
-            GenreLabel(
-              onTap: () {},
-              title: 'Актеры и Режиссёры',
-            ),
-            SizedBox(
-              height: 28.h,
-            ),
-            GridView.builder(
-              shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                mainAxisSpacing: 28,
-                crossAxisSpacing: 55.w,
-                childAspectRatio: 10,
-              ),
-              itemCount: actorsNameAndDirector.length,
-              itemBuilder: (context, index) {
-                return SearchActorAndDirector(
-                  actorName: actorsNameAndDirector.keys.elementAt(index),
-                  actorOrDiretorText: actorsNameAndDirector.values.elementAt(index),
-                );
-              },
-            ),
-          ],
-        ),
+            itemCount: actorsNameAndDirector.length,
+            itemBuilder: (context, index) {
+              return SearchActorAndDirector(
+                actorName: actorsNameAndDirector.keys.elementAt(index),
+                actorOrDiretorText: actorsNameAndDirector.values.elementAt(index),
+              );
+            },
+          ),
+        ],
       ),
     );
   }

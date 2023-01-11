@@ -10,6 +10,7 @@ import 'package:limetv/presentation/pages/my_page/my_page.dart';
 import 'package:limetv/presentation/pages/search_page/search_page.dart';
 import 'package:limetv/presentation/pages/settings_page/settings_page.dart';
 import 'package:limetv/presentation/pages/tv_page/tv_page.dart';
+import 'package:limetv/presentation/routes/routes.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -56,10 +57,11 @@ class _MainPageState extends State<MainPage> {
               children: [
                 //#logo picture
                 GestureDetector(
-                    onTap: () {
-                      select(0);
-                    },
-                    child: SvgPicture.asset(Assets.images.logo)),
+                  onTap: () {
+                    select(0);
+                  },
+                  child: SvgPicture.asset(Assets.images.logo),
+                ),
                 //#menu types
                 Flexible(
                   fit: FlexFit.tight,
@@ -99,7 +101,9 @@ class _MainPageState extends State<MainPage> {
                           title: "Фильтрация"),
                       SizedBox(width: 40.w),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, Routes.animationSearch);
+                        },
                         icon: SvgPicture.asset(
                           Assets.icons.search,
                           color: Colors.white,
