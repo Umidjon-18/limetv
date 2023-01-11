@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          // onGenerateRoute: (settings) => Routes.generateRoute(settings),
-          home: AnimationSearch(),
+          onGenerateRoute: (settings) => Routes.generateRoute(settings),
+          // home: AnimationSearch(),
         );
       },
     );

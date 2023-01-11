@@ -100,7 +100,12 @@ class _MainPageState extends State<MainPage> {
                       SizedBox(width: 40.w),
                       IconButton(
                         onPressed: () {},
-                        icon: SvgPicture.asset(Assets.icons.search, width: 20.h, height: 20.h),
+                        icon: SvgPicture.asset(
+                          Assets.icons.search,
+                          color: Colors.white,
+                          width: 20.h,
+                          height: 20.h,
+                        ),
                       ),
                     ],
                   ),
