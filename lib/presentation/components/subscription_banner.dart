@@ -1,4 +1,5 @@
 // ignore: must_be_immutable
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -18,6 +19,7 @@ class SubscriptionBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size.width / 8;
     return Container(
       width: 1584.w,
       height: 306.h,
@@ -37,7 +39,7 @@ class SubscriptionBanner extends StatelessWidget {
       ),
       child: Container(
         height: 304.h,
-        width: double.maxFinite,
+        // width: double.maxFinite,
         padding: EdgeInsets.only(left: 61.w),
         decoration: BoxDecoration(
           color: AppColors.appBarBgColor,
@@ -49,32 +51,57 @@ class SubscriptionBanner extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(r"Месяц за $10, год за полцены", style: AppTextStyles.head36w5),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width / 3.5,
+                  child: AutoSizeText(
+                    r"Месяц за $10, год за полцены",
+                    style: AppTextStyles.head36w5,
+                    minFontSize: 6,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                  ),
+                ),
                 SizedBox(height: 24.h),
-                Text(r"Проводём 2023 вместе ?", style: AppTextStyles.body22w5.copyWith(color: AppColors.selectedColor)),
+                SizedBox(
+                    width: MediaQuery.of(context).size.width / 5,
+                    child: AutoSizeText(
+                      r"Проводём 2023 вместе ?",
+                      style: AppTextStyles.body22w5
+                          .copyWith(color: AppColors.selectedColor),
+                      maxLines: 1,
+                      minFontSize: 6,
+                      overflow: TextOverflow.ellipsis,
+                    )),
                 Container(
                   width: 218.w,
                   height: 61.h,
                   alignment: Alignment.center,
                   margin: EdgeInsets.only(top: 53.h),
+                  padding: EdgeInsets.symmetric(horizontal: 55.w),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30.5.r),
                     color: AppColors.selectedColor,
                   ),
-                  child: Text("Конечно!", style: AppTextStyles.body22w5),
+                  child: AutoSizeText(
+                    "Конечно!",
+                    style: AppTextStyles.body22w5,
+                    maxLines: 1,
+                    minFontSize: 6,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
               ],
             ),
             Flexible(
               fit: FlexFit.tight,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   ClipPath(
                     clipper: MyCustomClipper(),
                     child: Container(
-                      width: 170,
-                      height: 300,
+                      width: size,
+                      height: 300.h,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(subscriptionMovies[0].bgImage),
@@ -88,8 +115,8 @@ class SubscriptionBanner extends StatelessWidget {
                     child: ClipPath(
                       clipper: MyCustomClipper(),
                       child: Container(
-                        width: 160,
-                        height: 300,
+                        width: size,
+                        height: 300.h,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(subscriptionMovies[1].bgImage),
@@ -104,8 +131,8 @@ class SubscriptionBanner extends StatelessWidget {
                     child: ClipPath(
                       clipper: MyCustomClipper(),
                       child: Container(
-                        width: 160,
-                        height: 300,
+                        width: size,
+                        height: 300.h,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(subscriptionMovies[2].bgImage),
@@ -120,8 +147,10 @@ class SubscriptionBanner extends StatelessWidget {
                     child: ClipPath(
                       clipper: MyCustomClipper(),
                       child: Container(
-                        width: 200,
-                        height: 300,
+                        constraints:
+                            BoxConstraints(maxWidth: size, minWidth: size / 2),
+                        width: size,
+                        height: 300.h,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(subscriptionMovies[3].bgImage),

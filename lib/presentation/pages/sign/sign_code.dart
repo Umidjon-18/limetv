@@ -14,6 +14,7 @@ import '../../../config/constants/assets.dart';
 
 class SignCodePage extends StatefulWidget {
   const SignCodePage({super.key, this.number});
+
   final String? number;
 
   @override
@@ -49,7 +50,7 @@ class _SignCodePageState extends State<SignCodePage> {
                   borderRadius: BorderRadius.circular(33.r),
                 ),
                 child: Container(
-                  height: 550.h,
+                  height: 584.h,
                   width: 525.w,
                   padding: EdgeInsets.only(top: 71.h, bottom: 93.h),
                   decoration: BoxDecoration(
@@ -195,7 +196,7 @@ class _TimeTextState extends State<TimeText> {
         style: AppTextStyles.body20w4,
         children: [
           TextSpan(
-            text: '00:$time',
+            text: '00:${time<10?0:''}$time',
             style: AppTextStyles.body20w4.copyWith(
               color: AppColors.redText,
             ),

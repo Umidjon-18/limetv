@@ -30,7 +30,7 @@ class GenreLabel extends StatelessWidget {
             SizedBox(width: 8.w),
             SvgPicture.asset(
               Assets.icons.arrowRight,
-              color: AppColors.baseLight.shade100,
+              color: AppColors.baseLight.shade100,width: 24.w,height: 24.h,
             ),
           ],
         ),

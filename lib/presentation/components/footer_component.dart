@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -46,9 +47,16 @@ class FooterComponent extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    bottomAboutText,
-                    style: AppTextStyles.body16w4,
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxWidth: MediaQuery.of(context).size.width*.7
+                    ),
+                    child: AutoSizeText(
+                      bottomAboutText,
+                      style: AppTextStyles.body16w4,maxLines: 5,
+                      minFontSize: 10,
+
+                    ),
                   ),
                   Row(
                     children: [

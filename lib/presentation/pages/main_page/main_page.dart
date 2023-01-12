@@ -6,6 +6,7 @@ import 'package:limetv/config/constants/assets.dart';
 import 'package:limetv/presentation/pages/filter_page/filter_page.dart';
 import 'package:limetv/presentation/pages/landing_page/landing_page.dart';
 import 'package:limetv/presentation/pages/main_page/widgets/menu_button.dart';
+
 import 'package:limetv/presentation/pages/my_page/my_page.dart';
 import 'package:limetv/presentation/pages/search_page/search_page.dart';
 import 'package:limetv/presentation/pages/settings_page/settings_page.dart';
@@ -101,6 +102,7 @@ class _MainPageState extends State<MainPage> {
                           title: "Фильтрация"),
                       SizedBox(width: 40.w),
                       IconButton(
+
                         onPressed: () {
                           Navigator.pushNamed(context, Routes.animationSearch);
                         },
@@ -110,6 +112,11 @@ class _MainPageState extends State<MainPage> {
                           width: 20.h,
                           height: 20.h,
                         ),
+
+  //                      onPressed: () {},
+  //                      icon: SvgPicture.asset(Assets.icons.search,
+  //                            width: 24.w, height: 24.h),
+
                       ),
                     ],
                   ),

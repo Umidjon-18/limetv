@@ -1,6 +1,6 @@
 import 'package:limetv/presentation/pages/animation/animation_search.dart';
 import 'package:limetv/presentation/pages/main_page/main_page.dart';
-import 'package:limetv/presentation/pages/my_page/my_page.dart';
+import 'package:limetv/presentation/pages/my_page/favorite_page.dart';
 import 'package:limetv/presentation/pages/tv_page/tv_page.dart';
 
 import '../pages/landing_page/landing_page.dart';

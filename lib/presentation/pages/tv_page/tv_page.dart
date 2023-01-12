@@ -5,7 +5,7 @@ import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/assets.dart';
 import 'package:limetv/presentation/components/footer_component.dart';
 import 'package:limetv/presentation/components/genre_label.dart';
-import 'package:limetv/presentation/components/web_appbar.dart';
+import 'package:limetv/presentation/pages/tv_page/tv_video_player_page.dart';
 import 'package:limetv/presentation/routes/routes.dart';
 
 class TVPage extends StatefulWidget {
@@ -19,6 +19,7 @@ class _TVPageState extends State<TVPage> {
   var sized = SizedBox(
     width: 20.w,
   );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,9 +123,12 @@ class _TVPageState extends State<TVPage> {
 
 // ignore: must_be_immutable
 class ChannelGridView extends StatelessWidget {
-  ChannelGridView({super.key, required this.text, required this.channelTextList});
+  ChannelGridView(
+      {super.key, required this.text, required this.channelTextList});
+
   String text;
   List<String> channelTextList;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -163,13 +167,11 @@ class ChannelGridView extends StatelessWidget {
 }
 
 class ChannelName extends StatelessWidget {
-  ChannelName({
-    Key? key,
-    required this.text,
-    required this.index,
-  }) : super(key: key);
+  ChannelName({Key? key, required this.text, required this.index})
+      : super(key: key);
   String text;
   int index;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -185,16 +187,16 @@ class ChannelName extends StatelessWidget {
       },
       borderRadius: BorderRadius.circular(15.r),
       child: Container(
-        width: 240.h,
+        width: 240.w,
         height: 239.h,
-        alignment: Alignment.center,
         decoration: BoxDecoration(
           color: const Color(0xff0A101C),
           borderRadius: BorderRadius.circular(15.r),
         ),
+        padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Image.asset(
           text,
-          alignment: Alignment.center,
+          fit: BoxFit.contain,
           width: 200.h,
           height: 200.h,
         ),
