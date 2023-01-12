@@ -7,9 +7,10 @@ import 'package:limetv/presentation/pages/filter_page/filter_page.dart';
 import 'package:limetv/presentation/pages/landing_page/landing_page.dart';
 import 'package:limetv/presentation/pages/main_page/widgets/menu_button.dart';
 import 'package:limetv/presentation/pages/my_page/favorite_page.dart';
-import 'package:limetv/presentation/pages/search_page.dart';
+import 'package:limetv/presentation/pages/search_page/search_page.dart';
 import 'package:limetv/presentation/pages/settings_page/settings_page.dart';
 import 'package:limetv/presentation/pages/tv_page/tv_page.dart';
+import 'package:limetv/presentation/routes/routes.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -99,9 +100,9 @@ class _MainPageState extends State<MainPage> {
                           title: "Фильтрация"),
                       SizedBox(width: 40.w),
                       IconButton(
-                        onPressed: () {},
-                        icon: SvgPicture.asset(Assets.icons.search,
-                            width: 24.w, height: 24.h),
+                        onPressed: () {                          
+                        },
+                        icon: SvgPicture.asset(Assets.icons.search, width: 24.w, height: 24.h),
                       ),
                     ],
                   ),
@@ -118,8 +119,7 @@ class _MainPageState extends State<MainPage> {
                     padding: EdgeInsets.all(2.r),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(
-                          width: 2.h, color: AppColors.selectedColor),
+                      border: Border.all(width: 2.h, color: AppColors.selectedColor),
                     ),
                     child: Container(
                       width: 60.w,
