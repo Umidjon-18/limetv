@@ -24,7 +24,7 @@ List<Widget> _pages = [
   const MyPage(),
   const TVPage(),
   const FilterPage(),
-  const SearchPage(),
+  SearchPage(),
   const SettingsPage()
 ];
 
@@ -57,10 +57,11 @@ class _MainPageState extends State<MainPage> {
               children: [
                 //#logo picture
                 GestureDetector(
-                    onTap: () {
-                      select(0);
-                    },
-                    child: SvgPicture.asset(Assets.images.logo)),
+                  onTap: () {
+                    select(0);
+                  },
+                  child: SvgPicture.asset(Assets.images.logo),
+                ),
                 //#menu types
                 Flexible(
                   fit: FlexFit.tight,
@@ -99,10 +100,22 @@ class _MainPageState extends State<MainPage> {
                           isSelected: indexes[3],
                           title: "Фильтрация"),
                       SizedBox(width: 40.w),
-                      IconButton(
-                        onPressed: () {                          
+                      IconButton(                        
+                        onPressed: () {
+                          Navigator.pushNamed(context, Routes.animationSearch);
                         },
-                        icon: SvgPicture.asset(Assets.icons.search, width: 24.w, height: 24.h),
+                        icon: SvgPicture.asset(
+                          Assets.icons.search,
+                          color: Colors.white,
+                          width: 24.h,
+                          height: 24.h,
+                        ),
+
+  //                      onPressed: () {},
+  //                      icon: SvgPicture.asset(Assets.icons.search,
+  //                            width: 24.w, height: 24.h),
+
+
                       ),
                     ],
                   ),

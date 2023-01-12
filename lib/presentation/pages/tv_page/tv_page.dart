@@ -66,12 +66,16 @@ class _TVPageState extends State<TVPage> {
                     contentPadding: EdgeInsets.only(left: 30.w),
                     fillColor: const Color(0xff2F80ED),
                     suffixIcon: Padding(
-                      padding: EdgeInsets.only(right: 30.w),
-                      child: Image.asset(
-                        Assets.icons.search1,
-                        color: Colors.white,
-                        width: 20.h,
-                        height: 20.h,
+                      padding: EdgeInsets.only(right: 30.w, top: 5.h, bottom: 5.h),
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(10.r),
+                        onTap: () {},
+                        child: Image.asset(
+                          Assets.icons.search1,
+                          color: Colors.white,
+                          width: 20.h,
+                          height: 20.h,
+                        ),
                       ),
                     ),
                   ),
