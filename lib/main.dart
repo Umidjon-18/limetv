@@ -6,7 +6,6 @@ import 'package:limetv/presentation/pages/main_page/main_page.dart';
 import 'package:limetv/presentation/pages/search_page/search_page.dart';
 import 'package:limetv/presentation/pages/settings_page/widget/settings_main.dart';
 
-
 import 'presentation/routes/routes.dart';
 
 void main() {
@@ -19,19 +18,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-
-//      designSize: const Size(1728, 1117),
-//      splitScreenMode: true,
-//      minTextAdapt: true,
-//      builder: (context, child) {
-//        return MaterialApp(
-    //      debugShowCheckedModeBanner: false,
-    //      onGenerateRoute: (settings) => Routes.generateRoute(settings),
-         // home: AnimationSearch(),
-      //  );
-   //   },
- //   );
-
         designSize: const Size(1728, 1117),
         splitScreenMode: true,
         minTextAdapt: true,
@@ -42,6 +28,5 @@ class MyApp extends StatelessWidget {
             // home: MainPage(),
           );
         });
-
   }
 }

@@ -100,7 +100,7 @@ class _MainPageState extends State<MainPage> {
                           isSelected: indexes[3],
                           title: "Фильтрация"),
                       SizedBox(width: 40.w),
-                      IconButton(                        
+                      IconButton(
                         onPressed: () {
                           Navigator.pushNamed(context, Routes.animationSearch);
                         },
@@ -110,12 +110,6 @@ class _MainPageState extends State<MainPage> {
                           width: 24.h,
                           height: 24.h,
                         ),
-
-  //                      onPressed: () {},
-  //                      icon: SvgPicture.asset(Assets.icons.search,
-  //                            width: 24.w, height: 24.h),
-
-
                       ),
                     ],
                   ),
