@@ -1,3 +1,4 @@
+import 'package:limetv/presentation/pages/animation/animation_search.dart';
 import 'package:limetv/presentation/pages/main_page/main_page.dart';
 import 'package:limetv/presentation/pages/my_page/favorite_page.dart';
 import 'package:limetv/presentation/pages/tv_page/tv_page.dart';
@@ -23,11 +24,11 @@ class Routes {
   static const settingsPage = '/settingsPage';
   static const tvVideoPlayerPage = '/tvVideoPlayerPage';
   static const myPage = '/myPage';
+  static const animationSearch = '/animationSearch';
 
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     try {
-      final Map<String, dynamic>? args =
-          routeSettings.arguments as Map<String, dynamic>?;
+      final Map<String, dynamic>? args = routeSettings.arguments as Map<String, dynamic>?;
       args ?? <String, dynamic>{};
       switch (routeSettings.name) {
         case filterPage:
@@ -66,6 +67,12 @@ class Routes {
           return MaterialPageRoute(
             builder: (context) {
               return const SettingsPage();
+            },
+          );
+        case animationSearch:
+          return MaterialPageRoute(
+            builder: (context) {
+              return const AnimationSearch();
             },
           );
 
