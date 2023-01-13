@@ -39,10 +39,13 @@ class _FilterPageState extends State<FilterPage> {
             child: Container(
               padding: EdgeInsets.all(79.r),
               decoration: BoxDecoration(
-                  color: AppColors.appBarBgColor,
-                  border: Border(
-                      bottom: BorderSide(
-                          color: AppColors.selectedColor.withOpacity(.2)))),
+                color: AppColors.appBarBgColor,
+                border: Border(
+                  bottom: BorderSide(
+                    color: AppColors.selectedColor.withOpacity(.2),
+                  ),
+                ),
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -146,14 +149,11 @@ class _FilterPageState extends State<FilterPage> {
                                     selectedLanguage = index;
                                     if (selectedLanguage == index) {
                                       setState(() {
-                                        languageBools[index] =
-                                            !languageBools[index];
+                                        languageBools[index] = !languageBools[index];
                                       });
                                     }
                                   },
-                                  child: FilterButton(
-                                      text: languagesList[index],
-                                      checked: languageBools[index]),
+                                  child: FilterButton(text: languagesList[index], checked: languageBools[index]),
                                 ),
                               ),
                             ),
@@ -169,19 +169,22 @@ class _FilterPageState extends State<FilterPage> {
                           countryButton = !countryButton;
                         });
                       },
-                      child: RubricsButton(
-                          selected: countryButton, name: 'Страны'))
+                      child: RubricsButton(selected: countryButton, name: 'Страны'))
                 ],
               ),
             ),
           ),
           SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.all(79.r),
-              child: Column(children: const [
-                FilterResultTextWidget(),
-                FilterResultVideosWidget()
-              ]),
+            child: Expanded(
+              child: Padding(
+                padding: EdgeInsets.all(72.h),
+                child: Column(
+                  children: const [
+                    FilterResultTextWidget(),
+                    FilterResultVideosWidget(),
+                  ],
+                ),
+              ),
             ),
           ),
           SliverToBoxAdapter(
