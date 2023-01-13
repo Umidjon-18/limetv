@@ -139,7 +139,7 @@ class _MainPageState extends State<MainPage> {
                       child: SvgPicture.asset(
                         Assets.icons.person,
                       ),
-                    ),
+                    ),  
                   ),
                 ),
               ],

@@ -8,7 +8,9 @@ import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_decorations.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/assets.dart';
+import 'package:limetv/presentation/pages/landing_page/landing_page.dart';
 import 'package:limetv/presentation/pages/search_page/search_page.dart';
+import 'package:limetv/presentation/pages/settings_page/settings_page.dart';
 
 class AnimationSearch extends StatefulWidget {
   const AnimationSearch({super.key});
@@ -17,9 +19,11 @@ class AnimationSearch extends StatefulWidget {
   State<AnimationSearch> createState() => _AnimationSearchState();
 }
 
-class _AnimationSearchState extends State<AnimationSearch> with SingleTickerProviderStateMixin {
+class _AnimationSearchState extends State<AnimationSearch> with TickerProviderStateMixin {
   late AnimationController _controller;
   int toggle = 0;
+
+  final List<Widget> _pages = [];
 
   late final Animation<Offset> _offsetAnimation = Tween<Offset>(
     begin: const Offset(-1, 0),
@@ -28,6 +32,21 @@ class _AnimationSearchState extends State<AnimationSearch> with SingleTickerProv
     parent: _controller,
     curve: Curves.easeInOut,
   ));
+
+  PageController controller = PageController();
+
+  List<bool> indexes = [true, false];
+
+  int _selectedPage = 0;
+
+  void select(int index) {
+    indexes.clear();
+    indexes = List.generate(2, (i) => i == index);
+    setState(() {
+      _selectedPage = index;
+    });
+    controller.jumpToPage(_selectedPage);
+  }
 
   @override
   void initState() {
@@ -54,8 +73,19 @@ class _AnimationSearchState extends State<AnimationSearch> with SingleTickerProv
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SvgPicture.asset(
-                Assets.images.logo,
+              GestureDetector(
+                onTap: () {
+                  select(0);
+                  setState(() {
+                    if (toggle == 1) {
+                      toggle = 0;
+                      _controller.reverse();
+                    }
+                  });
+                },
+                child: SvgPicture.asset(
+                  Assets.images.logo,
+                ),
               ),
               Flexible(
                 fit: FlexFit.tight,
@@ -140,6 +170,7 @@ class _AnimationSearchState extends State<AnimationSearch> with SingleTickerProv
                                         _controller.reverse();
                                       }
                                     });
+                                    select(1);
                                   },
                                   child: AnimatedBuilder(
                                     animation: _controller,
@@ -167,7 +198,15 @@ class _AnimationSearchState extends State<AnimationSearch> with SingleTickerProv
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  select(2);
+                  setState(() {
+                    if (toggle == 1) {
+                      toggle = 0;
+                      _controller.reverse();
+                    }
+                  });
+                },
                 child: Container(
                   width: 64.w,
                   height: 64.h,
@@ -195,19 +234,33 @@ class _AnimationSearchState extends State<AnimationSearch> with SingleTickerProv
           ),
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.start,
+      body: PageView(
+        scrollDirection: Axis.horizontal,
+        physics: const BouncingScrollPhysics(),
+        controller: controller,
+        onPageChanged: (value) {
+          setState(() {
+            _selectedPage = value;
+          });
+        },
         children: [
-          SizedBox(
-            height: 102.h,
+          const SizedBox.shrink(),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 102.h,
+              ),
+              Expanded(
+                child: SlideTransition(
+                  position: _offsetAnimation,
+                  child: SearchPage(),
+                ),
+              ),
+            ],
           ),
-          Expanded(
-            child: SlideTransition(
-              position: _offsetAnimation,
-              child: SearchPage(),
-            ),
-          ),
+          const SettingsPage(),
         ],
       ),
     );
