@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:limetv/presentation/pages/animation/animation_search.dart';
-
-import 'package:limetv/presentation/pages/main_page/main_page.dart';
-import 'package:limetv/presentation/pages/search_page/search_page.dart';
-import 'package:limetv/presentation/pages/settings_page/widget/settings_main.dart';
 
 import 'presentation/routes/routes.dart';
 
