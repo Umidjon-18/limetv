@@ -66,12 +66,16 @@ class _TVPageState extends State<TVPage> {
                     contentPadding: EdgeInsets.only(left: 30.w),
                     fillColor: const Color(0xff2F80ED),
                     suffixIcon: Padding(
-                      padding: EdgeInsets.only(right: 30.w),
-                      child: Image.asset(
-                        Assets.icons.search1,
-                        color: Colors.white,
-                        width: 20.h,
-                        height: 20.h,
+                      padding: EdgeInsets.only(right: 30.w, top: 5.h, bottom: 5.h),
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(10.r),
+                        onTap: () {},
+                        child: Image.asset(
+                          Assets.icons.search1,
+                          color: Colors.white,
+                          width: 20.h,
+                          height: 20.h,
+                        ),
                       ),
                     ),
                   ),
@@ -119,8 +123,7 @@ class _TVPageState extends State<TVPage> {
 
 // ignore: must_be_immutable
 class ChannelGridView extends StatelessWidget {
-  ChannelGridView(
-      {super.key, required this.text, required this.channelTextList});
+  ChannelGridView({super.key, required this.text, required this.channelTextList});
 
   String text;
   List<String> channelTextList;
@@ -129,19 +132,20 @@ class ChannelGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            GenreLabel(
-              onTap: () {},
-              margin: EdgeInsets.zero,
-              title: text,
-            ),
-          ],
+        GenreLabel(
+          onTap: () {},
+          margin: EdgeInsets.zero,
+          title: text,
         ),
         SizedBox(
           height: 32.h,
         ),
+        // SizedBox(
+        //   width: double.infinity,
+        //   child: List.generate(channelTextList.length, (index) {
+        //     return ChannelName(text: channelNameList[index], index: index);
+        //   }),
+        // ),
         GridView.builder(
           shrinkWrap: true,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -163,8 +167,7 @@ class ChannelGridView extends StatelessWidget {
 }
 
 class ChannelName extends StatelessWidget {
-  ChannelName({Key? key, required this.text, required this.index})
-      : super(key: key);
+  ChannelName({Key? key, required this.text, required this.index}) : super(key: key);
   String text;
   int index;
 

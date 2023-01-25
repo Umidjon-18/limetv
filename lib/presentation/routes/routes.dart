@@ -25,11 +25,11 @@ class Routes {
   static const settingsPage = '/settingsPage';
   static const tvVideoPlayerPage = '/tvVideoPlayerPage';
   static const myPage = '/myPage';
+  static const animationSearch = '/animationSearch';
 
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     try {
-      final Map<String, dynamic>? args =
-          routeSettings.arguments as Map<String, dynamic>?;
+      final Map<String, dynamic>? args = routeSettings.arguments as Map<String, dynamic>?;
       args ?? <String, dynamic>{};
       switch (routeSettings.name) {
         case filterPage:
@@ -70,6 +70,12 @@ class Routes {
               return const SettingsPage();
             },
           );
+        // case animationSearch:
+        //   return MaterialPageRoute(
+        //     builder: (context) {
+        //       return const AnimationSearch();
+        //     },
+        //   );
 
         case tvVideoPlayerPage:
           return MaterialPageRoute(
