@@ -4,9 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/assets.dart';
 import 'package:limetv/presentation/mobile_pages/pages/home/home_page.dart';
+import 'package:limetv/presentation/mobile_pages/pages/search_page.dart';
 import 'package:limetv/presentation/pages/filter_page/filter_page.dart';
 import 'package:limetv/presentation/pages/my_page/favorite_page.dart';
-import 'package:limetv/presentation/pages/search_page.dart';
 import 'package:limetv/presentation/pages/settings_page/settings_page.dart';
 import 'package:limetv/presentation/pages/tv_page/tv_page.dart';
 
