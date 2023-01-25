@@ -24,9 +24,12 @@ abstract class AppColors {
   static const Color backgroundColorTv = Color(0xff03060B);  
 
   static const Color selectedColor = Color(0xFF2F80ED);
+  static const Color unselectedColor = Color(0xFF1A2B4B);
+  static const Color lightBlue = Color(0xff92C0FF);
   static const Color cartBgColor = Color(0xFF080E19);
   static const Color textFieldBgColor = Color(0xFF0F192C);
   static const Color redText = Color(0xFFEB5757);
+  static const Color whiteF2 = Color(0xFFF2F2F2);
   static  Color shadowColor = const Color(0xFF122345).withOpacity(.39);
   
   static Color appBarBgColor = const Color(0xFF060A12).withOpacity(.85);

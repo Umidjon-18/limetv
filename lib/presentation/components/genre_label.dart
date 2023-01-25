@@ -26,7 +26,7 @@ class GenreLabel extends StatelessWidget {
         margin: margin,
         child: Row(
           children: [
-            Text(title, style: AppTextStyles.body22w7),
+            Text(title, style: AppTextStyles.body14w5),
             SizedBox(width: 8.w),
             SvgPicture.asset(
               Assets.icons.arrowRight,

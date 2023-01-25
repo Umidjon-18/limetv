@@ -1,8 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:limetv/presentation/pages/main_page/main_page.dart';
-import 'package:limetv/presentation/pages/search_page/search_page.dart';
-import 'package:limetv/presentation/pages/settings_page/widget/settings_main.dart';
 
 import 'presentation/routes/routes.dart';
 
@@ -15,16 +14,28 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (Platform.isAndroid) {
+      return ScreenUtilInit(
+          designSize: const Size(393, 852),
+          splitScreenMode: true,
+          minTextAdapt: true,
+          builder: (context, child) {
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              onGenerateRoute: (settings) => MobileRoutes.generateRoute(settings),
+              // home: MobileHomePage(),
+            );
+          });
+    }
     return ScreenUtilInit(
         designSize: const Size(1728, 1117),
         splitScreenMode: true,
         minTextAdapt: true,
         builder: (context, child) {
           return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            onGenerateRoute: (settings) => Routes.generateRoute(settings),
-            // home: MainPage(),
-          );
+              debugShowCheckedModeBanner: false,
+              onGenerateRoute: (settings) => Routes.generateRoute(settings));
+
         });
   }
 }
