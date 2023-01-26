@@ -8,6 +8,12 @@ abstract class Assets {
   static _Images get images => const _Images();
 
   // ignore: library_private_types_in_public_api
+  static _IconsMobile get iconsMobile => _IconsMobile();
+
+  // ignore: library_private_types_in_public_api
+  static _ImagesMobile get imagesMobile => _ImagesMobile();
+
+  // ignore: library_private_types_in_public_api
   static _ChannelsList get channelList => _ChannelsList();
 
   // ignore: library_private_types_in_public_api
@@ -24,11 +30,12 @@ class _Icons extends _AssetsHolder {
   const _Icons() : super('assets/icons');
 
   String get trash => "$basePath/ic_trash.svg";
+
   String get search1 => "$basePath/search_1.png";
+
   String get play => "$basePath/play.svg";
 
   String get clock => "$basePath/clock.svg";
-
 
   String get favorite => "$basePath/ic_favorite.svg";
 
@@ -70,7 +77,6 @@ class _Icons extends _AssetsHolder {
 
   String get thriller => "$basePath/thriller.svg";
 
-
   String get down => "$basePath/down.svg";
 
   String get arrowDown => "$basePath/arrow_down.svg";
@@ -91,7 +97,6 @@ class _Icons extends _AssetsHolder {
 
   String get settingsMain => "$basePath/settings_main.svg";
 
-
   String get ios => "$basePath/ios.svg";
 
   String get android => "$basePath/android.svg";
@@ -99,15 +104,28 @@ class _Icons extends _AssetsHolder {
   String get person => "$basePath/person.svg";
 }
 
+class _IconsMobile extends _AssetsHolder {
+  _IconsMobile() : super('assets/mobile/icons');
+
+  String get mobileSearchMenu => "$basePath/mobile_search_menu.svg";
+  String get searchVector => "$basePath/search_vector.svg";
+}
+
+class _ImagesMobile extends _AssetsHolder {
+  _ImagesMobile() : super('assets/mobile/images');
+
+  String get leonardoDekaprio => "$basePath/leonardo_dekaprio.png";
+  String get mobileJonnyDepp => "$basePath/mobile_jonny_depp.png";
+  String get skarletYohanson => "$basePath/skarlet_yohanson.png";
+  String get mobileSearchImage => "$basePath/mobile_search_image.png";
+}
+
 class _Images extends _AssetsHolder {
   const _Images() : super('assets/images');
 
-
   //String get yoshlarTv => "$basePath/yoshlar_channel.png";
 
-
   String get yoshlarTv => "$basePath/yoshlar_tv.png";
-
 
   //String get yoshlarTv => "$basePath/yoshlar_channel.png";
 
@@ -116,7 +134,7 @@ class _Images extends _AssetsHolder {
   String get my5 => "$basePath/my5.png";
   String get navo => "$basePath/navo.png";
   String get sevimli => "$basePath/sevimli_channel.png";
-  
+
   String get channelPlay => "$basePath/channel_play.png";
 
   String get euroPlus => "$basePath/euro_plus.png";
@@ -202,7 +220,6 @@ class _Images extends _AssetsHolder {
 
   String get prince => "$basePath/prince.png";
 
-
   String get crcode => "$basePath/crcode.png";
 
   String get signBg => "$basePath/sign_bg.png";
@@ -212,10 +229,6 @@ class _Images extends _AssetsHolder {
   String get postuchisMoyuDver => "$basePath/postuchis_moyu_dver.png";
 
   String get serdseParme => "$basePath/serdse_parme.png";
-
-
-
-
 }
 
 class _ChannelsList {

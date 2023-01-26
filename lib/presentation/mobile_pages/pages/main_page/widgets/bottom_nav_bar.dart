@@ -12,11 +12,11 @@ class BottomNavBar extends StatelessWidget {
   final int selectedIndex;
   final Function onTap;
   final List<String> menuIcons = [
-    'assets/mobile_pages/icons/home.svg',
-    'assets/mobile_pages/icons/favorite.svg',
-    'assets/mobile_pages/icons/menu.svg',
-    'assets/mobile_pages/icons/search.svg',
-    'assets/mobile_pages/icons/person.svg',
+    'assets/mobile/icons/home.svg',
+    'assets/mobile/icons/favorite.svg',
+    'assets/mobile/icons/menu.svg',
+    'assets/mobile/icons/search.svg',
+    'assets/mobile/icons/person.svg',
   ];
 
   @override
@@ -28,10 +28,8 @@ class BottomNavBar extends StatelessWidget {
       child: Container(
         height: 75.h,
         margin: EdgeInsets.fromLTRB(10.w, 0, 10.w, 12.h),
-        decoration: BoxDecoration(
-            color: AppColors.cardBgColor,
-            borderRadius: BorderRadius.circular(45.r)),
-        padding: EdgeInsets.symmetric(horizontal: 37.w) ,
+        decoration: BoxDecoration(color: AppColors.cardBgColor, borderRadius: BorderRadius.circular(45.r)),
+        padding: EdgeInsets.symmetric(horizontal: 37.w),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: List.generate(
@@ -58,17 +56,14 @@ class BottomNavBar extends StatelessWidget {
               menuIcons[index],
               height: 26.h,
               width: 26.w,
-              color: selectedIndex == index
-                  ? AppColors.selectedColor
-                  : AppColors.unselectedColor,
+              color: selectedIndex == index ? AppColors.selectedColor : AppColors.unselectedColor,
             ),
           ),
           if (selectedIndex == index)
             Container(
               width: 4.w,
               height: 4.h,
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle, color: AppColors.selectedColor),
+              decoration: BoxDecoration(shape: BoxShape.circle, color: AppColors.selectedColor),
             )
         ],
       ),

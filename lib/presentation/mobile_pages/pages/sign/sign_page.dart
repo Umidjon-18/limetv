@@ -51,7 +51,7 @@ class _MobileSignPageState extends State<MobileSignPage> {
                 ),
                 child: Container(
                   height: 263.h,
-                  padding: EdgeInsets.fromLTRB(34.w, 28.h, 34.w, 12.h),
+                  padding: EdgeInsets.fromLTRB(34.w, 28.h, 34.w, 10.h),
                   decoration: BoxDecoration(
                     color: AppColors.cartBgColor,
                     borderRadius: BorderRadius.circular(20.r),
@@ -132,7 +132,7 @@ class _MobileSignPageState extends State<MobileSignPage> {
                             style: AppTextStyles.body12w4,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

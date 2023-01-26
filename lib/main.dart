@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:limetv/presentation/mobile_pages/pages/search_page.dart';
 
 import 'presentation/routes/routes.dart';
 
@@ -20,10 +21,10 @@ class MyApp extends StatelessWidget {
           splitScreenMode: true,
           minTextAdapt: true,
           builder: (context, child) {
-            return MaterialApp(
+            return const MaterialApp(
               debugShowCheckedModeBanner: false,
-              onGenerateRoute: (settings) => MobileRoutes.generateRoute(settings),
-              // home: MobileHomePage(),
+              // onGenerateRoute: (settings) => MobileRoutes.generateRoute(settings),
+              home: SearchPage(),
             );
           });
     }
@@ -33,9 +34,9 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         builder: (context, child) {
           return MaterialApp(
-              debugShowCheckedModeBanner: false,
-              onGenerateRoute: (settings) => Routes.generateRoute(settings));
-
+            debugShowCheckedModeBanner: false,
+            onGenerateRoute: (settings) => Routes.generateRoute(settings),
+          );
         });
   }
 }

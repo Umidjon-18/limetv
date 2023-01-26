@@ -1,3 +1,4 @@
+import 'package:limetv/data/models/actors_model.dart';
 import 'package:limetv/data/models/category_model.dart';
 import 'package:limetv/data/models/movie_model.dart';
 
@@ -45,6 +46,39 @@ List<MovieModel> bannerMovies = [
     about:
         "После принятия образа аватара солдат Джейк Салли становится предводителем народа на'ви и берет на себя миссию по защите новых друзей от корыстных бизнесменов с Земли. Теперь ему есть за кого бороться — с Джейком его прекрасная возлюбленная Нейтири. Когда на Пандору возвращаются до зубов вооруженные земляне, Джейк готов дать им отпор",
     rating: "IMDB 8.6",
+  ),
+];
+
+List<ActorsModel> searchActorsProfessions = [
+  ActorsModel(
+    mainImage: Assets.imagesMobile.mobileJonnyDepp,
+    name: 'Джонни Депп',
+    prefession: 'Актер',
+  ),
+  ActorsModel(
+    mainImage: Assets.imagesMobile.leonardoDekaprio,
+    name: 'Леонардо Ди Каприо',
+    prefession: 'Актер',
+  ),
+  ActorsModel(
+    mainImage: Assets.imagesMobile.skarletYohanson,
+    name: 'Скарлетт Йоханссон',
+    prefession: 'Актер',
+  ),
+  ActorsModel(
+    mainImage: Assets.imagesMobile.mobileJonnyDepp,
+    name: 'Джонни Депп',
+    prefession: 'Актер',
+  ),
+  ActorsModel(
+    mainImage: Assets.imagesMobile.leonardoDekaprio,
+    name: 'Леонардо Ди Каприо',
+    prefession: 'Актер',
+  ),
+  ActorsModel(
+    mainImage: Assets.imagesMobile.skarletYohanson,
+    name: 'Скарлетт Йоханссон',
+    prefession: 'Актер',
   ),
 ];
 
@@ -301,54 +335,18 @@ List<MovieModel> serialy = [
 ];
 
 List<CategoryModel> categories = [
-  CategoryModel(
-      categoryIcon: Assets.icons.documentary,
-      categoryName: "Биографии",
-      categoryMovieCount: 1334),
-  CategoryModel(
-      categoryIcon: Assets.icons.action,
-      categoryName: "Боевики",
-      categoryMovieCount: 44534),
-  CategoryModel(
-      categoryIcon: Assets.icons.filmNoir,
-      categoryName: "Детективы",
-      categoryMovieCount: 44534),
-  CategoryModel(
-      categoryIcon: Assets.icons.drama,
-      categoryName: "Драмы",
-      categoryMovieCount: 44534),
-  CategoryModel(
-      categoryIcon: Assets.icons.comedy,
-      categoryName: "Комедии",
-      categoryMovieCount: 1334),
-  CategoryModel(
-      categoryIcon: Assets.icons.crime,
-      categoryName: "Криминалы",
-      categoryMovieCount: 44534),
-  CategoryModel(
-      categoryIcon: Assets.icons.romantic,
-      categoryName: "Мелодрамы",
-      categoryMovieCount: 44534),
-  CategoryModel(
-      categoryIcon: Assets.icons.musical,
-      categoryName: "Мюзиклы",
-      categoryMovieCount: 44534),
-  CategoryModel(
-      categoryIcon: Assets.icons.sport,
-      categoryName: "Спорт",
-      categoryMovieCount: 500),
-  CategoryModel(
-      categoryIcon: Assets.icons.fantasy,
-      categoryName: "Фантастики",
-      categoryMovieCount: 1334),
-  CategoryModel(
-      categoryIcon: Assets.icons.horror,
-      categoryName: "Триллеры",
-      categoryMovieCount: 44534),
-  CategoryModel(
-      categoryIcon: Assets.icons.thriller,
-      categoryName: "Ужасы",
-      categoryMovieCount: 44534),
+  CategoryModel(categoryIcon: Assets.icons.documentary, categoryName: "Биографии", categoryMovieCount: 1334),
+  CategoryModel(categoryIcon: Assets.icons.action, categoryName: "Боевики", categoryMovieCount: 44534),
+  CategoryModel(categoryIcon: Assets.icons.filmNoir, categoryName: "Детективы", categoryMovieCount: 44534),
+  CategoryModel(categoryIcon: Assets.icons.drama, categoryName: "Драмы", categoryMovieCount: 44534),
+  CategoryModel(categoryIcon: Assets.icons.comedy, categoryName: "Комедии", categoryMovieCount: 1334),
+  CategoryModel(categoryIcon: Assets.icons.crime, categoryName: "Криминалы", categoryMovieCount: 44534),
+  CategoryModel(categoryIcon: Assets.icons.romantic, categoryName: "Мелодрамы", categoryMovieCount: 44534),
+  CategoryModel(categoryIcon: Assets.icons.musical, categoryName: "Мюзиклы", categoryMovieCount: 44534),
+  CategoryModel(categoryIcon: Assets.icons.sport, categoryName: "Спорт", categoryMovieCount: 500),
+  CategoryModel(categoryIcon: Assets.icons.fantasy, categoryName: "Фантастики", categoryMovieCount: 1334),
+  CategoryModel(categoryIcon: Assets.icons.horror, categoryName: "Триллеры", categoryMovieCount: 44534),
+  CategoryModel(categoryIcon: Assets.icons.thriller, categoryName: "Ужасы", categoryMovieCount: 44534),
 ];
 
 List<String> janrs = [

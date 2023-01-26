@@ -55,8 +55,7 @@ class _MyPageState extends State<MyPage> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15.r),
                             image: DecorationImage(
-                              image: AssetImage(
-                                  continueWatchingMovies[index].bgImage),
+                              image: AssetImage(continueWatchingMovies[index].bgImage),
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -64,8 +63,9 @@ class _MyPageState extends State<MyPage> {
                       },
                     ),
                     Positioned(
-                        right: 0,
-                        child: ScrollVideosButton(controller: controller)),
+                      right: 0,
+                      child: ScrollVideosButton(controller: controller),
+                    ),
                   ],
                 ),
               ),
@@ -95,19 +95,16 @@ class _MyPageState extends State<MyPage> {
                             Container(
                               width: 463.w,
                               height: 277.h,
-                              margin:
-                                  EdgeInsets.only(right: 27.w, bottom: 22.h),
+                              margin: EdgeInsets.only(right: 27.w, bottom: 22.h),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15.r),
                                 image: DecorationImage(
-                                  image: AssetImage(
-                                      continueWatchingMovies[index].bgImage),
+                                  image: AssetImage(continueWatchingMovies[index].bgImage),
                                   fit: BoxFit.cover,
                                 ),
                               ),
                             ),
-                            Text(continueWatchingMovies[index].name,
-                                style: AppTextStyles.body20w6),
+                            Text(continueWatchingMovies[index].name, style: AppTextStyles.body20w6),
                           ],
                         );
                       },
@@ -134,14 +131,13 @@ class _MyPageState extends State<MyPage> {
 }
 
 class ScrollVideosButton extends StatelessWidget {
-  const ScrollVideosButton({Key? key, required this.controller})
-      : super(key: key);
+  const ScrollVideosButton({Key? key, required this.controller}) : super(key: key);
   final ScrollController controller;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(right: 72.w,top: 145.h,bottom: 145.h),
+      padding: EdgeInsets.only(right: 72.w, top: 145.h, bottom: 145.h),
       height: 331.h,
       width: 414.w,
       alignment: Alignment.centerRight,
@@ -160,8 +156,7 @@ class ScrollVideosButton extends StatelessWidget {
         child: GestureDetector(
           onTap: () {
             controller.animateTo(controller.position.pixels + 500.w,
-                duration: const Duration(seconds: 1),
-                curve: Curves.fastOutSlowIn);
+                duration: const Duration(seconds: 1), curve: Curves.fastOutSlowIn);
           },
           child: SvgPicture.asset(
             Assets.icons.play,

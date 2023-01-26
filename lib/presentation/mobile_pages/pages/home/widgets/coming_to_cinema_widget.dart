@@ -81,7 +81,7 @@ class ComingSoonToCinemaWidget extends StatelessWidget {
                 ? Border.all(
                     color: AppColors.selectedColor,
                     width: 2.w,
-                    strokeAlign: BorderSide.strokeAlignOutside,
+                    strokeAlign: StrokeAlign.outside,
                   )
                 : null,
           ),
