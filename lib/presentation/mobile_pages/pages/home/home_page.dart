@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/assets.dart';
@@ -31,6 +32,20 @@ class _MobileHomePageState extends State<MobileHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: AppColors.backgroundColor,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(114.h),
+          child: Container(
+            height: 114.h,
+            color: AppColors.backgroundColor,
+            alignment: Alignment.bottomCenter,
+            padding: EdgeInsets.only(bottom: 27.h),
+            child: GestureDetector(
+                onTap: () {
+                  // select(0);
+                },
+                child: SvgPicture.asset(Assets.images.logo)),
+          ),
+        ),
         body: CustomScrollView(
           physics: const BouncingScrollPhysics(),
           slivers: <Widget>[
@@ -52,8 +67,7 @@ class _MobileHomePageState extends State<MobileHomePage> {
                       },
                       autoPlayCurve: Curves.fastOutSlowIn,
                       autoPlayInterval: const Duration(seconds: 3),
-                      autoPlayAnimationDuration:
-                          const Duration(milliseconds: 800),
+                      autoPlayAnimationDuration: const Duration(milliseconds: 800),
                     ),
                     items: List.generate(
                       bannerMovies.length,
@@ -145,8 +159,7 @@ class _MobileHomePageState extends State<MobileHomePage> {
                         color: AppColors.cardBgColor,
                       ),
                       child: Center(
-                        child: Image.asset(
-                            Assets.channelList.russianChannels[index]),
+                        child: Image.asset(Assets.channelList.russianChannels[index]),
                       ),
                     );
                   },
@@ -162,7 +175,7 @@ class _MobileHomePageState extends State<MobileHomePage> {
             ),
             SliverToBoxAdapter(
               child: FilmsCardSlider(
-                controller: recommendedController ,
+                controller: recommendedController,
                 data: filmy,
                 sliderHeight: 205,
               ),
@@ -293,8 +306,7 @@ class ContinueBrowsingChapter extends StatelessWidget {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(6.r),
                           image: DecorationImage(
-                            image: AssetImage(
-                                continueWatchingMovies[index].bgImage),
+                            image: AssetImage(continueWatchingMovies[index].bgImage),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -306,8 +318,7 @@ class ContinueBrowsingChapter extends StatelessWidget {
                           width: 153.w,
                           decoration: BoxDecoration(
                             color: AppColors.selectedColor.withOpacity(0.5),
-                            borderRadius: BorderRadius.vertical(
-                                bottom: Radius.circular(6.r)),
+                            borderRadius: BorderRadius.vertical(bottom: Radius.circular(6.r)),
                           ),
                           alignment: Alignment.bottomLeft,
                           child: Container(
@@ -328,8 +339,7 @@ class ContinueBrowsingChapter extends StatelessWidget {
                   SizedBox(
                     width: 153.w,
                     child: Text(continueWatchingMovies[index].name,
-                        style: AppTextStyles.body10w4,
-                        overflow: TextOverflow.ellipsis),
+                        style: AppTextStyles.body10w4, overflow: TextOverflow.ellipsis),
                   ),
                 ],
               );
