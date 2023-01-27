@@ -109,6 +109,7 @@ class _IconsMobile extends _AssetsHolder {
 
   String get mobileSearchMenu => "$basePath/mobile_search_menu.svg";
   String get searchVector => "$basePath/search_vector.svg";
+  String get backMobileIcon => "$basePath/back_mobile_icon.svg";
 }
 
 class _ImagesMobile extends _AssetsHolder {
