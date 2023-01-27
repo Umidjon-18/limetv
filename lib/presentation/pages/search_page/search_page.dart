@@ -42,6 +42,7 @@ class _SearchPageState extends State<SearchPage> {
       ),
       decoration: const BoxDecoration(),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           GenreLabel(
             onTap: () {},
@@ -50,14 +51,33 @@ class _SearchPageState extends State<SearchPage> {
           SizedBox(
             height: 32.h,
           ),
+          // Flexible(
+          //   child: Wrap(
+          //     crossAxisAlignment: WrapCrossAlignment.start,
+          //     alignment: WrapAlignment.center,
+          //     spacing: 51,
+          //     direction: Axis.horizontal,
+          //     runSpacing: 28,
+          //     children: List.generate(
+          //       3,
+          //       ((index) {
+          //         return SearchWidget(
+          //           movieNameText: movieAndMovieText.keys.elementAt(index),
+          //           assetsText: movieAndMovieText.values.elementAt(index),
+          //         );
+          //       }),
+          //     ),
+          //   ),
+          // ),
           GridView.builder(
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              mainAxisSpacing: 28,
-              crossAxisSpacing: 51.w,
-              childAspectRatio: 493.4.w / 160.h,
-            ),
+                crossAxisCount: 3,
+                mainAxisSpacing: 28,
+                crossAxisSpacing: 51.w,
+                childAspectRatio: 5 / 2
+                //  493.4.w / 160.h,
+                ),
             itemCount: movieAndMovieText.length,
             itemBuilder: (context, index) {
               return SearchWidget(
@@ -88,7 +108,8 @@ class _SearchPageState extends State<SearchPage> {
             itemBuilder: (context, index) {
               return SearchActorAndDirector(
                 actorName: actorsNameAndDirector.keys.elementAt(index),
-                actorOrDiretorText: actorsNameAndDirector.values.elementAt(index),
+                actorOrDiretorText:
+                    actorsNameAndDirector.values.elementAt(index),
               );
             },
           ),
@@ -99,7 +120,8 @@ class _SearchPageState extends State<SearchPage> {
 }
 
 class SearchActorAndDirector extends StatelessWidget {
-  SearchActorAndDirector({required this.actorName, required this.actorOrDiretorText, super.key});
+  SearchActorAndDirector(
+      {required this.actorName, required this.actorOrDiretorText, super.key});
   String actorName;
   String actorOrDiretorText;
   @override
@@ -117,7 +139,8 @@ class SearchActorAndDirector extends StatelessWidget {
           padding: EdgeInsets.only(top: 4.h),
           child: Text(
             actorOrDiretorText,
-            style: AppTextStyles.body14w5.copyWith(color: AppColors.selectedColor),
+            style:
+                AppTextStyles.body14w5.copyWith(color: AppColors.selectedColor),
           ),
         ),
       ],
@@ -126,7 +149,8 @@ class SearchActorAndDirector extends StatelessWidget {
 }
 
 class SearchWidget extends StatelessWidget {
-  SearchWidget({required this.movieNameText, required this.assetsText, super.key});
+  SearchWidget(
+      {required this.movieNameText, required this.assetsText, super.key});
   String assetsText;
   String movieNameText;
 
@@ -136,7 +160,7 @@ class SearchWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          width: 267.4.h,
+          width: 267.h,
           height: 160.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.r),
@@ -146,8 +170,8 @@ class SearchWidget extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        SizedBox(
-          width: 28.w,
+        const SizedBox(
+          width: 28,
         ),
         SizedBox(
           width: 198.h,

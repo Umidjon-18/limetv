@@ -95,28 +95,21 @@ class ComingSoonToCinemaWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
       builder: (context, i, child) {
-        bool isActive = index == comingSoonToCinemaIndex.value - 1;
+        bool isActive = index == comingSoonToCinemaIndex.value;
         return Stack(
           clipBehavior: Clip.none,
           fit: StackFit.expand,
           children: [
             AnimatedContainer(
               duration: const Duration(milliseconds: 200),
-              margin: EdgeInsets.symmetric(
-                  horizontal: isActive ? 12.w : 20.w,
-                  vertical: isActive ? 0 : 31.h),
+              margin: EdgeInsets.symmetric(horizontal: isActive ? 12.w : 20.w, vertical: isActive ? 0 : 31.h),
               decoration: BoxDecoration(
-                boxShadow: isActive
-                    ? [
-                        const BoxShadow(
-                            color: Color(0xff122345), blurRadius: 250)
-                      ]
-                    : null,
+                boxShadow: isActive ? [const BoxShadow(color: Color(0xff122345), blurRadius: 250)] : null,
                 borderRadius: BorderRadius.circular(15.r),
               ),
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 2.w),
-                decoration: index == comingSoonToCinemaIndex.value - 1
+                decoration: index == comingSoonToCinemaIndex.value
                     ? BoxDecoration(
                         borderRadius: BorderRadius.circular(15.r),
                         gradient: LinearGradient(
@@ -150,8 +143,7 @@ class ComingSoonToCinemaWidget extends StatelessWidget {
                   children: [
                     AutoSizeText(
                       '${skoroVKino[index].name} (${skoroVKino[index].date})',
-                      style: AppTextStyles.body26w5
-                          .copyWith(fontWeight: FontWeight.w700),
+                      style: AppTextStyles.body26w5.copyWith(fontWeight: FontWeight.w700),
                       minFontSize: 6,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
@@ -159,9 +151,8 @@ class ComingSoonToCinemaWidget extends StatelessWidget {
                     SizedBox(height: 4.h),
                     AutoSizeText(
                       skoroVKino[index].genre,
-                      style: AppTextStyles.body12w4.copyWith(
-                          color: AppColors.selectedColor,
-                          decoration: TextDecoration.underline),
+                      style: AppTextStyles.body12w4
+                          .copyWith(color: AppColors.selectedColor, decoration: TextDecoration.underline),
                       minFontSize: 6,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
