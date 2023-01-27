@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:limetv/presentation/mobile_pages/pages/search_page/search_page.dart';
 
 import 'presentation/routes/routes.dart';
 
@@ -22,8 +23,8 @@ class MyApp extends StatelessWidget {
           builder: (context, child) {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
-              onGenerateRoute: (settings) => MobileRoutes.generateRoute(settings),
-              // home: SearchPage(),
+              // onGenerateRoute: (settings) => MobileRoutes.generateRoute(settings),
+              home: SearchPage(),
             );
           });
     }
