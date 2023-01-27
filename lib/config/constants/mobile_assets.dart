@@ -97,6 +97,8 @@ class _Icons extends _AssetsHolder {
   String get android => "$basePath/android.svg";
 
   String get person => "$basePath/person.svg";
+   String get download => "$basePath/download.svg";
+
 }
 
 class _Images extends _AssetsHolder {
