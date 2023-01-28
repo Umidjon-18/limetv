@@ -29,8 +29,7 @@ class _MobileSignPageState extends State<MobileSignPage> {
         padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 34.w),
         decoration: BoxDecoration(
           color: AppColors.cartBgColor,
-          image: DecorationImage(
-              image: AssetImage(MobileAssets.images.signBg), fit: BoxFit.cover),
+          image: DecorationImage(image: AssetImage(MobileAssets.images.signBg), fit: BoxFit.cover),
         ),
         child: Stack(
           children: [
@@ -44,13 +43,11 @@ class _MobileSignPageState extends State<MobileSignPage> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                   ),
-                  boxShadow: [
-                    BoxShadow(blurRadius: 250, color: AppColors.shadowColor)
-                  ],
+                  boxShadow: [BoxShadow(blurRadius: 250, color: AppColors.shadowColor)],
                   borderRadius: BorderRadius.circular(20.r),
                 ),
                 child: Container(
-                  height: 263.h,
+                  height: 265.h,
                   padding: EdgeInsets.fromLTRB(34.w, 28.h, 34.w, 10.h),
                   decoration: BoxDecoration(
                     color: AppColors.cartBgColor,
@@ -74,9 +71,10 @@ class _MobileSignPageState extends State<MobileSignPage> {
                           color: AppColors.textFieldBgColor,
                           borderRadius: BorderRadius.circular(38.5.r),
                         ),
-                        child:  TextField(
+                        child: TextField(
                           controller: controller,
-                          style: AppTextStyles.body12w4,keyboardType: TextInputType.phone,
+                          style: AppTextStyles.body12w4,
+                          keyboardType: TextInputType.phone,
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             contentPadding: EdgeInsets.only(bottom: 10.h),

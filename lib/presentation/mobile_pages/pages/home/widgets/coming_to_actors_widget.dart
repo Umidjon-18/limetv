@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
+import 'package:limetv/data/models/actors_model.dart';
 import 'package:limetv/data/models/movie_model.dart';
 import 'package:limetv/presentation/components/carousel_options.dart';
 
-class FilmsCardSlider extends StatelessWidget {
-  const FilmsCardSlider({
+class ActorsCardSlider extends StatelessWidget {
+  const ActorsCardSlider({
     super.key,
     required this.controller,
     required this.sliderHeight,
@@ -18,7 +19,7 @@ class FilmsCardSlider extends StatelessWidget {
   });
 
   final double sliderHeight;
-  final List<MovieModel> data;
+  final List<ActorsModel> data;
   final bool isHaveBorder;
   final bool autoPlay;
   final CarouselController controller;
@@ -34,7 +35,7 @@ class FilmsCardSlider extends StatelessWidget {
           items: List.generate(
             data.length,
             (index) {
-              return ComingSoonToCinemaWidget(
+              return _ComingSoonToCinemaWidget(
                 model: data[index],
                 haveBorder: isHaveBorder,
               );
@@ -62,10 +63,11 @@ class FilmsCardSlider extends StatelessWidget {
   }
 }
 
-class ComingSoonToCinemaWidget extends StatelessWidget {
-  const ComingSoonToCinemaWidget({super.key, required this.model, required this.haveBorder});
+// ignore: unused_element
+class _ComingSoonToCinemaWidget extends StatelessWidget {
+  const _ComingSoonToCinemaWidget({required this.model, required this.haveBorder});
 
-  final MovieModel model;
+  final ActorsModel model;
   final bool haveBorder;
 
   @override
@@ -74,7 +76,7 @@ class ComingSoonToCinemaWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: haveBorder ? null : 141.h,
+          height: haveBorder ? null : 108.h,
           margin: EdgeInsets.only(right: 12.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(6.r),
@@ -105,8 +107,8 @@ class ComingSoonToCinemaWidget extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(right: 10.w, top: 2.h),
             child: AutoSizeText(
-              model.genre.substring(0, 10),
-
+              model.prefession,
+              
               ///TODO clear substring
               style: AppTextStyles.body10w4.copyWith(color: AppColors.settingsTextFieldAndTextColor),
               minFontSize: 6,

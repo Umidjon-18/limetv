@@ -7,8 +7,8 @@ import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/config/constants/assets.dart';
 import 'package:limetv/config/constants/local_data.dart';
 import 'package:limetv/presentation/components/mobile_genre_label.dart';
-import 'package:limetv/presentation/mobile_pages/pages/search_page/widgets/popular_persons.dart';
-import 'package:limetv/presentation/mobile_pages/pages/search_page/widgets/often_searched.dart';
+import 'package:limetv/presentation/mobile_pages/pages/home/widgets/coming_to_actors_widget.dart';
+import 'package:limetv/presentation/mobile_pages/pages/home/widgets/coming_to_cinema_widget.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -37,8 +37,8 @@ class _SearchPageState extends State<SearchPage> {
                 width: 345.w,
                 margin: EdgeInsets.symmetric(horizontal: 24.w),
                 padding: EdgeInsets.only(
-                  left: 17.67.w,
-                  right: 20.67.w,
+                  left: 17.5.w,
+                  right: 20.5.w,
                 ),
                 decoration: BoxDecoration(
                   color: const Color(0xff0A101C),
@@ -52,8 +52,8 @@ class _SearchPageState extends State<SearchPage> {
                       child: Image.asset(
                         Assets.icons.search1,
                         color: AppColors.selectedColor,
-                        width: 16.93.w,
-                        height: 16.93.w,
+                        width: 17,
+                        height: 17,
                       ),
                     ),
                     SizedBox(
@@ -61,15 +61,41 @@ class _SearchPageState extends State<SearchPage> {
                     ),
                     Expanded(
                       child: TextField(
+                        style: AppTextStyles.body14w4.copyWith(
+                          color: AppColors.selectedColor,
+                        ),
                         decoration: InputDecoration(
-                          border: const OutlineInputBorder(),
+                          enabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                          ),
+                          border: const OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                          ),
                           hintText: 'Фильмы, Персоны, Кинотеатры',
                           hintStyle: AppTextStyles.body14w4.copyWith(
                             color: AppColors.selectedColor,
                           ),
+                          contentPadding: EdgeInsets.zero,
                         ),
                       ),
                     ),
+                    // SizedBox(
+                    //   width: 230.w,
+                    //   child: TextField(
+                    //     style: AppTextStyles.body14w4.copyWith(
+                    //       color: AppColors.selectedColor,
+                    //     ),
+                    //     decoration: InputDecoration(
+                    //       border: const OutlineInputBorder(
+                    //         borderSide: BorderSide.none,
+                    //       ),
+                    //       hintText: 'Фильмы, Персоны, Кинотеатры',
+                    //       hintStyle: AppTextStyles.body14w4.copyWith(
+                    //         color: AppColors.selectedColor,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
                     InkWell(
                       onTap: () {},
                       child: SvgPicture.asset(
@@ -173,8 +199,13 @@ class _SearchPageState extends State<SearchPage> {
                 topMargin: 18.h,
               ),
             ),
-            const SliverToBoxAdapter(
-              child: ListOfMovies(),
+            SliverToBoxAdapter(
+              child: FilmsCardSlider(
+                controller: filmController,
+                data: filmy,
+                sliderHeight: 197,
+                autoPlay: false,
+              ),
             ),
             SliverToBoxAdapter(
               child: MobileGenreLabel(
@@ -183,8 +214,18 @@ class _SearchPageState extends State<SearchPage> {
                 topMargin: 18.h,
               ),
             ),
-            const SliverToBoxAdapter(
-              child: ListOfActors(),
+            SliverToBoxAdapter(
+              child: ActorsCardSlider(
+                controller: filmController,
+                data: searchActorsProfessions,
+                sliderHeight: 160,
+                autoPlay: false,
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 90.h,
+              ),
             ),
           ],
         ),

@@ -29,8 +29,7 @@ class _MobileSignCodePageState extends State<MobileSignCodePage> {
         padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 34.w),
         decoration: BoxDecoration(
           color: AppColors.cartBgColor,
-          image: DecorationImage(
-              image: AssetImage(MobileAssets.images.signBg), fit: BoxFit.cover),
+          image: DecorationImage(image: AssetImage(MobileAssets.images.signBg), fit: BoxFit.cover),
         ),
         child: Stack(
           children: [
@@ -44,9 +43,7 @@ class _MobileSignCodePageState extends State<MobileSignCodePage> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                   ),
-                  boxShadow: [
-                    BoxShadow(blurRadius: 250, color: AppColors.shadowColor)
-                  ],
+                  boxShadow: [BoxShadow(blurRadius: 250, color: AppColors.shadowColor)],
                   borderRadius: BorderRadius.circular(20.r),
                 ),
                 child: Container(
@@ -81,15 +78,15 @@ class _MobileSignCodePageState extends State<MobileSignCodePage> {
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: '_  _  _   _  _  _',
-                            hintStyle: AppTextStyles.body14w4
-                                .copyWith(color: AppColors.selectedColor),
+                            hintStyle: AppTextStyles.body14w4.copyWith(color: AppColors.selectedColor),
                           ),
                           inputFormatters: [
                             MaskTextInputFormatter(
                               mask: '# # #   # # #',
                               filter: {"#": RegExp(r'[0-9]')},
-                            )
+                            ),
                           ],
+                          keyboardType: TextInputType.number,
                         ),
                       ),
                       const Spacer(),
@@ -196,7 +193,7 @@ class _TimeTextState extends State<TimeText> {
         style: AppTextStyles.body12w4,
         children: [
           TextSpan(
-            text: '00:${time<10?0:''}$time',
+            text: '00:${time < 10 ? 0 : ''}$time',
             style: AppTextStyles.body12w4.copyWith(
               color: AppColors.redText,
             ),

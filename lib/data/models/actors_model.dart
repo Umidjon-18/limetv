@@ -1,10 +1,10 @@
 class ActorsModel {
-  String mainImage;
+  String bgImage;
   String name;
   String prefession;
 
   ActorsModel({
-    required this.mainImage,
+    required this.bgImage,
     required this.name,
     required this.prefession
   });

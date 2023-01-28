@@ -51,32 +51,32 @@ List<MovieModel> bannerMovies = [
 
 List<ActorsModel> searchActorsProfessions = [
   ActorsModel(
-    mainImage: Assets.imagesMobile.mobileJonnyDepp,
+    bgImage: Assets.imagesMobile.mobileJonnyDepp,
     name: 'Джонни Депп',
     prefession: 'Актер',
   ),
   ActorsModel(
-    mainImage: Assets.imagesMobile.leonardoDekaprio,
+    bgImage: Assets.imagesMobile.leonardoDekaprio,
     name: 'Леонардо Ди Каприо',
     prefession: 'Актер',
   ),
   ActorsModel(
-    mainImage: Assets.imagesMobile.skarletYohanson,
+    bgImage: Assets.imagesMobile.skarletYohanson,
     name: 'Скарлетт Йоханссон',
     prefession: 'Актер',
   ),
   ActorsModel(
-    mainImage: Assets.imagesMobile.mobileJonnyDepp,
+    bgImage: Assets.imagesMobile.mobileJonnyDepp,
     name: 'Джонни Депп',
     prefession: 'Актер',
   ),
   ActorsModel(
-    mainImage: Assets.imagesMobile.leonardoDekaprio,
+    bgImage: Assets.imagesMobile.leonardoDekaprio,
     name: 'Леонардо Ди Каприо',
     prefession: 'Актер',
   ),
   ActorsModel(
-    mainImage: Assets.imagesMobile.skarletYohanson,
+    bgImage: Assets.imagesMobile.skarletYohanson,
     name: 'Скарлетт Йоханссон',
     prefession: 'Актер',
   ),
