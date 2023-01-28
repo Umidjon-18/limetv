@@ -41,7 +41,7 @@ class FilmsCardSlider extends StatelessWidget {
         ),
         Positioned(
           right: 0,
-          top: isHaveBorder ? -2 : 0,
+          top: isHaveBorder ? -2 : -1,
           child: Container(
             width: 124.w,
             height: sliderHeight.h,
@@ -81,7 +81,7 @@ class ComingSoonToCinemaWidget extends StatelessWidget {
                 ? Border.all(
                     color: AppColors.selectedColor,
                     width: 2.w,
-                    strokeAlign: StrokeAlign.outside,
+                    strokeAlign: BorderSide.strokeAlignOutside,
                   )
                 : null,
           ),
@@ -105,6 +105,7 @@ class ComingSoonToCinemaWidget extends StatelessWidget {
             padding: EdgeInsets.only(right: 10.w, top: 2.h),
             child: AutoSizeText(
               model.genre.substring(0, 10),
+
               ///TODO clear substring
               style: AppTextStyles.body10w4
                   .copyWith(color: AppColors.settingsTextFieldAndTextColor),

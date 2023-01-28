@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,44 +16,51 @@ class CategoryMobileGridView extends StatelessWidget {
       child: GridView.builder(
         itemCount: categories.length,
         shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.symmetric(horizontal: 25.w),
+        physics: const BouncingScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
-          mainAxisSpacing: 14.w,
+          mainAxisSpacing: 14.h,
           crossAxisSpacing: 14.w,
-          childAspectRatio: 105 / 104,
+          // childAspectRatio: 105 / 104,
         ),
         itemBuilder: (context, index) {
-          return Container(
-            height: 104.w,
-            width: 105.w,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8.r),
-              color: AppColors.categoryBgColor.withOpacity(.5),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SvgPicture.asset(
-                  categories[index].categoryIcon,
-                  width: 35.w,
-                  height: 31.5.h,
-                ),
-                SizedBox(height: 13.h),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(categories[index].categoryName, style: AppTextStyles.body10w5),
-                    SizedBox(height: 3.h),
-                    Text(
-                      "(${categories[index].categoryMovieCount})",
-                      style: AppTextStyles.body10w4.copyWith(color: AppColors.categoryCountColor),
-                    ),
-                  ],
-                ),
-              ],
+          return InkWell(
+            onTap: (){},
+            child: Container(
+              height: 104.w,
+              width: 105.w,
+              padding: EdgeInsets.symmetric(horizontal: 10.w),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8.r),
+                color: AppColors.containerColor,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    categories[index].categoryIcon,
+                    width: 42.w,
+                    height: 42.h,
+                  ),
+                  SizedBox(height: 8.h),
+                  AutoSizeText(
+                    categories[index].categoryName,
+                    style: AppTextStyles.body10w5,
+                    maxLines: 1,
+                    minFontSize: 6,
+                  ),
+                  SizedBox(height: 3.h),
+                  AutoSizeText(
+                    "(${categories[index].categoryMovieCount})",
+                    style: AppTextStyles.body10w4
+                        .copyWith(color: AppColors.categoryCountColor),
+                    minFontSize: 6,
+                    maxLines: 1,
+                  ),
+                ],
+              ),
             ),
           );
         },

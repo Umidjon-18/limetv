@@ -21,7 +21,7 @@ abstract class _AssetsHolder {
 }
 
 class _Icons extends _AssetsHolder {
-  const _Icons() : super('assets/mobile_pages/icons');
+  const _Icons() : super('assets/mobile/icons');
 
   String get trash => "$basePath/ic_trash.svg";
   String get search1 => "$basePath/search_1.png";
@@ -97,10 +97,12 @@ class _Icons extends _AssetsHolder {
   String get android => "$basePath/android.svg";
 
   String get person => "$basePath/person.svg";
+   String get download => "$basePath/download.svg";
+
 }
 
 class _Images extends _AssetsHolder {
-  const _Images() : super('assets/mobile_pages/images');
+  const _Images() : super('assets/mobile/images');
 
 
   //String get yoshlarTv => "$basePath/yoshlar_channel.png";

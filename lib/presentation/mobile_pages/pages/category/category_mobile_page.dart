@@ -17,40 +17,21 @@ class _CatergoryMobilePageState extends State<CatergoryMobilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
-      body: Padding(
-        padding: EdgeInsets.only(
-          left: 24.w,
-          right: 24.w,
-          top: 67.h,
-        ),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                InkWell(
-                  onTap: () {},
-                  child: SvgPicture.asset(
-                    Assets.iconsMobile.backMobileIcon,
-                    width: 28.5,
-                    height: 24,
-                  ),
-                ),
-                Text(
-                  'Катигории',
-                  style: AppTextStyles.body16w5,
-                ),
-                const SizedBox.shrink()
-              ],
+        appBar: AppBar(
+          backgroundColor: AppColors.backgroundColor,
+          toolbarHeight: 82.h,
+          leading: InkWell(
+            onTap: () {},
+            child: Padding(
+              padding: EdgeInsets.only(left: 20.w),
+              child: SvgPicture.asset(Assets.iconsMobile.backMobileIcon,
+                  height: 24, fit: BoxFit.none),
             ),
-            SizedBox(
-              height: 27.h,
-            ),
-            const CategoryMobileGridView()
-          ],
+          ),
+          title: Text('Катигории', style: AppTextStyles.body16w5),
+          centerTitle: true,
         ),
-      ),
-    );
+        backgroundColor: AppColors.backgroundColor,
+        body: const CategoryMobileGridView());
   }
 }

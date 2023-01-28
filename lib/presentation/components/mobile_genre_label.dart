@@ -10,11 +10,15 @@ class MobileGenreLabel extends StatelessWidget {
     required this.onTap,
     this.topMargin,
     required this.title,
+    this.subtitle ,
+    this.subtitleColor ,
   }) : super(key: key);
 
   final Function() onTap;
   final double? topMargin;
   final String title;
+  final String? subtitle;
+  final Color? subtitleColor;
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +31,9 @@ class MobileGenreLabel extends StatelessWidget {
           GestureDetector(
             onTap: onTap,
             child: Text(
-              "Все",
+              subtitle ?? "Все",
               style: AppTextStyles.body12w4.copyWith(
-                color: AppColors.selectedColor,
+                color: subtitleColor ?? AppColors.selectedColor,
                 decoration: TextDecoration.underline,
               ),
             ),
