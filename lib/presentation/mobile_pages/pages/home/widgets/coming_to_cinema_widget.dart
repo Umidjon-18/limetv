@@ -13,12 +13,14 @@ class FilmsCardSlider extends StatelessWidget {
     required this.controller,
     required this.sliderHeight,
     this.isHaveBorder = false,
+    this.autoPlay = true,
     required this.data,
   });
 
   final double sliderHeight;
   final List<MovieModel> data;
   final bool isHaveBorder;
+  final bool autoPlay;
   final CarouselController controller;
 
   @override
@@ -28,7 +30,7 @@ class FilmsCardSlider extends StatelessWidget {
       children: [
         CarouselSlider(
           carouselController: controller,
-          options: LandingCarouselOptions(height: sliderHeight),
+          options: LandingCarouselOptions(height: sliderHeight,autoPlay: autoPlay),
           items: List.generate(
             data.length,
             (index) {

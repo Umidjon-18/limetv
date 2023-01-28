@@ -9,11 +9,12 @@ class LandingCarouselOptions extends CarouselOptions {
     double aspectRatio = 463 / 277,
     bool enlargeCenterPage = false,
     double viewportFraction = 0.28,
+    bool autoPlay = true,
     dynamic Function(int, CarouselPageChangedReason)? onPageChanged,
   }) : super(
     height: height.h,
     enlargeCenterPage: enlargeCenterPage,
-    autoPlay: true,
+    autoPlay: autoPlay,
     enlargeFactor: enlargeFactor,
     aspectRatio: aspectRatio,
     disableCenter: true,
