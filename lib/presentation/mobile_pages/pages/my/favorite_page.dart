@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -11,8 +10,6 @@ import 'package:limetv/config/constants/assets.dart';
 import 'package:limetv/config/constants/mobile_assets.dart';
 import 'package:limetv/presentation/components/mobile_genre_label.dart';
 import 'package:limetv/presentation/mobile_pages/pages/home/widgets/coming_to_cinema_widget.dart';
-import 'package:limetv/presentation/mobile_pages/pages/my/widget/customScrollerMobile.dart';
-import 'package:limetv/presentation/mobile_pages/pages/my/widget/custom_button.dart';
 
 import '../../../../config/constants/local_data.dart';
 
