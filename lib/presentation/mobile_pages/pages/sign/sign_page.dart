@@ -56,7 +56,7 @@ class _MobileSignPageState extends State<MobileSignPage> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      SvgPicture.asset(Assets.images.logo),
+                      SvgPicture.asset(Assets.images.logo,height: 32.h),
                       Padding(
                         padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
                         child: Text(
