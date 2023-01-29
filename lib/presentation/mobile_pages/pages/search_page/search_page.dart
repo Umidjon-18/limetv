@@ -183,7 +183,7 @@ class _SearchPageState extends State<SearchPage> {
             child: FilmsCardSlider(
               controller: filmController,
               data: filmy,
-              sliderHeight: 197,
+              sliderHeight: 198,
               autoPlay: false,
             ),
           ),
@@ -198,7 +198,7 @@ class _SearchPageState extends State<SearchPage> {
             child: ActorsCardSlider(
               controller: filmController,
               data: searchActorsProfessions,
-              sliderHeight: 160,
+              sliderHeight: 161,
               autoPlay: false,
             ),
           ),

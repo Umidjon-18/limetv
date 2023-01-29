@@ -8,14 +8,14 @@ import 'package:limetv/config/constants/assets.dart';
 import 'package:limetv/presentation/pages/search_page/search_page.dart';
 import 'package:limetv/presentation/pages/settings_page/settings_page.dart';
 
-class AnimationSearch extends StatefulWidget {
-  const AnimationSearch({super.key});
+class SearchPageAnimation extends StatefulWidget {
+  const SearchPageAnimation({super.key});
 
   @override
-  State<AnimationSearch> createState() => _AnimationSearchState();
+  State<SearchPageAnimation> createState() => _AnimationSearchState();
 }
 
-class _AnimationSearchState extends State<AnimationSearch>
+class _AnimationSearchState extends State<SearchPageAnimation>
     with TickerProviderStateMixin {
   // late AnimationController _controller;
   // int toggle = 0;

@@ -6,6 +6,7 @@ import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/data/models/movie_model.dart';
 import 'package:limetv/presentation/components/carousel_options.dart';
+import 'package:limetv/presentation/components/carousel_options_mobile.dart';
 
 class FilmsCardSlider extends StatelessWidget {
   const FilmsCardSlider({
@@ -30,7 +31,7 @@ class FilmsCardSlider extends StatelessWidget {
       children: [
         CarouselSlider(
           carouselController: controller,
-          options: LandingCarouselOptions(height: sliderHeight, autoPlay: autoPlay),
+          options: LandingCarouselOptionsMobile(height: sliderHeight, autoPlay: autoPlay),
           items: List.generate(
             data.length,
             (index) {
@@ -74,7 +75,7 @@ class ComingSoonToCinemaWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: haveBorder ? null : 141.h,
+          height: haveBorder ? null : 145.h,
           width: 97.w,
           margin: EdgeInsets.only(right: 12.w),
           decoration: BoxDecoration(

@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LandingCarouselOptions extends CarouselOptions {
   LandingCarouselOptions({
-    double height = 280,  
+    double height = 280,
     double enlargeFactor = 0,
-    double aspectRatio = 97 / 197,
+    double aspectRatio = 463 / 277,
     bool enlargeCenterPage = false,
     double viewportFraction = 0.28,
     bool autoPlay = true,

@@ -111,7 +111,7 @@ class _MobileHomePageState extends State<MobileHomePage> {
               child: FilmsCardSlider(
                 controller: filmController,
                 data: filmy,
-                sliderHeight: 197,
+                sliderHeight: 198,
               ),
             ),
             SliverToBoxAdapter(
@@ -125,7 +125,7 @@ class _MobileHomePageState extends State<MobileHomePage> {
               child: FilmsCardSlider(
                 controller: serialController,
                 data: serialy,
-                sliderHeight: 197,
+                sliderHeight: 198,
               ),
             ),
             SliverToBoxAdapter(
@@ -177,7 +177,7 @@ class _MobileHomePageState extends State<MobileHomePage> {
               child: FilmsCardSlider(
                 controller: recommendedController,
                 data: filmy,
-                sliderHeight: 205,
+                sliderHeight: 198,
               ),
             ),
             SliverToBoxAdapter(
