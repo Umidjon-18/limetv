@@ -75,6 +75,7 @@ class ComingSoonToCinemaWidget extends StatelessWidget {
       children: [
         Container(
           height: haveBorder ? null : 141.h,
+          width: 97.w,
           margin: EdgeInsets.only(right: 12.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(6.r),
@@ -82,13 +83,17 @@ class ComingSoonToCinemaWidget extends StatelessWidget {
                 ? Border.all(
                     color: AppColors.selectedColor,
                     width: 2.w,
-                    strokeAlign: BorderSide.strokeAlignOutside,
+                    strokeAlign: StrokeAlign.outside,
                   )
                 : null,
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(6.r),
-            child: Image.asset(model.bgImage, fit: BoxFit.cover),
+            child: Image.asset(
+              model.bgImage,
+              fit: BoxFit.cover,
+              height: 145.h,
+            ),
           ),
         ),
         Padding(

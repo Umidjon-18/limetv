@@ -6,6 +6,7 @@ import 'package:limetv/config/constants/app_colors.dart';
 import 'package:limetv/config/constants/app_text_styles.dart';
 import 'package:limetv/data/models/actors_model.dart';
 import 'package:limetv/presentation/components/carousel_options.dart';
+import 'package:limetv/presentation/components/carousel_options_mobile.dart';
 
 class ActorsCardSlider extends StatelessWidget {
   const ActorsCardSlider({
@@ -30,7 +31,7 @@ class ActorsCardSlider extends StatelessWidget {
       children: [
         CarouselSlider(
           carouselController: controller,
-          options: LandingCarouselOptions(height: sliderHeight, autoPlay: autoPlay),
+          options: LandingCarouselOptionsMobile(height: sliderHeight, autoPlay: autoPlay),
           items: List.generate(
             data.length,
             (index) {
@@ -76,6 +77,7 @@ class _ComingSoonToCinemaWidget extends StatelessWidget {
       children: [
         Container(
           height: haveBorder ? null : 108.h,
+          width: 97,
           margin: EdgeInsets.only(right: 12.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(6.r),
@@ -83,7 +85,7 @@ class _ComingSoonToCinemaWidget extends StatelessWidget {
                 ? Border.all(
                     color: AppColors.selectedColor,
                     width: 2.w,
-                    strokeAlign: BorderSide.strokeAlignOutside,
+                    strokeAlign: StrokeAlign.outside,
                   )
                 : null,
           ),
@@ -107,7 +109,7 @@ class _ComingSoonToCinemaWidget extends StatelessWidget {
             padding: EdgeInsets.only(right: 10.w, top: 2.h),
             child: AutoSizeText(
               model.prefession,
-              
+
               ///TODO clear substring
               style: AppTextStyles.body10w4.copyWith(color: AppColors.settingsTextFieldAndTextColor),
               minFontSize: 6,
