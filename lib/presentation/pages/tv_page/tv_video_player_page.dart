@@ -2,12 +2,12 @@ import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:limetv/config/constants/app_colors.dart';
-import 'package:limetv/config/constants/app_text_styles.dart';
-import 'package:limetv/config/constants/assets.dart';
-import 'package:limetv/presentation/pages/tv_page/widget/flick_controller.dart';
-import 'package:limetv/presentation/pages/tv_page/widget/flick_data_manager.dart';
-import 'package:limetv/presentation/pages/tv_page/widget/mock_data.dart';
+import '../../../config/constants/app_colors.dart';
+import '../../../config/constants/app_text_styles.dart';
+import '../../../config/constants/assets.dart';
+import 'widget/flick_controller.dart';
+import 'widget/flick_data_manager.dart';
+import 'widget/mock_data.dart';
 import 'package:video_player/video_player.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 

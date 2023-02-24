@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:limetv/config/constants/app_text_styles.dart';
+import '../../../../config/constants/app_text_styles.dart';
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({super.key});

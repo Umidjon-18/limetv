@@ -1,17 +1,17 @@
-import 'package:limetv/presentation/mobile_pages/pages/main_page/main_page.dart';
-import 'package:limetv/presentation/mobile_pages/pages/sign/sign_code.dart';
-import 'package:limetv/presentation/mobile_pages/pages/sign/sign_page.dart';
-import 'package:limetv/presentation/pages/main_page/main_page.dart';
-import 'package:limetv/presentation/pages/my_page/favorite_page.dart';
-import 'package:limetv/presentation/pages/tv_page/tv_page.dart';
+import '../mobile_pages/pages/main_page/main_page.dart';
+import '../mobile_pages/pages/sign/sign_code.dart';
+import '../mobile_pages/pages/sign/sign_page.dart';
+import '../pages/main_page/main_page.dart';
+import '../pages/my_page/favorite_page.dart';
+import '../pages/tv_page/tv_page.dart';
 import '../pages/landing_page/landing_page.dart';
 import '../pages/settings_page/settings_page.dart';
 import 'package:flutter/material.dart';
-import 'package:limetv/presentation/pages/sign/sign_code.dart';
-import 'package:limetv/presentation/pages/sign/sign_page.dart';
-import 'package:limetv/presentation/pages/tv_page/tv_video_player_page.dart';
+import '../pages/sign/sign_code.dart';
+import '../pages/sign/sign_page.dart';
+import '../pages/tv_page/tv_video_player_page.dart';
 
-import 'package:limetv/presentation/pages/filter_page/filter_page.dart';
+import '../pages/filter_page/filter_page.dart';
 
 class Routes {
   static const mainPage = '/mainPage';

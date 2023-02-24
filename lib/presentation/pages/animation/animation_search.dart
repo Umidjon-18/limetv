@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:limetv/config/constants/app_colors.dart';
-import 'package:limetv/config/constants/app_text_styles.dart';
-import 'package:limetv/config/constants/assets.dart';
+import '../../../config/constants/app_colors.dart';
+import '../../../config/constants/app_text_styles.dart';
+import '../../../config/constants/assets.dart';
 
-import 'package:limetv/presentation/pages/search_page/search_page.dart';
-import 'package:limetv/presentation/pages/settings_page/settings_page.dart';
+import '../search_page/search_page.dart';
+import '../settings_page/settings_page.dart';
 
 class AnimationSearch extends StatefulWidget {
   const AnimationSearch({super.key});

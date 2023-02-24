@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:limetv/config/constants/app_colors.dart';
-import 'package:limetv/config/constants/app_text_styles.dart';
-import 'package:limetv/config/constants/assets.dart';
-import 'package:limetv/presentation/pages/settings_page/widget/child_protection_page.dart';
-import 'package:limetv/presentation/pages/settings_page/widget/custom_button.dart';
+import '../../../../config/constants/app_colors.dart';
+import '../../../../config/constants/app_text_styles.dart';
+import '../../../../config/constants/assets.dart';
+import 'child_protection_page.dart';
+import 'custom_button.dart';
 
 class MyDevicesPage extends StatelessWidget {
   const MyDevicesPage({super.key});

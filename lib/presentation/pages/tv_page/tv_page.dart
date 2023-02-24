@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:limetv/config/constants/app_colors.dart';
-import 'package:limetv/config/constants/app_text_styles.dart';
-import 'package:limetv/config/constants/assets.dart';
-import 'package:limetv/presentation/components/footer_component.dart';
-import 'package:limetv/presentation/components/genre_label.dart';
-import 'package:limetv/presentation/pages/tv_page/tv_video_player_page.dart';
-import 'package:limetv/presentation/routes/routes.dart';
+import '../../../config/constants/app_colors.dart';
+import '../../../config/constants/app_text_styles.dart';
+import '../../../config/constants/assets.dart';
+import '../../components/footer_component.dart';
+import '../../components/genre_label.dart';
+import 'tv_video_player_page.dart';
+import '../../routes/routes.dart';
 
 class TVPage extends StatefulWidget {
   const TVPage({super.key});

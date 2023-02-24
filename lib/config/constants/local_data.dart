@@ -1,6 +1,6 @@
-import 'package:limetv/data/models/actors_model.dart';
-import 'package:limetv/data/models/category_model.dart';
-import 'package:limetv/data/models/movie_model.dart';
+import '../../data/models/actors_model.dart';
+import '../../data/models/category_model.dart';
+import '../../data/models/movie_model.dart';
 
 import 'assets.dart';
 

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:limetv/config/constants/app_colors.dart';
-import 'package:limetv/config/constants/app_text_styles.dart';
-import 'package:limetv/presentation/components/footer_component.dart';
-import 'package:limetv/presentation/pages/filter_page/widgets/custom_dropdown_button.dart';
-import 'package:limetv/presentation/pages/filter_page/widgets/filter_button.dart';
-import 'package:limetv/presentation/pages/filter_page/widgets/filter_result_text.dart';
-import 'package:limetv/presentation/pages/filter_page/widgets/filter_result_videos.dart';
-import 'package:limetv/presentation/pages/filter_page/widgets/rubrics_button.dart';
+import '../../../config/constants/app_colors.dart';
+import '../../../config/constants/app_text_styles.dart';
+import '../../components/footer_component.dart';
+import 'widgets/custom_dropdown_button.dart';
+import 'widgets/filter_button.dart';
+import 'widgets/filter_result_text.dart';
+import 'widgets/filter_result_videos.dart';
+import 'widgets/rubrics_button.dart';
 
 import '../../../config/constants/constants.dart';
 import '../../../config/constants/local_data.dart';

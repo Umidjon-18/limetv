@@ -1,4 +1,4 @@
-import 'package:limetv/config/constants/assets.dart';
+import 'assets.dart';
  bool comedy = false;
   bool drama = false;
   bool melodrama = false;

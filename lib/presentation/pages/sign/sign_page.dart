@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:limetv/config/constants/app_colors.dart';
-import 'package:limetv/config/constants/app_decorations.dart';
-import 'package:limetv/config/constants/app_text_styles.dart';
-import 'package:limetv/config/constants/assets.dart';
-import 'package:limetv/presentation/routes/routes.dart';
+import '../../../config/constants/app_colors.dart';
+import '../../../config/constants/app_decorations.dart';
+import '../../../config/constants/app_text_styles.dart';
+import '../../../config/constants/assets.dart';
+import '../../routes/routes.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class SignPage extends StatefulWidget {

@@ -2,10 +2,10 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:limetv/config/constants/app_colors.dart';
-import 'package:limetv/config/constants/app_text_styles.dart';
-import 'package:limetv/data/models/movie_model.dart';
-import 'package:limetv/presentation/components/carousel_options.dart';
+import '../../../../../config/constants/app_colors.dart';
+import '../../../../../config/constants/app_text_styles.dart';
+import '../../../../../data/models/movie_model.dart';
+import '../../../../components/carousel_options.dart';
 
 class FilmsCardSlider extends StatelessWidget {
   const FilmsCardSlider({
@@ -82,7 +82,7 @@ class ComingSoonToCinemaWidget extends StatelessWidget {
                 ? Border.all(
                     color: AppColors.selectedColor,
                     width: 2.w,
-                    strokeAlign: StrokeAlign.outside,
+                    strokeAlign: BorderSide.strokeAlignOutside,
                   )
                 : null,
           ),

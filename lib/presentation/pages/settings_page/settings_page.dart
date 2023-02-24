@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:limetv/config/constants/app_colors.dart';
-import 'package:limetv/config/constants/app_text_styles.dart';
-import 'package:limetv/config/constants/constants.dart';
-import 'package:limetv/presentation/components/genre_label.dart';
+import '../../../config/constants/app_colors.dart';
+import '../../../config/constants/app_text_styles.dart';
+import '../../../config/constants/constants.dart';
+import '../../components/genre_label.dart';
 
-import 'package:limetv/presentation/pages/settings_page/widget/child_protection_page.dart';
-import 'package:limetv/presentation/pages/settings_page/widget/compl_and%20_sugg_page.dart';
-import 'package:limetv/presentation/pages/settings_page/widget/my_devices_page.dart';
-import 'package:limetv/presentation/pages/settings_page/widget/notification_page.dart';
-import 'package:limetv/presentation/pages/settings_page/widget/settings_main.dart';
-import 'package:limetv/presentation/pages/settings_page/widget/settings_menu_item.dart';
-import 'package:limetv/presentation/pages/settings_page/widget/settings_payment_services.dart';
+import 'widget/child_protection_page.dart';
+import 'widget/compl_and%20_sugg_page.dart';
+import 'widget/my_devices_page.dart';
+import 'widget/notification_page.dart';
+import 'widget/settings_main.dart';
+import 'widget/settings_menu_item.dart';
+import 'widget/settings_payment_services.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:limetv/presentation/pages/tv_page/widget/progress_bar_settings.dart';
+import 'progress_bar_settings.dart';
 import 'package:video_player/video_player.dart';
 
 /// Renders progress bar for the video using custom paint.

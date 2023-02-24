@@ -4,15 +4,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:limetv/config/constants/app_colors.dart';
-import 'package:limetv/config/constants/app_decorations.dart';
-import 'package:limetv/config/constants/app_text_styles.dart';
-import 'package:limetv/config/constants/assets.dart';
-import 'package:limetv/config/constants/mobile_assets.dart';
-import 'package:limetv/presentation/components/mobile_genre_label.dart';
-import 'package:limetv/presentation/mobile_pages/pages/home/widgets/coming_to_cinema_widget.dart';
-import 'package:limetv/presentation/mobile_pages/pages/my/widget/customScrollerMobile.dart';
-import 'package:limetv/presentation/mobile_pages/pages/my/widget/custom_button.dart';
+import '../../../../config/constants/app_colors.dart';
+import '../../../../config/constants/app_decorations.dart';
+import '../../../../config/constants/app_text_styles.dart';
+import '../../../../config/constants/assets.dart';
+import '../../../../config/constants/mobile_assets.dart';
+import '../../../components/mobile_genre_label.dart';
+import '../home/widgets/coming_to_cinema_widget.dart';
+import 'widget/customScrollerMobile.dart';
+import 'widget/custom_button.dart';
 
 import '../../../../config/constants/local_data.dart';
 

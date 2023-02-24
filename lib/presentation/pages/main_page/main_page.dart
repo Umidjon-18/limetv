@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:limetv/config/constants/app_colors.dart';
-import 'package:limetv/config/constants/assets.dart';
-import 'package:limetv/presentation/pages/filter_page/filter_page.dart';
-import 'package:limetv/presentation/pages/landing_page/landing_page.dart';
-import 'package:limetv/presentation/pages/main_page/widgets/menu_button.dart';
-import 'package:limetv/presentation/pages/my_page/favorite_page.dart';
-import 'package:limetv/presentation/pages/search_page/search_page.dart';
-import 'package:limetv/presentation/pages/settings_page/settings_page.dart';
-import 'package:limetv/presentation/pages/tv_page/tv_page.dart';
-import 'package:limetv/presentation/routes/routes.dart';
+import '../../../config/constants/app_colors.dart';
+import '../../../config/constants/assets.dart';
+import '../filter_page/filter_page.dart';
+import '../landing_page/landing_page.dart';
+import 'widgets/menu_button.dart';
+import '../my_page/favorite_page.dart';
+import '../search_page/search_page.dart';
+import '../settings_page/settings_page.dart';
+import '../tv_page/tv_page.dart';
+import '../../routes/routes.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
