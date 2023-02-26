@@ -20,7 +20,7 @@ class _CatergoryMobilePageState extends State<CatergoryMobilePage> {
         appBar: AppBar(
           backgroundColor: AppColors.backgroundColor,
           toolbarHeight: 82.h,
-          leading: InkWell(
+          leading: GestureDetector(
             onTap: () {},
             child: Padding(
               padding: EdgeInsets.only(left: 20.w),

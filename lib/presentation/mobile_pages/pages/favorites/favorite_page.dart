@@ -30,7 +30,7 @@ class _FavoritePageState extends State<FavoritePage> {
       appBar: AppBar(
         backgroundColor: AppColors.backgroundColor,
         toolbarHeight: 82.h,
-        leading: InkWell(
+        leading: GestureDetector(
           onTap: () {},
           child: Padding(
             padding: EdgeInsets.only(left: 20.w),
@@ -75,6 +75,7 @@ class _FavoritePageState extends State<FavoritePage> {
       // ),
       backgroundColor: AppColors.backgroundColor,
       body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
         slivers: [
           SliverToBoxAdapter(
             child: MobileGenreLabel(

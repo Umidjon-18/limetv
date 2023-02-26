@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:limetv/presentation/mobile_pages/pages/category/category_mobile_page.dart';
+import 'package:limetv/presentation/mobile_pages/pages/favorites/favorite_page.dart';
 import 'package:limetv/presentation/mobile_pages/pages/home/home_page.dart';
 import 'package:limetv/presentation/mobile_pages/pages/search_page/search_page.dart';
 import 'package:limetv/presentation/pages/filter_page/filter_page.dart';
 
-import '../my/favorite_page.dart';
 import 'widgets/bottom_nav_bar.dart';
 
 class MobileMainPage extends StatefulWidget {

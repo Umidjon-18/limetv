@@ -27,6 +27,7 @@ class CategoryMobileGridView extends StatelessWidget {
         itemBuilder: (context, index) {
           return InkWell(
             onTap: (){},
+            borderRadius: BorderRadius.circular(8.r),
             child: Container(
               height: 104.w,
               width: 105.w,

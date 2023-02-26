@@ -47,21 +47,24 @@ class _MobileSignPageState extends State<MobileSignPage> {
                   borderRadius: BorderRadius.circular(20.r),
                 ),
                 child: Container(
-                  height: 265.h,
                   padding: EdgeInsets.fromLTRB(34.w, 28.h, 34.w, 10.h),
                   decoration: BoxDecoration(
                     color: AppColors.cartBgColor,
                     borderRadius: BorderRadius.circular(20.r),
                   ),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       SvgPicture.asset(Assets.images.logo,height: 32.h),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
-                        child: Text(
-                          'Войдите или Регистрируйтесь',
-                          style: AppTextStyles.body10w4,
+                      Align(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
+                          child: Text(
+                            'Войдите или Регистрируйтесь',
+                            style: AppTextStyles.body10w4,
+                          ),
                         ),
                       ),
                       Container(
@@ -89,7 +92,7 @@ class _MobileSignPageState extends State<MobileSignPage> {
                           ],
                         ),
                       ),
-                      const Spacer(),
+                      SizedBox(height: 16.h),
                       TextButton(
                         onPressed: () {
                           if (controller.text.length == 19) {
@@ -105,11 +108,9 @@ class _MobileSignPageState extends State<MobileSignPage> {
                           borderRadius: 38.5.r,
                           size: Size.fromHeight(36.h),
                         ),
-                        child: Center(
-                          child: Text(
-                            'Войти',
-                            style: AppTextStyles.body12w4,
-                          ),
+                        child: Text(
+                          'Войти',
+                          style: AppTextStyles.body12w4,
                         ),
                       ),
                       // SizedBox(height: 12.h),
@@ -124,11 +125,9 @@ class _MobileSignPageState extends State<MobileSignPage> {
                           borderRadius: 38.5.r,
                           size: Size.fromHeight(36.h),
                         ),
-                        child: Center(
-                          child: Text(
-                            'Регистрация',
-                            style: AppTextStyles.body12w4,
-                          ),
+                        child: Text(
+                          'Регистрация',
+                          style: AppTextStyles.body12w4,
                         ),
                       ),
                     ],

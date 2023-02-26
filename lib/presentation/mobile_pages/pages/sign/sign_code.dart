@@ -47,13 +47,15 @@ class _MobileSignCodePageState extends State<MobileSignCodePage> {
                   borderRadius: BorderRadius.circular(20.r),
                 ),
                 child: Container(
-                  height: 308.h,
+                  // height: 308.h,
                   padding: EdgeInsets.fromLTRB(34.w, 28.h, 34.w, 24.h),
                   decoration: BoxDecoration(
                     color: AppColors.cartBgColor,
                     borderRadius: BorderRadius.circular(20.r),
                   ),
                   child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       SvgPicture.asset(Assets.images.logo),
                       Padding(
@@ -73,6 +75,7 @@ class _MobileSignCodePageState extends State<MobileSignCodePage> {
                           borderRadius: BorderRadius.circular(38.5.r),
                         ),
                         child: TextField(
+                          autofocus: true,
                           textAlign: TextAlign.center,
                           style: AppTextStyles.body12w4,
                           decoration: InputDecoration(
@@ -89,7 +92,7 @@ class _MobileSignCodePageState extends State<MobileSignCodePage> {
                           keyboardType: TextInputType.number,
                         ),
                       ),
-                      const Spacer(),
+                      SizedBox(height: 12.h),
                       TextButton(
                         onPressed: () {
                           Navigator.pushNamed(context, MobileRoutes.mainPage);
@@ -99,11 +102,9 @@ class _MobileSignCodePageState extends State<MobileSignCodePage> {
                           borderRadius: 38.5.r,
                           size: Size.fromHeight(36.h),
                         ),
-                        child: Center(
-                          child: Text(
-                            'Далее',
-                            style: AppTextStyles.body12w4,
-                          ),
+                        child: Text(
+                          'Далее',
+                          style: AppTextStyles.body12w4,
                         ),
                       ),
                       // SizedBox(height: 16.h),
@@ -118,7 +119,7 @@ class _MobileSignCodePageState extends State<MobileSignCodePage> {
                           borderRadius: 38.5.r,
                           size: Size.fromHeight(36.h),
                         ),
-                        child: const Center(child: TimeText()),
+                        child: const TimeText(),
                       )
                     ],
                   ),
